@@ -278,7 +278,7 @@ const Resume = () => {
         <div className="desc">
           <h1>
             <a href="https://piknic-entrepreneurship.vercel.app/">
-              레벨나인 옵티컬미 포텐셜미
+              옵티컬 미 포텐셜 미
             </a>
           </h1>
           <p>
