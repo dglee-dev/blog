@@ -1,20 +1,24 @@
+import React from "react";
 import styled from "styled-components/macro";
-import GlobalStyle from "./GlobalStyle";
-import Resume from "./components/Resume";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+
+import GlobalStyle from "@/GlobalStyle";
+import Nav from "@/components/Nav";
+import WorksPage from "@/pages/Works";
+import useRouter from "@/shared/lib/router/hooks/useRouter";
 
 function App() {
+  const { routePath } = useRouter();
+
   const isMobile = window.innerWidth <= 480;
 
   return (
     <>
       <GlobalStyle />
-      <Container>
-        {!isMobile && <Header>프로젝트</Header>}
 
-        <Resume />
-        <Footer />
+      {!isMobile && <Nav />}
+
+      <Container>
+        {routePath === "/works" && <WorksPage />}
       </Container>
     </>
   );
