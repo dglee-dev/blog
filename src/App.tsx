@@ -2,22 +2,28 @@ import React from "react";
 import styled from "styled-components/macro";
 
 import GlobalStyle from "@/GlobalStyle";
-import Nav from "@/components/Nav";
-import WorksPage from "@/pages/Works";
 import useRouter from "@/shared/lib/router/hooks/useRouter";
+
+import WorksPage from "@/pages/Works";
+import HomePage from "@/pages/Home";
+import PostPage from "@/pages/posts";
+
+import Nav from "@/components/Nav";
+import NewPostPage from "@/pages/New";
 
 function App() {
   const { routePath } = useRouter();
-
-  const isMobile = window.innerWidth <= 480;
 
   return (
     <>
       <GlobalStyle />
 
-      {!isMobile && <Nav />}
+      <Nav />
 
       <Container>
+        {routePath === "/" && <HomePage />}
+        {routePath === "/new" && <NewPostPage />}
+        {routePath === "/posts" && <PostPage />}
         {routePath === "/works" && <WorksPage />}
       </Container>
     </>
@@ -25,10 +31,17 @@ function App() {
 }
 
 const Container = styled.div`
-  background-color: white;
+  position: fixed;
+  left: 50%;
+  top: var(--nav-height);
+  transform: translateX(-50%);
 
-  max-width: 240mm;
-  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+
+  width: 100vw;
+  height: calc(100dvh - var(--nav-height));
+  overflow: scroll;
 
   margin: 0 auto;
 

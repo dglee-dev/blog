@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import React from "react";
 
-const MobileList = () => {
+const MobileLanding = () => {
   return (
     <Container>
       <div
@@ -23,7 +23,7 @@ const MobileList = () => {
 };
 
 const Container = styled.div`
-  min-height: 100svh;
+  min-height: calc(100svh - var(--nav-height));
 
   display: flex;
   justify-content: center;
@@ -55,4 +55,4 @@ const Notice = styled.div`
   transform: translateX(-50%);
 `;
 
-export default MobileList;
+export default MobileLanding;
