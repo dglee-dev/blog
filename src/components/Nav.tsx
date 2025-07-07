@@ -7,9 +7,9 @@ const Nav = () => {
 
   return (
     <Container>
-      <li onClick={() => navigate("/")}>
+      <span onClick={() => navigate("/")}>
         이동규 블로그
-      </li>
+      </span>
 
       <List>
         <li onClick={() => navigate("/posts")}>
@@ -25,8 +25,16 @@ const Nav = () => {
 };
 
 const Container = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: var(--nav-height);
+
+  box-sizing: border-box;
+
   padding: 1em;
-  margin-bottom: 2em;
 
   font-size: 1.5em;
 

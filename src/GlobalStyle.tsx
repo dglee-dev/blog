@@ -1,6 +1,10 @@
 import { createGlobalStyle } from "styled-components/macro";
 
 export default createGlobalStyle`
+  :root {
+    --nav-height: 61.39px;
+  }
+
   html, body {
     margin: 0;
     padding: 0;
@@ -8,6 +12,7 @@ export default createGlobalStyle`
 
   * {
     color: black;
+    box-sizing: border-box;
   }
 
   body {

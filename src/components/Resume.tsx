@@ -7,7 +7,7 @@ import ChopsticksConsumerGif from "@/images/chopsticks-consumer.gif";
 
 import Carousel from "@/components/Carousel";
 import TechStack from "@/components/TechStack";
-import MobileList from "@/components/MobileList";
+import MobileLanding from "@/components/MobileLanding";
 import useViewportType from "@/hooks/useViewportType";
 
 const Resume = () => {
@@ -17,7 +17,7 @@ const Resume = () => {
     <div>
       {isMobile && (
         <Section>
-          <MobileList />
+          <MobileLanding />
         </Section>
       )}
 
@@ -636,7 +636,7 @@ const Resume = () => {
   );
 };
 
-const Section = styled.div`
+export const Section = styled.div`
   margin-bottom: 2em;
 
   h1 {
@@ -651,7 +651,7 @@ const Section = styled.div`
   }
 
   @media only screen and (max-width: 480px) {
-    height: 100svh;
+    height: calc(100svh - var(--nav-height));
     margin-top: 0;
 
     padding-left: 2em !important;
@@ -674,7 +674,7 @@ const Section = styled.div`
     }
 
     p {
-      font-size: min(2vh, 3.5vw);
+      font-size: 12px;
     }
 
     /* &:first-child {
