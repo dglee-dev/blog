@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components/macro";
 
-import useMapIds from "@/hooks/useMapIds.ts";
+import useMapIds from "@/shared/hooks/useMapIds";
 
 const Carousel = ({ images }) => {
   const imagesWithKey = useMapIds(images);

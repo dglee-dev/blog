@@ -3,7 +3,7 @@ import { map } from "fxjs";
 import styled from "styled-components/macro";
 import { useMediaQuery } from "@uidotdev/usehooks";
 
-import useMapIds from "../hooks/useMapIds.ts";
+import useMapIds from "../shared/hooks/useMapIds.ts";
 import Badge, { Icons } from "./Badge.tsx";
 
 interface Props {
@@ -16,14 +16,19 @@ interface Props {
 const TechStack = ({ stacks }: Props) => {
   const stacksWithId = useMapIds(stacks);
 
-  const isMobile = useMediaQuery("only screen and (max-width: 480px)");
+  const isMobile = useMediaQuery(
+    "only screen and (max-width: 480px)"
+  );
 
   return (
     <Container>
       {!isMobile &&
         map((stack) => {
           return (
-            <Badge key={stack.id} icon={stack.icon}>
+            <Badge
+              key={stack.id}
+              icon={stack.icon}
+            >
               {stack.name}
             </Badge>
           );
