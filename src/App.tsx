@@ -4,7 +4,7 @@ import styled from "styled-components/macro";
 import GlobalStyle from "@/GlobalStyle";
 import useRouter from "@/shared/lib/router/hooks/useRouter";
 
-import WorksPage from "@/pages/Works";
+import WorksPage from "@/pages/works";
 import HomePage from "@/pages/Home";
 import PostPage from "@/pages/posts";
 
