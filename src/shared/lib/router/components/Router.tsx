@@ -23,16 +23,10 @@ const Router = ({
 
   useEffect(() => {
     const handler = () => {
-      console.log("pop state occurred");
-      setRoutePath(window.location.href);
+      setRoutePath(window.location.pathname);
     };
 
     window.addEventListener("popstate", handler);
-
-    return window.removeEventListener(
-      "popstate",
-      handler
-    );
   }, []);
 
   return (
