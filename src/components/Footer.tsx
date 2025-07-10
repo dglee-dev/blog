@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components/macro";
 
-import useViewportType from "@/hooks/useViewportType";
+import useViewportType from "@/shared/hooks/useViewportType";
 
 const Footer = () => {
   const { isMobile } = useViewportType();

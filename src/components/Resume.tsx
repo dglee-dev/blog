@@ -8,7 +8,7 @@ import ChopsticksConsumerGif from "@/images/chopsticks-consumer.gif";
 import Carousel from "@/components/Carousel";
 import TechStack from "@/components/TechStack";
 import MobileLanding from "@/components/MobileLanding";
-import useViewportType from "@/hooks/useViewportType";
+import useViewportType from "@/shared/hooks/useViewportType";
 
 const Resume = () => {
   const { isMobile } = useViewportType();
