@@ -21,22 +21,30 @@ const WorkListItem = ({
   return (
     <Container
       onClick={handleClick}
-      thumbnail={workItem.thumbnail}
+      thumbnail={workItem.thumbnail.src}
+      fit={workItem.thumbnail.style.fit}
+      position={workItem.thumbnail.style.position}
     ></Container>
   );
 };
 
 const Container = styled.div<{
   thumbnail: string;
+  position?: string;
 }>`
-  background-color: blue;
+  background-color: white;
   background-image: ${(props: {
     thumbnail: string;
   }) => `url("${props.thumbnail}")`};
-  background-size: cover;
-  background-position: center;
+  background-size: ${(props: { fit?: string }) =>
+    props.fit ? props.fit : "cover"};
+  background-position: ${(props: {
+    position?: string;
+  }) =>
+    props.position ? props.position : "center"};
+  background-repeat: no-repeat;
 
-  transition: all 0.1s ease-in-out;
+  transition: opacity 0.1s ease-in-out;
 
   &:hover {
     opacity: 0.8;
@@ -44,6 +52,9 @@ const Container = styled.div<{
 
   width: 20vw;
   height: 20vw;
+
+  max-width: 300px;
+  max-height: 300px;
 
   cursor: pointer;
 `;

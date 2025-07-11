@@ -32,15 +32,10 @@ export default createGlobalStyle`
     font-family: "Pretendard", "sans-serif";
   }
 
-  ul, ol, li {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+  ul {
+    padding-left: 1.5em;
   }
 
-  li {
-    padding-left: 1em;
-  }
 
   p {
     line-height: 1.5em;

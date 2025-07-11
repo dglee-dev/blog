@@ -12,13 +12,13 @@ const Nav = () => {
       </span>
 
       <List>
-        <li onClick={() => navigate("/posts")}>
+        <span onClick={() => navigate("/posts")}>
           글
-        </li>
+        </span>
 
-        <li onClick={() => navigate("/works")}>
+        <span onClick={() => navigate("/works")}>
           작업
-        </li>
+        </span>
       </List>
     </Container>
   );
@@ -27,14 +27,16 @@ const Nav = () => {
 const Container = styled.div`
   position: fixed;
   top: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
 
   width: 100%;
+
   height: var(--nav-height);
 
   box-sizing: border-box;
 
-  padding: 1em;
+  padding: 16px;
 
   font-size: 1.5em;
 
@@ -44,10 +46,17 @@ const Container = styled.div`
   & a {
     text-decoration: none;
   }
+
+  & span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
-const List = styled.ul`
+const List = styled.div`
   display: flex;
+  gap: 1em;
 `;
 
 export default Nav;

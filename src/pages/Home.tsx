@@ -17,10 +17,14 @@ const HomePage = () => {
         좋아합니다. 프론트엔드 개발자로서 너무
         추상화된 것들에 둘러쌓여 지내다보니 간단한
         도구는 직접 만들어 사용하는 것이 더 확실히
-        제어하고 있다는 기분이 듭니다. 예를 들어,
-        이 홈페이지의 라우터는 React Router를
-        사용하지 않고 직접 라우트 로직을 만들어
-        사용했습니다.
+        제어하고 있다는 기분이 듭니다. 예를 들어..
+        <ul>
+          <li>
+            이 홈페이지의 라우터는 React Router를
+            사용하지 않고 직접 라우트 로직을
+            만들어 사용했습니다.
+          </li>
+        </ul>
       </p>
 
       <p>
@@ -37,7 +41,9 @@ const Container = styled.div`
   max-width: 500px;
   word-break: keep-all;
 
-  padding: 1em;
+  padding: 16px;
+
+  font-size: 16px;
 `;
 
 export default HomePage;
