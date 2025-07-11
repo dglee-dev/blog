@@ -4,6 +4,7 @@ import styled from "styled-components/macro";
 
 import WorkListItem from "@/pages/works/components/work-list-item";
 import { workItemStore } from "@/pages/works/store/work-items";
+import WorkDetails from "@/pages/works/components/work-details";
 
 const WorksPage = () => {
   const { works, selectedWork } = useStore(
@@ -24,9 +25,7 @@ const WorksPage = () => {
       </ListSection>
 
       <DetailsSection>
-        <h1>{selectedWork.name}</h1>
-
-        <p>{selectedWork.contents}</p>
+        <WorkDetails workItem={selectedWork} />
       </DetailsSection>
     </Container>
   );
@@ -44,14 +43,35 @@ const ListSection = styled.section`
   background-color: #f3f3f3;
 
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-auto-rows: 20vw;
+
+  grid-template-columns: repeat(
+    2,
+    min(20vw, 300px)
+  );
+
+  @media (min-width: 1500px) {
+    grid-template-columns: repeat(
+      3,
+      min(20vw, 300px)
+    );
+  }
+
+  @media (min-width: 1800px) {
+    grid-template-columns: repeat(
+      4,
+      min(20vw, 300px)
+    );
+  }
+
+  grid-auto-rows: min(20vw, 300px);
   gap: 0;
 `;
 
 const DetailsSection = styled.section`
-  background-color: skyblue;
+  background-color: #f9f9f9;
   flex: 1;
+
+  padding: 2em;
 `;
 
 export default WorksPage;
