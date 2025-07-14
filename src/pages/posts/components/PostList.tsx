@@ -1,12 +1,23 @@
 import React from "react";
+import styled from "styled-components/macro";
 
 const PostList = ({
   children,
 }: {
   children: React.ReactNode;
 }) => {
-  return <div>{children}</div>;
+  return (
+    <PostList.Container>
+      {children}
+    </PostList.Container>
+  );
 };
+
+PostList.Container = styled.ul`
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+`;
 
 PostList.Item = ({
   title,
@@ -16,7 +27,12 @@ PostList.Item = ({
   href?: string;
 }) => {
   return (
-    <li>
+    <li
+      style={{
+        fontSize: "16px",
+        listStyle: "none",
+      }}
+    >
       <a href={href}>{title}</a>
     </li>
   );
