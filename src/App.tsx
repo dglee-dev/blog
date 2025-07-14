@@ -23,7 +23,18 @@ function App() {
       <Container>
         {routePath === "/" && <HomePage />}
         {routePath === "/new" && <NewPostPage />}
+
         {routePath === "/posts" && <PostPage />}
+        {routePath !== "/posts" &&
+          routePath.includes("/posts/") && (
+            <iframe
+              src="/docs/reading-materials/july-second.md"
+              style={{
+                backgroundColor: "white",
+              }}
+            ></iframe>
+          )}
+
         {routePath === "/works" && <WorksPage />}
       </Container>
     </>
