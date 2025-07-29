@@ -10,6 +10,7 @@ import PostPage from "@/pages/posts";
 
 import Nav from "@/components/Nav";
 import NewPostPage from "@/pages/New";
+import PostDetails from "@/pages/posts/components/PostDetails";
 
 function App() {
   const { routePath } = useRouter();
@@ -25,14 +26,10 @@ function App() {
         {routePath === "/new" && <NewPostPage />}
 
         {routePath === "/posts" && <PostPage />}
+
         {routePath !== "/posts" &&
           routePath.includes("/posts/") && (
-            <iframe
-              src="/docs/reading-materials/july-second.md"
-              style={{
-                backgroundColor: "white",
-              }}
-            ></iframe>
+            <PostDetails />
           )}
 
         {routePath === "/works" && <WorksPage />}

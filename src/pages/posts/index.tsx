@@ -1,21 +1,31 @@
 import React from "react";
 import styled from "styled-components/macro";
+import { last } from "lodash";
 
 import PostList from "@/pages/posts/components/PostList";
+import usePosts from "@/pages/posts/hooks/usePosts";
 
 const PostPage = () => {
+  const { posts } = usePosts();
+
   return (
     <Container>
       <PostList>
-        <PostList.Item
-          title="7월 둘째 주 읽기 자료"
-          href="/posts/july-second-weekly-readings"
-        />
+        {posts.map((post, index) => {
+          const postKey = post.Key;
 
-        <PostList.Item
-          title="7월 둘째 주 읽기 자료"
-          href="/posts/july-second-weekly-readings"
-        />
+          const filename = last(
+            postKey.split("/")
+          );
+
+          return (
+            <PostList.Item
+              key={`Post-${index}`}
+              title={filename.split(".md")}
+              href={`/posts/${filename}`}
+            />
+          );
+        })}
       </PostList>
     </Container>
   );
