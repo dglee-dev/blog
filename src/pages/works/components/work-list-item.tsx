@@ -52,7 +52,6 @@ const Container = styled.div<{
 
   width: 20vw;
   height: 20vw;
-
   max-width: 300px;
   max-height: 300px;
 

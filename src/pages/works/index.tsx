@@ -5,11 +5,14 @@ import styled from "styled-components/macro";
 import WorkListItem from "@/pages/works/components/work-list-item";
 import { workItemStore } from "@/pages/works/store/work-items";
 import WorkDetails from "@/pages/works/components/work-details";
+import useViewport from "@/shared/hooks/useViewport";
 
 const WorksPage = () => {
   const { works, selectedWork } = useStore(
     workItemStore
   );
+
+  const { viewport } = useViewport();
 
   return (
     <Container>
@@ -24,9 +27,11 @@ const WorksPage = () => {
         })}
       </ListSection>
 
-      <DetailsSection>
-        <WorkDetails workItem={selectedWork} />
-      </DetailsSection>
+      {viewport === "desktop" && (
+        <DetailsSection>
+          <WorkDetails workItem={selectedWork} />
+        </DetailsSection>
+      )}
     </Container>
   );
 };
