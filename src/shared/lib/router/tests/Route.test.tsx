@@ -7,7 +7,7 @@ import "@testing-library/jest-dom";
 
 import Route from "@/shared/lib/router/components/Route";
 
-test.only("Route component returns null", () => {
+test("Route component returns null", () => {
   const { container } = render(
     <Route path="/abc" element={<div>abc</div>} />
   );
