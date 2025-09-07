@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 const Routes = ({
   children,
 }: {
   children: React.ReactNode;
 }) => {
-  return <div>{children}</div>;
+  useEffect(() => {
+    console.log("Route children", children);
+  }, [children]);
+
+  return <div></div>;
 };
 
 export default Routes;
