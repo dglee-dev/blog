@@ -3,3 +3,5 @@ export type WithId<T> = T & {
 };
 
 export type Nullable<T> = T | null;
+
+export type Path = `/${string}`;

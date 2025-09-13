@@ -1,13 +1,12 @@
-import React, { useEffect } from "react";
+import useMatch from "@/shared/lib/router/hooks/useMatch";
+import React from "react";
 
 const Routes = ({
   children,
 }: {
   children: React.ReactNode;
 }) => {
-  useEffect(() => {
-    console.log("Route children", children);
-  }, [children]);
+  const matchedChild = useMatch(children);
 
   return <div></div>;
 };
