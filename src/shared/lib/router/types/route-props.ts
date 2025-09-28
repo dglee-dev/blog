@@ -15,7 +15,7 @@ interface LeafRouteProps {
 interface LayoutRouteProps {
   path?: string;
   element?: React.ReactNode;
-  children: React.ReactNode;
+  children: React.ReactNode[];
   index?: false;
 }
 
