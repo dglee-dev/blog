@@ -1,3 +1,4 @@
+import { RouteObject } from "@/shared/lib/router/types/route-object";
 import React from "react";
 
 export function createRoutes(
@@ -6,7 +7,7 @@ export function createRoutes(
   const childrenArray =
     React.Children.toArray(children);
 
-  const routes = childrenArray.map(
+  const routes: RouteObject[] = childrenArray.map(
     (child: any) => {
       return child.props.children
         ? {
