@@ -24,7 +24,10 @@ const Resume = () => {
       <Section>
         <div className="desc">
           <h1>
-            <a href="https://www.seonyupublicart.com/">
+            <a
+              target="_black"
+              href="https://www.seonyupublicart.com/"
+            >
               선유동화: Unseeing
             </a>
           </h1>
@@ -39,7 +42,10 @@ const Resume = () => {
             있습니다. 인터랙티브 요소가 들어간
             녹색 기둥의 정원을 제외하고 모든 AR
             컨텐츠를{" "}
-            <a href="https://github.com/nninnnin/ar-framework">
+            <a
+              target="_black"
+              href="https://github.com/nninnnin/ar-framework"
+            >
               AR Framework
             </a>
             를 이용해 제작하고 UI와 통합해
@@ -65,7 +71,10 @@ const Resume = () => {
       <Section>
         <div className="desc">
           <h1>
-            <a href="https://treasure-sb.kr/">
+            <a
+              target="_black"
+              href="https://treasure-sb.kr/"
+            >
               성북마을 보물찾기
             </a>
           </h1>
@@ -102,7 +111,10 @@ const Resume = () => {
       <Section>
         <div className="desc">
           <h1>
-            <a href="https://www.yongdamplay.co.kr/">
+            <a
+              target="_black"
+              href="https://www.yongdamplay.co.kr/"
+            >
               용담플레이
             </a>
           </h1>
@@ -143,7 +155,10 @@ const Resume = () => {
       <Section>
         <div className="desc">
           <h1>
-            <a href="https://www.wishfullmoon.kr/">
+            <a
+              target="_black"
+              href="https://www.wishfullmoon.kr/"
+            >
               청주에 뜬 달
             </a>
           </h1>
@@ -184,13 +199,19 @@ const Resume = () => {
       <Section>
         <div className="desc">
           <h1>
-            <a href="https://www.memorial-timecube.com/">
+            <a
+              target="_black"
+              href="https://www.memorial-timecube.com/"
+            >
               메모리얼 타임큐브
             </a>
           </h1>
           <p>
             2024년 6월에 진행된 보훈부 행사{" "}
-            <a href="https://www.koreamemorialfesta.com/">
+            <a
+              target="_black"
+              href="https://www.koreamemorialfesta.com/"
+            >
               코리아 메모리얼 페스타
             </a>
             에 사용된 모바일 웹 `메모리얼
@@ -205,7 +226,10 @@ const Resume = () => {
             <br />
             <br />웹 AR 라이브러리{" "}
             <code>
-              <a href="https://hiukim.github.io/mind-ar-js-doc/">
+              <a
+                target="_black"
+                href="https://hiukim.github.io/mind-ar-js-doc/"
+              >
                 MindAR
               </a>
             </code>{" "}
@@ -214,7 +238,10 @@ const Resume = () => {
             기반으로 증강되는 AR 컨텐츠 개발을
             위해서는{" "}
             <code>
-              <a href="https://ar-js-org.github.io/AR.js-Docs/">
+              <a
+                target="_black"
+                href="https://ar-js-org.github.io/AR.js-Docs/"
+              >
                 AR.js
               </a>
             </code>{" "}
@@ -258,7 +285,12 @@ const Resume = () => {
             연속적인 카드 애니메이션을 구현하기
             위해{" "}
             <code>
-              <a href="https://gsap.com/">GSAP</a>
+              <a
+                target="_black"
+                href="https://gsap.com/"
+              >
+                GSAP
+              </a>
             </code>
             의 타임라인 기능을 사용하였고,
             조이스틱 하드웨어의 인풋을 웹에서
@@ -278,7 +310,10 @@ const Resume = () => {
       <Section>
         <div className="desc">
           <h1>
-            <a href="https://ar-dadada.ccydp.kr/">
+            <a
+              target="_black"
+              href="https://ar-dadada.ccydp.kr/"
+            >
               YDP DADADA AR
             </a>
           </h1>
@@ -292,7 +327,10 @@ const Resume = () => {
             iOS와 안드로이드 각각의 네이티브 AR
             SDK를 이용할 수 있도록 돕는{" "}
             <code>
-              <a href="https://modelviewer.dev/">
+              <a
+                target="_black"
+                href="https://modelviewer.dev/"
+              >
                 ModelViewer
               </a>
             </code>{" "}
@@ -318,13 +356,19 @@ const Resume = () => {
       <Section>
         <div className="desc">
           <h1>
-            <a href="https://piknic-entrepreneurship.vercel.app/">
+            <a
+              target="_black"
+              href="https://piknic-entrepreneurship.vercel.app/"
+            >
               옵티컬 미 포텐셜 미
             </a>
           </h1>
           <p>
             복합 문화공간 피크닉의 전시{" "}
-            <a href="https://piknic.kr/home/include/board_view.php?SEQ=CATEEXHIBITION0003">
+            <a
+              target="_black"
+              href="https://piknic.kr/home/include/board_view.php?SEQ=CATEEXHIBITION0003"
+            >
               회사만들기
             </a>{" "}
             에 참여한 레벨나인의 프로젝트
@@ -346,12 +390,18 @@ const Resume = () => {
       <Section>
         <div className="desc">
           <h1>
-            <a href="https://www.decoding-my-emotion.com/">
+            <a
+              target="_black"
+              href="https://www.decoding-my-emotion.com/"
+            >
               앤어플랜트 이모션디코더
             </a>
           </h1>
           <p>
-            <a href="https://www.instagram.com/and_a_plant/">
+            <a
+              target="_black"
+              href="https://www.instagram.com/and_a_plant/"
+            >
               앤어플랜트
             </a>
             의 `감정해독기(Emotion Decoder)`
@@ -380,7 +430,10 @@ const Resume = () => {
       <Section>
         <div className="desc">
           <h1>
-            <a href="https://chopsticks.market">
+            <a
+              target="_black"
+              href="https://chopsticks.market"
+            >
               찹스틱스 소비자 플랫폼
             </a>
           </h1>
@@ -596,7 +649,10 @@ const Resume = () => {
       <Section>
         <div className="desc">
           <h1>
-            <a href="https://piknic-piet-oudolf.netlify.app/">
+            <a
+              target="_black"
+              href="https://piknic-piet-oudolf.netlify.app/"
+            >
               정원 만들기
             </a>
           </h1>
