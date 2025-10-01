@@ -24,6 +24,47 @@ const Resume = () => {
       <Section>
         <div className="desc">
           <h1>
+            <a href="https://www.seonyupublicart.com/">
+              선유동화: Unseeing
+            </a>
+          </h1>
+          <p>
+            선유도공원에서 진행되는 서울시의
+            수변갤러리 프로젝트를 개발했습니다.
+            <br />
+            <br />
+            5개의 거점에서 지도를 기반으로 선유도
+            공원 곳곳에 설치된 팻말의 QR을 이용해
+            각 위치에 맞는 AR 컨텐츠를 체험할 수
+            있습니다. 인터랙티브 요소가 들어간
+            녹색 기둥의 정원을 제외하고 모든 AR
+            컨텐츠를{" "}
+            <a href="https://github.com/nninnnin/ar-framework">
+              AR Framework
+            </a>
+            를 이용해 제작하고 UI와 통합해
+            컨텐츠의 생산성을 높이고 유지보수가
+            용이하도록 만들었습니다.
+          </p>
+        </div>
+
+        <Video
+          autoPlay
+          loop
+          muted
+          playsInline
+          style={{ objectFit: "cover" }}
+        >
+          <source
+            src="https://justin-cms-images.s3.ap-northeast-2.amazonaws.com/seonyudonwha-pf.mov"
+            type="video/mp4"
+          />
+        </Video>
+      </Section>
+
+      <Section>
+        <div className="desc">
+          <h1>
             <a href="https://treasure-sb.kr/">
               성북마을 보물찾기
             </a>
