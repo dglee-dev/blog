@@ -33,6 +33,11 @@ function App() {
           )}
 
         {routePath === "/works" && <WorksPage />}
+
+        {/* for test */}
+        {routePath === "/works/abc" && (
+          <WorksPage />
+        )}
       </Container>
     </>
   );

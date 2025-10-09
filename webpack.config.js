@@ -24,6 +24,7 @@ module.exports = (env, argv) => {
     entry: "./src/index.js",
     output: {
       filename: "bundle.js",
+      publicPath: "/",
       path: path.resolve(__dirname, "dist"),
       clean: true, // 기존 파일 제거
     },
