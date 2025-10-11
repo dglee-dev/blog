@@ -9,12 +9,13 @@ import { tokenizeBranches } from "@/shared/lib/router/utils/tokenize-branches";
 import { sortBranches } from "@/shared/lib/router/utils/sort-branches";
 import { matchRoute } from "@/shared/lib/router/utils/match-route";
 import { buildResourceMap } from "@/shared/lib/router/utils/build-resource-map";
+import useRouter from "@/shared/lib/router/hooks/useRouter";
 
 const useMatch = (children: React.ReactNode) => {
   const [matchedElement, setMatchedElement] =
     useState(null);
 
-  const currentPath = location.pathname;
+  const { routePath: currentPath } = useRouter();
 
   useEffect(() => {
     const routes = createRoutes(children);
