@@ -8,17 +8,24 @@ export function buildBranches(
   base = "/"
 ): RouteBranch[] {
   // DFS on routeObjects and generate fullpath as joining paths of parents' and childs'
-
   const branches: RouteBranch[] = [];
+
+  let order = 0;
 
   function walk(
     route: RouteObject,
-    accumulatedPath: string
+    accumulatedPath: string,
+    parentId: string
   ) {
     if (route.index) {
+      order++;
+
       branches.push({
         fullPath: accumulatedPath,
         isIndex: true,
+        order,
+        id: route.id,
+        parentId,
       });
 
       return;
@@ -32,21 +39,27 @@ export function buildBranches(
       : accumulatedPath;
 
     if (!hasChild) {
+      order++;
+
       branches.push({
         fullPath,
         isIndex: false,
+        order,
+        id: route.id,
+        parentId,
       });
 
       return;
     }
 
+    const newParentId = route.id;
     return route.children.forEach((child) =>
-      walk(child, fullPath)
+      walk(child, fullPath, newParentId)
     );
   }
 
   for (const route of routeObjects) {
-    walk(route, base);
+    walk(route, base, "root");
   }
 
   return branches;

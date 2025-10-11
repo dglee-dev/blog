@@ -1,7 +1,26 @@
-import { BranchToken } from "@/shared/lib/router/types/route-token";
 import { chain } from "lodash";
 
+import {
+  RouteBranch,
+  TokenizedBranch,
+} from "@/shared/lib/router/types/route-branch";
+import { BranchToken } from "@/shared/lib/router/types/route-token";
+
 export function tokenizeBranches(
+  branches: RouteBranch[]
+): TokenizedBranch[] {
+  return branches.map((branch) => {
+    return {
+      ...branch,
+      tokens: tokenize(
+        branch.fullPath,
+        branch.isIndex
+      ),
+    };
+  });
+}
+
+export function tokenize(
   fullPath: string,
   isIndex = false
 ): BranchToken[] {

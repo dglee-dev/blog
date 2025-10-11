@@ -4,10 +4,8 @@ import styled from "styled-components/macro";
 
 import WorkListItem from "@/pages/works/components/work-list-item";
 import { workItemStore } from "@/pages/works/store/work-items";
-import WorkDetails from "@/pages/works/components/work-details";
+
 import useViewport from "@/shared/hooks/useViewport";
-import Routes from "@/shared/lib/router/components/Routes";
-import Route from "@/shared/lib/router/components/Route";
 
 const WorksPage = () => {
   const { works, selectedWork } = useStore(
@@ -31,19 +29,7 @@ const WorksPage = () => {
 
       {viewport === "desktop" && (
         <DetailsSection>
-          <Routes>
-            <Route path="/works/">
-              <Route
-                index
-                element={<div>work index</div>}
-              />
-
-              <Route
-                path="/:slug"
-                element={<div>work details</div>}
-              />
-            </Route>
-          </Routes>
+          Work Item Details
         </DetailsSection>
       )}
     </Container>

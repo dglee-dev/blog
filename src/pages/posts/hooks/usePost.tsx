@@ -7,7 +7,9 @@ const usePost = () => {
 
   useEffect(() => {
     const pathname = window.location.pathname;
-    const filename = last(pathname.split("/"));
+    const filename = decodeURIComponent(
+      last(pathname.split("/"))
+    );
 
     (async function () {
       const markdownStrings =

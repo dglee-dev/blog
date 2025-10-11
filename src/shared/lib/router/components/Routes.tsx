@@ -1,14 +1,15 @@
-import useMatch from "@/shared/lib/router/hooks/useMatch";
 import React from "react";
+
+import useMatch from "@/shared/lib/router/hooks/useMatch";
 
 const Routes = ({
   children,
 }: {
   children: React.ReactNode;
 }) => {
-  const matchedChild = useMatch(children);
+  const matchedRouteElement = useMatch(children);
 
-  return <div></div>;
+  return <>{matchedRouteElement}</>;
 };
 
 export default Routes;

@@ -1,4 +1,5 @@
 interface IndexRouteProps {
+  id: string;
   index: true;
   element: React.ReactNode;
   path?: never;
@@ -6,6 +7,7 @@ interface IndexRouteProps {
 }
 
 interface LeafRouteProps {
+  id: string;
   path: string;
   element: React.ReactNode;
   index?: false;
@@ -13,6 +15,7 @@ interface LeafRouteProps {
 }
 
 interface LayoutRouteProps {
+  id: string;
   path?: string;
   element?: React.ReactNode;
   children: RouteObject[];

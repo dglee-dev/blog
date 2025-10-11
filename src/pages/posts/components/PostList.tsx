@@ -1,3 +1,5 @@
+import useRouter from "@/shared/lib/router/hooks/useRouter";
+import { Path } from "@/shared/types/utils";
 import React from "react";
 import styled from "styled-components/macro";
 
@@ -26,14 +28,19 @@ PostList.Item = ({
   title: string;
   href?: string;
 }) => {
+  const router = useRouter();
+
   return (
     <li
       style={{
         fontSize: "16px",
         listStyle: "none",
       }}
+      onClick={() => {
+        if (href) router.navigate(href as Path);
+      }}
     >
-      <a href={href}>{title}</a>
+      {title}
     </li>
   );
 };

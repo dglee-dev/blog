@@ -1,3 +1,4 @@
+const webpack = require("webpack");
 const path = require("path");
 
 const HtmlWebpackPlugin = require("html-webpack-plugin");
@@ -5,14 +6,14 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = (env, argv) => {
   const plugins = getPluginsByEnv(
     {
-      production: [
+      production: [],
+      development: [],
+      common: [
         new HtmlWebpackPlugin({
           template: "./public/index.html",
         }),
-      ],
-      development: [
-        new HtmlWebpackPlugin({
-          template: "./public/index.html",
+        new webpack.ProvidePlugin({
+          Buffer: ["buffer", "Buffer"],
         }),
       ],
     },
@@ -66,8 +67,9 @@ function getPluginsByEnv(
   plugins = {
     production: [],
     development: [],
+    common: [],
   },
   env
 ) {
-  return plugins[env];
+  return [...plugins[env], ...plugins.common];
 }

@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components/macro";
 
 import GlobalStyle from "@/GlobalStyle";
@@ -9,8 +8,9 @@ import HomePage from "@/pages/Home";
 import PostPage from "@/pages/posts";
 
 import Nav from "@/components/Nav";
-import NewPostPage from "@/pages/New";
 import PostDetails from "@/pages/posts/components/PostDetails";
+import Route from "@/shared/lib/router/components/Route";
+import Routes from "@/shared/lib/router/components/Routes";
 
 function App() {
   const { routePath } = useRouter();
@@ -22,22 +22,24 @@ function App() {
       <Nav />
 
       <Container>
-        {routePath === "/" && <HomePage />}
-        {routePath === "/new" && <NewPostPage />}
-
-        {routePath === "/posts" && <PostPage />}
-
-        {routePath !== "/posts" &&
-          routePath.includes("/posts/") && (
-            <PostDetails />
-          )}
-
-        {routePath === "/works" && <WorksPage />}
-
-        {/* for test */}
-        {routePath === "/works/abc" && (
-          <WorksPage />
-        )}
+        <Routes>
+          <Route
+            path="/"
+            element={<HomePage />}
+          />
+          <Route
+            path="/posts"
+            element={<PostPage />}
+          />
+          <Route
+            path="/posts/:postId"
+            element={<PostDetails />}
+          />
+          <Route
+            path="/works"
+            element={<WorksPage />}
+          />
+        </Routes>
       </Container>
     </>
   );

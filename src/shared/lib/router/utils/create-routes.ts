@@ -1,9 +1,10 @@
 import { RouteObject } from "@/shared/lib/router/types/route-object";
+import { nanoid } from "nanoid";
 import React from "react";
 
 export function createRoutes(
   children: React.ReactNode
-) {
+): RouteObject[] {
   const childrenArray =
     React.Children.toArray(children);
 
@@ -11,12 +12,16 @@ export function createRoutes(
     (child: any) => {
       return child.props.children
         ? {
+            id: nanoid(),
             ...child.props,
             children: createRoutes(
               child.props.children
             ),
           }
-        : child.props;
+        : {
+            id: nanoid(),
+            ...child.props,
+          };
     }
   );
 
