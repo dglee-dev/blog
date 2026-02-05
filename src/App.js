@@ -1,48 +1,29 @@
-import styled from "styled-components/macro";
+/* eslint-disable */
 import GlobalStyle from "./GlobalStyle";
+import Layout from "./Layout";
 import Resume from "./components/Resume";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import useViewportType from "./hooks/useViewportType";
 
 function App() {
-  const isMobile = window.innerWidth <= 480;
+  const { isMobile } = useViewportType();
 
   return (
     <>
       <GlobalStyle />
-      <Container>
-        {!isMobile && <Header>프로젝트</Header>}
+      <Layout>
+        {!isMobile && (
+          <Header>
+            이동규 프로젝트 포트폴리오
+          </Header>
+        )}
 
         <Resume />
         <Footer />
-      </Container>
+      </Layout>
     </>
   );
 }
-
-const Container = styled.div`
-  background-color: white;
-
-  max-width: 240mm;
-  min-height: 100vh;
-
-  margin: 0 auto;
-
-  @media only screen and (max-width: 480px) {
-    height: 100svh;
-    overflow: auto;
-    scroll-snap-type: y mandatory;
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
-
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-
-  @media only screen and (min-width: 481px) {
-  }
-`;
 
 export default App;

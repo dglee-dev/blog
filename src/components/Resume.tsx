@@ -1,11 +1,13 @@
-import React from "react";
+import React, {
+  useEffect,
+  useState,
+} from "react";
 import styled, {
   css,
 } from "styled-components/macro";
 
 import ChopsticksConsumerGif from "@/images/chopsticks-consumer.gif";
 
-import Carousel from "@/components/Carousel";
 import TechStack from "@/components/TechStack";
 import MobileList from "@/components/MobileList";
 import useViewportType from "@/hooks/useViewportType";
@@ -62,47 +64,7 @@ const Resume = () => {
           style={{ objectFit: "cover" }}
         >
           <source
-            src="https://justin-cms-images.s3.ap-northeast-2.amazonaws.com/seonyudonwha-pf.mov"
-            type="video/mp4"
-          />
-        </Video>
-      </Section>
-
-      <Section>
-        <div className="desc">
-          <h1>
-            <a
-              target="_black"
-              href="https://treasure-sb.kr/"
-            >
-              성북마을 보물찾기
-            </a>
-          </h1>
-          <p>
-            성북구의 문화유산 체험과 교육을 위한
-            모바일 웹 애플리케이션 `성북마을
-            보물찾기`를 개발하였습니다.
-            <br />
-            <br />
-            실시간 위치정보를 기반으로 AR 컨텐츠를
-            트리거할 수 있으며, 총 5종의 AR 참새와
-            함께 성북구의 문화유산과 관련된 퀴즈를
-            풀 수 있습니다. 정답과 오답, 안내
-            상태에 따라 참새가 다양한
-            애니메이션으로 반응하여 유저에게
-            즐거움을 줍니다.
-          </p>
-        </div>
-
-        <Video
-          autoPlay
-          loop
-          muted
-          playsInline
-          style={{ objectFit: "cover" }}
-        >
-          <source
-            src="https://justin-cms-images.s3.ap-northeast-2.amazonaws.com/sb-treasure-pf.mov"
+            src="https://ddbjbm834jucr.cloudfront.net/seonyudonwha-pf.mov"
             type="video/mp4"
           />
         </Video>
@@ -146,51 +108,7 @@ const Resume = () => {
           style={{ objectFit: "cover" }}
         >
           <source
-            src="https://justin-cms-images.s3.ap-northeast-2.amazonaws.com/yongdam-play-pf.mov"
-            type="video/mp4"
-          />
-        </Video>
-      </Section>
-
-      <Section>
-        <div className="desc">
-          <h1>
-            <a
-              target="_black"
-              href="https://www.wishfullmoon.kr/"
-            >
-              청주에 뜬 달
-            </a>
-          </h1>
-          <p>
-            청주시립미술관의 강익중 특별전 `청주에
-            뜬 달` 의 전시 체험에 사용된 웹 개발에
-            참여하였습니다. 모바일과 데스크탑
-            이용을 모두 대응합니다.
-            <br />
-            <br />
-            인트로를 포함 3단계를 거쳐 작성된
-            메세지를 서버로 전송하면 전시장 내
-            미디어 월에 시각적으로 표현된 메세지를
-            확인할 수 있습니다.
-            <br />
-            <br />
-            상호작용의 즐거움을 더하기위해{" "}
-            <code>p5.js</code>의 WebGL 모드를
-            사용하여 유저의 터치에 반응해 무너지는
-            3D 타일을 구현하였습니다.
-          </p>
-        </div>
-
-        <Video
-          autoPlay
-          loop
-          muted
-          playsInline
-          style={{ objectFit: "contain" }}
-        >
-          <source
-            src="https://justin-cms-images.s3.ap-northeast-2.amazonaws.com/wish-fullmoon-cropped.mp4"
+            src="https://ddbjbm834jucr.cloudfront.net/yongdam-play-pf.mov"
             type="video/mp4"
           />
         </Video>
@@ -260,7 +178,160 @@ const Resume = () => {
           }}
         >
           <source
-            src="https://justin-cms-images.s3.ap-northeast-2.amazonaws.com/korea-memorial-cropped.mp4"
+            src="https://ddbjbm834jucr.cloudfront.net/korea-memorial-cropped.mp4"
+            type="video/mp4"
+          />
+        </Video>
+      </Section>
+
+      <Section>
+        <div className="desc">
+          <h1>
+            <a
+              target="_black"
+              href="https://www.wishfullmoon.kr/"
+            >
+              청주에 뜬 달
+            </a>
+          </h1>
+          <p>
+            청주시립미술관의 강익중 특별전 `청주에
+            뜬 달` 의 전시 체험에 사용된 웹 개발에
+            참여하였습니다. 모바일과 데스크탑
+            이용을 모두 대응합니다.
+            <br />
+            <br />
+            인트로를 포함 3단계를 거쳐 작성된
+            메세지를 서버로 전송하면 전시장 내
+            미디어 월에 시각적으로 표현된 메세지를
+            확인할 수 있습니다.
+            <br />
+            <br />
+            상호작용의 즐거움을 더하기위해{" "}
+            <code>p5.js</code>의 WebGL 모드를
+            사용하여 유저의 터치에 반응해 무너지는
+            3D 타일을 구현하였습니다.
+          </p>
+        </div>
+
+        <Video
+          autoPlay
+          loop
+          muted
+          playsInline
+          style={{ objectFit: "contain" }}
+        >
+          <source
+            src="https://ddbjbm834jucr.cloudfront.net/wish-fullmoon-cropped.mp4"
+            type="video/mp4"
+          />
+        </Video>
+      </Section>
+
+      <Section>
+        <div className="desc">
+          <h1>
+            <a
+              target="_black"
+              href="https://andongza.works"
+            >
+              안동선 아카이브
+            </a>
+          </h1>
+          <p>
+            안동선 에디터님의 아카이브 웹사이트를
+            개발하였습니다. Quill을 사용해
+            자체적인 텍스트 에디터를
+            구현하였습니다. 에디터에서는 이미지,
+            링크, 슬라이드를 텍스트와 함께 편집할
+            수 있습니다.
+          </p>
+        </div>
+
+        <Video
+          autoPlay
+          loop
+          muted
+          playsInline
+          style={{ objectFit: "contain" }}
+        >
+          <source
+            src="https://ddbjbm834jucr.cloudfront.net/andongza.mp4"
+            type="video/mp4"
+          />
+        </Video>
+      </Section>
+
+      <Section>
+        <div className="desc">
+          <h1>
+            <a
+              target="_black"
+              href="https://rebel9.co.kr/en/services"
+            >
+              Rebel9 Services
+            </a>
+          </h1>
+          <p>
+            레벨나인의 서비스들을 소개하는
+            페이지를 개발하였습니다. 스크롤에 따라
+            슬라이드 컨텐츠가 앞 뒤로 페이드되는
+            트랜지션이 특징입니다.
+          </p>
+        </div>
+
+        <Video
+          autoPlay
+          loop
+          muted
+          playsInline
+          style={{
+            objectFit: "contain",
+          }}
+        >
+          <source
+            src="https://ddbjbm834jucr.cloudfront.net/rebel9-products.mp4"
+            type="video/mp4"
+          />
+        </Video>
+      </Section>
+
+      <Section>
+        <div className="desc">
+          <h1>
+            <a
+              target="_black"
+              href="https://www.renalab.xyz/"
+            >
+              닥터레나의 실험실
+            </a>
+          </h1>
+          <p>
+            수원 광교의 교육 프로그램 '닥터 레나의
+            실험실' 의 참여 학생들의 직접 가져온
+            물건들을 스캐닝해 만든 3D 모델들을
+            구경할 수 있는 웹페이지를
+            개발하였습니다.{" "}
+            <code>
+              <a href="https://modelviewer.dev/">
+                model-viewer
+              </a>
+            </code>{" "}
+            를 사용하였습니다.
+          </p>
+        </div>
+
+        <Video
+          autoPlay
+          loop
+          muted
+          playsInline
+          style={{
+            objectFit: "contain",
+          }}
+        >
+          <source
+            src="https://ddbjbm834jucr.cloudfront.net/dr-rena-x4.mp4"
             type="video/mp4"
           />
         </Video>
@@ -301,7 +372,7 @@ const Resume = () => {
 
         <Video autoPlay loop muted playsInline>
           <source
-            src="https://justin-cms-images.s3.ap-northeast-2.amazonaws.com/ydp-whole.mp4"
+            src="https://ddbjbm834jucr.cloudfront.net/ydp-whole.mp4"
             type="video/mp4"
           />
         </Video>
@@ -347,44 +418,10 @@ const Resume = () => {
           style={{ objectFit: "contain" }}
         >
           <source
-            src="https://justin-cms-images.s3.ap-northeast-2.amazonaws.com/ydp-ar.mp4"
+            src="https://ddbjbm834jucr.cloudfront.net/ydp-ar.mp4"
             type="video/mp4"
           />
         </Video>
-      </Section>
-
-      <Section>
-        <div className="desc">
-          <h1>
-            <a
-              target="_black"
-              href="https://piknic-entrepreneurship.vercel.app/"
-            >
-              옵티컬 미 포텐셜 미
-            </a>
-          </h1>
-          <p>
-            복합 문화공간 피크닉의 전시{" "}
-            <a
-              target="_black"
-              href="https://piknic.kr/home/include/board_view.php?SEQ=CATEEXHIBITION0003"
-            >
-              회사만들기
-            </a>{" "}
-            에 참여한 레벨나인의 프로젝트
-            `옵티컬미 포텐셜미`에 모바일 웹
-            개발자로 참여하였습니다.
-            <br />
-            <br />
-            QR코드로 접근해 단계별로 질문에 답하고
-            답변 정보가 포함된 바코드를
-            출력합니다. 이후 사용자는 해당
-            바코드를 인식시켜 자신에게 어울리는
-            유형을 확인할 수 있습니다.
-          </p>
-        </div>
-
-        <Image src="https://justin-cms-images.s3.ap-northeast-2.amazonaws.com/piknic-opticalme.jpeg" />
       </Section>
 
       <Section>
@@ -421,10 +458,128 @@ const Resume = () => {
 
         <Video autoPlay loop muted playsInline>
           <source
-            src="https://justin-cms-images.s3.ap-northeast-2.amazonaws.com/%E1%84%8B%E1%85%B5%E1%84%86%E1%85%A9%E1%84%89%E1%85%A7%E1%86%AB%E1%84%83%E1%85%B5%E1%84%8F%E1%85%A9%E1%84%83%E1%85%A5-%E1%84%91%E1%85%A9%E1%84%90%E1%85%B3%E1%84%91%E1%85%A9%E1%86%AF%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A9-%E1%84%87%E1%85%B5%E1%84%83%E1%85%B5%E1%84%8B%E1%85%A9.mp4"
+            src="https://ddbjbm834jucr.cloudfront.net/%E1%84%8B%E1%85%B5%E1%84%86%E1%85%A9%E1%84%89%E1%85%A7%E1%86%AB%E1%84%83%E1%85%B5%E1%84%8F%E1%85%A9%E1%84%83%E1%85%A5-%E1%84%91%E1%85%A9%E1%84%90%E1%85%B3%E1%84%91%E1%85%A9%E1%86%AF%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A9-%E1%84%87%E1%85%B5%E1%84%83%E1%85%B5%E1%84%8B%E1%85%A9.mp4"
             type="video/mp4"
           />
         </Video>
+      </Section>
+
+      <Section>
+        <div className="desc">
+          <h1>
+            <a
+              target="_black"
+              href="https://piknic-entrepreneurship.vercel.app/"
+            >
+              옵티컬 미 포텐셜 미
+            </a>
+          </h1>
+          <p>
+            복합 문화공간 피크닉의 전시{" "}
+            <a
+              target="_black"
+              href="https://piknic.kr/home/include/board_view.php?SEQ=CATEEXHIBITION0003"
+            >
+              회사만들기
+            </a>{" "}
+            에 참여한 레벨나인의 프로젝트
+            `옵티컬미 포텐셜미`에 모바일 웹
+            개발자로 참여하였습니다.
+            <br />
+            <br />
+            QR코드로 접근해 단계별로 질문에 답하고
+            답변 정보가 포함된 바코드를
+            출력합니다. 이후 사용자는 해당
+            바코드를 인식시켜 자신에게 어울리는
+            유형을 확인할 수 있습니다.
+          </p>
+        </div>
+
+        <Image src="https://ddbjbm834jucr.cloudfront.net/piknic-opticalme.jpeg" />
+      </Section>
+
+      <Section>
+        <div className="desc">
+          <h1>
+            <a
+              target="_black"
+              href="https://piknic-piet-oudolf.netlify.app/"
+            >
+              정원 만들기
+            </a>
+          </h1>
+          <p>
+            정원을 주제로 한 피크닉의 전시 `정원
+            만들기`에 사용된 키오스크를
+            개발하였습니다. 전시장 내부에 설치된
+            프로젝터와 트랙패드를 이용해 Piet
+            Oudolf의 정원 설계도를 기반으로 한
+            정원 설계도를 탐색할 수 있습니다.
+            <br />
+            <br />
+            마우스 드래그 앤 드롭으로 정원
+            설계도를 이동하고 확대 및 축소하며
+            설계도를 탐색할 수 있습니다. 설계도에
+            표기된 구역을 클릭하면 각각의 자세한
+            식재 정보를 확인할 수 있습니다.
+          </p>
+          <TechStack
+            stacks={[
+              {
+                name: "JavaScript",
+                icon: "javascript",
+              },
+              {
+                name: "Netlify",
+                icon: "netlify",
+              },
+            ]}
+          />
+        </div>
+        <Image alt="piet1" src="/piet-1.gif" />
+      </Section>
+
+      <Section>
+        <div className="desc">
+          <h1>창문을 통해 어렴풋이</h1>
+          <p>
+            뉴욕의 사진가 사울레이터를 다룬
+            피크닉의 전시 `창문을 통해 어렴풋이`에
+            전시된 이미지 슬라이더를
+            개발하였습니다.
+            <br />
+            <br />
+            인스타그램에 #saulleiterinspired
+            해시태그를 사용한 이미지들의 URL을
+            통해 이미지를 가져와 슬라이더로
+            표현합니다.
+            <br />
+            <br />
+            인스타그램의 이미지 링크는 외부에서
+            가져올 수 없으므로 프록시 서버를 통해
+            요청한 후 따로 저장해두고, 이것을
+            캐시로 사용하여 이미지를 가져오도록
+            구현하였습니다.
+          </p>
+          <TechStack
+            stacks={[
+              {
+                name: "JavaScript",
+                icon: "javascript",
+              },
+              {
+                name: "Node.js",
+                icon: "nodejs",
+              },
+              {
+                name: "Heroku",
+                icon: "heroku",
+              },
+            ]}
+          />
+        </div>
+
+        <Image alt="saul1" src="/saul-1.gif" />
       </Section>
 
       <Section>
@@ -527,7 +682,7 @@ const Resume = () => {
 
         <Video autoPlay loop muted playsInline>
           <source
-            src="https://justin-cms-images.s3.ap-northeast-2.amazonaws.com/chopsticks-seller.mp4"
+            src="https://ddbjbm834jucr.cloudfront.net/chopsticks-seller.mp4"
             type="video/mp4"
           />
         </Video>
@@ -570,17 +725,12 @@ const Resume = () => {
             ]}
           />
         </div>
-        <Carousel
-          images={[
-            {
-              alt: "portal1",
-              src: "/portal-1.png",
-            },
-            // {
-            //   alt: "portal2",
-            //   src: "/portal-2.gif",
-            // },
-          ]}
+
+        <Image
+          src="/portal-2.gif"
+          style={{
+            objectFit: "contain",
+          }}
         />
       </Section>
 
@@ -644,90 +794,6 @@ const Resume = () => {
             objectFit: "contain",
           }}
         />
-      </Section>
-
-      <Section>
-        <div className="desc">
-          <h1>
-            <a
-              target="_black"
-              href="https://piknic-piet-oudolf.netlify.app/"
-            >
-              정원 만들기
-            </a>
-          </h1>
-          <p>
-            정원을 주제로 한 피크닉의 전시 `정원
-            만들기`에 사용된 키오스크를
-            개발하였습니다. 전시장 내부에 설치된
-            프로젝터와 트랙패드를 이용해 Piet
-            Oudolf의 정원 설계도를 기반으로 한
-            정원 설계도를 탐색할 수 있습니다.
-            <br />
-            <br />
-            마우스 드래그 앤 드롭으로 정원
-            설계도를 이동하고 확대 및 축소하며
-            설계도를 탐색할 수 있습니다. 설계도에
-            표기된 구역을 클릭하면 각각의 자세한
-            식재 정보를 확인할 수 있습니다.
-          </p>
-          <TechStack
-            stacks={[
-              {
-                name: "JavaScript",
-                icon: "javascript",
-              },
-              {
-                name: "Netlify",
-                icon: "netlify",
-              },
-            ]}
-          />
-        </div>
-        <Image alt="piet1" src="/piet-1.gif" />
-      </Section>
-
-      <Section>
-        <div className="desc">
-          <h1>창문을 통해 어렴풋이</h1>
-          <p>
-            뉴욕의 사진가 사울레이터를 다룬
-            피크닉의 전시 `창문을 통해 어렴풋이`에
-            전시된 이미지 슬라이더를
-            개발하였습니다.
-            <br />
-            <br />
-            인스타그램에 #saulleiterinspired
-            해시태그를 사용한 이미지들의 URL을
-            통해 이미지를 가져와 슬라이더로
-            표현합니다.
-            <br />
-            <br />
-            인스타그램의 이미지 링크는 외부에서
-            가져올 수 없으므로 프록시 서버를 통해
-            요청한 후 따로 저장해두고, 이것을
-            캐시로 사용하여 이미지를 가져오도록
-            구현하였습니다.
-          </p>
-          <TechStack
-            stacks={[
-              {
-                name: "JavaScript",
-                icon: "javascript",
-              },
-              {
-                name: "Node.js",
-                icon: "nodejs",
-              },
-              {
-                name: "Heroku",
-                icon: "heroku",
-              },
-            ]}
-          />
-        </div>
-
-        <Image alt="saul1" src="/saul-1.gif" />
       </Section>
     </div>
   );

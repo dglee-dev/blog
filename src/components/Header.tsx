@@ -6,13 +6,13 @@ const Header = ({ children }) => {
 };
 
 const Container = styled.h1`
-  font-size: 2em;
+  font-size: 1.5em;
 
-  letter-spacing: 4px;
+  letter-spacing: 1px;
   font-weight: 700;
 
   padding: 12.8px;
-  padding-top: 25.6px;
+  padding-top: 30px;
   padding-bottom: calc(25.6px + 12.8px);
 
   scroll-snap-align: start;

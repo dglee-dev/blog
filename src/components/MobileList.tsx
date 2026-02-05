@@ -1,20 +1,32 @@
 import styled from "styled-components";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 const MobileList = () => {
+  const ref = useRef<null | HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (ref.current) {
+      ref.current.scrollIntoView();
+    }
+  }, [ref]);
+
   return (
     <Container>
       <div
+        ref={ref}
         style={{
-          fontSize: "2.5em",
-          color: "black",
+          fontSize: "16px",
+          color: "#1f1f1f",
           borderRadius: "50%",
           display: "flex",
           whiteSpace: "nowrap",
-          fontWeight: "700",
+          fontWeight: "600",
+          lineHeight: "1.4em",
         }}
       >
-        👾 프로젝트 📱
+        웹 프론트엔드 개발자 이동규
+        <br />
+        프로젝트 포트폴리오
       </div>
 
       <Notice>스크롤을 내려주세요!</Notice>
@@ -26,7 +38,7 @@ const Container = styled.div`
   min-height: 100svh;
 
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
 
   position: relative;

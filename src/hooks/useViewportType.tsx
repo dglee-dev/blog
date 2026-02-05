@@ -1,39 +1,27 @@
 import { useEffect, useState } from "react";
 
-const MOBILE_STANDARD_WIDTH = 480;
-
 const useViewportType = () => {
-  const [viewportType, setViewportType] =
-    useState<null | "mobile" | "desktop">(null);
+  const [isMobile, setIsMobile] = useState(
+    window.innerWidth <= 480,
+  );
 
   useEffect(() => {
-    const handleResize = () => {
-      if (
-        window.innerWidth <= MOBILE_STANDARD_WIDTH
-      ) {
-        setViewportType("mobile");
-      } else {
-        setViewportType("desktop");
-      }
+    const handler = () => {
+      setIsMobile(window.innerWidth <= 480);
     };
 
-    handleResize();
+    window.addEventListener("resize", handler);
 
-    window.addEventListener(
-      "resize",
-      handleResize
-    );
-
-    return () =>
+    return () => {
       window.removeEventListener(
         "resize",
-        handleResize
+        handler,
       );
+    };
   }, []);
 
   return {
-    isMobile: viewportType === "mobile",
-    isDesktop: viewportType === "desktop",
+    isMobile,
   };
 };
 

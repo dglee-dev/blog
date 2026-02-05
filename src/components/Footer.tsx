@@ -11,19 +11,26 @@ const Footer = () => {
       {isMobile ? (
         <>
           <div>이동규</div>
-          <div>Frontend (Web) Developer</div>
+          <div>웹 프론트엔드 개발자</div>
+          <div>nninnnin7@gmail.com</div>
         </>
       ) : (
-        <div>이동규, Web Frontend Developer</div>
+        <div
+          style={{
+            paddingBottom: "2.5em",
+          }}
+        >
+          <div style={{ marginBottom: "0.5em" }}>
+            웹 프론트엔드 개발자 이동규
+          </div>
+          <div>nninnnin7@gmail.com</div>
+        </div>
       )}
-      <div>nninnnin7@gmail.com</div>
     </Container>
   );
 };
 
 const Container = styled.footer`
-  padding-bottom: 2em;
-
   position: relative;
   display: flex;
   flex-direction: column;
@@ -37,10 +44,6 @@ const Container = styled.footer`
   @media screen and (max-width: 480px) {
     height: 100svh;
     padding-right: 2em;
-  }
-
-  & > div {
-    margin-bottom: 0.5em;
   }
 `;
 
