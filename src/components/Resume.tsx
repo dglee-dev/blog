@@ -22,7 +22,7 @@ const Resume = () => {
         <div className="desc">
           <h1>
             <a
-              target="_black"
+              target="_blank"
               href="https://www.seonyupublicart.com/"
             >
               선유동화: Unseeing
@@ -40,7 +40,7 @@ const Resume = () => {
             녹색 기둥의 정원을 제외하고 모든 AR
             컨텐츠를{" "}
             <a
-              target="_black"
+              target="_blank"
               href="https://github.com/nninnnin/ar-framework"
             >
               AR Framework
@@ -69,7 +69,7 @@ const Resume = () => {
         <div className="desc">
           <h1>
             <a
-              target="_black"
+              target="_blank"
               href="https://www.yongdamplay.co.kr/"
             >
               용담플레이
@@ -113,7 +113,7 @@ const Resume = () => {
         <div className="desc">
           <h1>
             <a
-              target="_black"
+              target="_blank"
               href="https://www.memorial-timecube.com/"
             >
               메모리얼 타임큐브
@@ -122,7 +122,7 @@ const Resume = () => {
           <p>
             2024년 6월에 진행된 보훈부 행사{" "}
             <a
-              target="_black"
+              target="_blank"
               href="https://www.koreamemorialfesta.com/"
             >
               코리아 메모리얼 페스타
@@ -140,7 +140,7 @@ const Resume = () => {
             <br />웹 AR 라이브러리{" "}
             <code>
               <a
-                target="_black"
+                target="_blank"
                 href="https://hiukim.github.io/mind-ar-js-doc/"
               >
                 MindAR
@@ -152,7 +152,7 @@ const Resume = () => {
             위해서는{" "}
             <code>
               <a
-                target="_black"
+                target="_blank"
                 href="https://ar-js-org.github.io/AR.js-Docs/"
               >
                 AR.js
@@ -183,7 +183,7 @@ const Resume = () => {
         <div className="desc">
           <h1>
             <a
-              target="_black"
+              target="_blank"
               href="https://www.wishfullmoon.kr/"
             >
               청주에 뜬 달
@@ -227,7 +227,7 @@ const Resume = () => {
         <div className="desc">
           <h1>
             <a
-              target="_black"
+              target="_blank"
               href="https://andongza.works"
             >
               안동선 아카이브
@@ -235,8 +235,16 @@ const Resume = () => {
           </h1>
           <p>
             안동선 에디터님의 아카이브 웹사이트를
-            개발하였습니다. Quill을 사용해
-            자체적인 텍스트 에디터를
+            개발하였습니다.{" "}
+            <code>
+              <a
+                target="_blank"
+                href="https://quilljs.com/"
+              >
+                Quill.js
+              </a>
+            </code>
+            을 사용해 자체적인 텍스트 에디터를
             구현하였습니다. 에디터에서는 이미지,
             링크, 슬라이드를 텍스트와 함께 편집할
             수 있습니다.
@@ -261,7 +269,7 @@ const Resume = () => {
         <div className="desc">
           <h1>
             <a
-              target="_black"
+              target="_blank"
               href="https://rebel9.co.kr/en/services"
             >
               Rebel9 Services
@@ -271,7 +279,8 @@ const Resume = () => {
             레벨나인의 서비스들을 소개하는
             페이지를 개발하였습니다. 스크롤에 따라
             슬라이드 컨텐츠가 앞 뒤로 페이드되는
-            트랜지션이 특징입니다.
+            트랜지션이 특징입니다. Intersection
+            Observer API를 이용해 구현하였습니다.
           </p>
         </div>
 
@@ -295,7 +304,7 @@ const Resume = () => {
         <div className="desc">
           <h1>
             <a
-              target="_black"
+              target="_blank"
               href="https://www.renalab.xyz/"
             >
               닥터레나의 실험실
@@ -306,12 +315,26 @@ const Resume = () => {
             실험실' 의 참여 학생들의 직접 가져온
             물건들을 스캐닝해 만든 3D 모델들을
             구경할 수 있는 웹페이지를
-            개발하였습니다.{" "}
+            개발하였습니다.
+            <br />
+            <br />
+            3D 모델들을 렌더링하기 위해{" "}
             <code>
               <a href="https://modelviewer.dev/">
                 model-viewer
               </a>
-            </code>{" "}
+            </code>
+            를 사용하였으며, 인트로 화면 배경에
+            존재하는 키 비주얼 요소에 모션을
+            적용하기 위해{" "}
+            <code>
+              <a
+                target="_blank"
+                href="https://gsap.com/"
+              >
+                GSAP
+              </a>
+            </code>
             를 사용하였습니다.
           </p>
         </div>
@@ -353,7 +376,7 @@ const Resume = () => {
             위해{" "}
             <code>
               <a
-                target="_black"
+                target="_blank"
                 href="https://gsap.com/"
               >
                 GSAP
@@ -378,7 +401,7 @@ const Resume = () => {
         <div className="desc">
           <h1>
             <a
-              target="_black"
+              target="_blank"
               href="https://ar-dadada.ccydp.kr/"
             >
               YDP DADADA AR
@@ -391,18 +414,18 @@ const Resume = () => {
             모바일 웹을 개발하였습니다.
             <br />
             <br />
-            iOS와 안드로이드 각각의 네이티브 AR
-            SDK를 이용할 수 있도록 돕는{" "}
+            높은 퀄리티의 AR 컨텐츠를 제공하기
+            위해 iOS와 안드로이드 각각의 네이티브
+            AR SDK를 이용할 수 있도록 돕는{" "}
             <code>
               <a
-                target="_black"
+                target="_blank"
                 href="https://modelviewer.dev/"
               >
-                ModelViewer
+                model-viewer
               </a>
-            </code>{" "}
-            를 사용하여 높은 퀄리티의 AR 컨텐츠를
-            제공합니다.
+            </code>
+            를 사용하였습니다.
           </p>
         </div>
 
@@ -424,7 +447,7 @@ const Resume = () => {
         <div className="desc">
           <h1>
             <a
-              target="_black"
+              target="_blank"
               href="https://www.decoding-my-emotion.com/"
             >
               앤어플랜트 이모션디코더
@@ -432,7 +455,7 @@ const Resume = () => {
           </h1>
           <p>
             <a
-              target="_black"
+              target="_blank"
               href="https://www.instagram.com/and_a_plant/"
             >
               앤어플랜트
@@ -441,14 +464,11 @@ const Resume = () => {
             프로젝트에 웹 개발자로 참여하였습니다.
             <br />
             <br />
-            감정해독기는 크게 `이모션 스캐너`와
-            `이모션 파노라마`로 구성되어 있으며
-            각각 다른 질문과 결과물을 출력합니다.
-            <br />
-            <br />
             마치 장면이 넘어가듯 보여지는 페이지
             트랜지션을 구현하기 위해
-            debounce/throttle을 활용했습니다.
+            debounce/throttle을 활용해 스크롤
+            이벤트의 감도를 제어하여 트랜지션
+            애니메이션과 매핑하였습니다.
           </p>
         </div>
 
@@ -464,7 +484,7 @@ const Resume = () => {
         <div className="desc">
           <h1>
             <a
-              target="_black"
+              target="_blank"
               href="https://piknic-entrepreneurship.vercel.app/"
             >
               옵티컬 미 포텐셜 미
@@ -473,7 +493,7 @@ const Resume = () => {
           <p>
             복합 문화공간 피크닉의 전시{" "}
             <a
-              target="_black"
+              target="_blank"
               href="https://piknic.kr/home/include/board_view.php?SEQ=CATEEXHIBITION0003"
             >
               회사만들기
@@ -488,6 +508,11 @@ const Resume = () => {
             출력합니다. 이후 사용자는 해당
             바코드를 인식시켜 자신에게 어울리는
             유형을 확인할 수 있습니다.
+            <br />
+            <br />
+            비주얼 컨셉에 어울리는 마이크로
+            인터랙션을 위해 노이즈필터를 구현하여
+            적용하였습니다.
           </p>
         </div>
 
@@ -498,7 +523,7 @@ const Resume = () => {
         <div className="desc">
           <h1>
             <a
-              target="_black"
+              target="_blank"
               href="https://piknic-piet-oudolf.netlify.app/"
             >
               정원 만들기
@@ -518,6 +543,11 @@ const Resume = () => {
             설계도를 탐색할 수 있습니다. 설계도에
             표기된 구역을 클릭하면 각각의 자세한
             식재 정보를 확인할 수 있습니다.
+            <br />
+            <br />
+            식재 정보가 화면을 벗어나지 않도록
+            모달 크기와 뷰포트 바운더리를 계산하여
+            모달 위치를 설정하도록 하였습니다.
           </p>
           <TechStack
             stacks={[
@@ -582,7 +612,7 @@ const Resume = () => {
         <div className="desc">
           <h1>
             <a
-              target="_black"
+              target="_blank"
               href="https://chopsticks.market"
             >
               찹스틱스 소비자 플랫폼
