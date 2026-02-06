@@ -1,12 +1,7 @@
-import React, {
-  useEffect,
-  useState,
-} from "react";
+import React from "react";
 import styled, {
   css,
 } from "styled-components/macro";
-
-import ChopsticksConsumerGif from "@/images/chopsticks-consumer.gif";
 
 import TechStack from "@/components/TechStack";
 import MobileList from "@/components/MobileList";
@@ -637,7 +632,7 @@ const Resume = () => {
 
         <Image
           alt="chopsticks-consumer"
-          src={ChopsticksConsumerGif}
+          src="/chopsticks-consumer.gif"
         />
       </Section>
 
