@@ -23,6 +23,7 @@ const Resume = () => {
           <h1>
             <a
               target="_blank"
+              rel="noreferrer"
               href="https://www.seonyupublicart.com/"
             >
               선유동화: Unseeing
@@ -70,6 +71,7 @@ const Resume = () => {
           <h1>
             <a
               target="_blank"
+              rel="noreferrer"
               href="https://www.yongdamplay.co.kr/"
             >
               용담플레이
@@ -114,6 +116,7 @@ const Resume = () => {
           <h1>
             <a
               target="_blank"
+              rel="noreferrer"
               href="https://www.memorial-timecube.com/"
             >
               메모리얼 타임큐브
@@ -123,6 +126,7 @@ const Resume = () => {
             2024년 6월에 진행된 보훈부 행사{" "}
             <a
               target="_blank"
+              rel="noreferrer"
               href="https://www.koreamemorialfesta.com/"
             >
               코리아 메모리얼 페스타
@@ -141,6 +145,7 @@ const Resume = () => {
             <code>
               <a
                 target="_blank"
+                rel="noreferrer"
                 href="https://hiukim.github.io/mind-ar-js-doc/"
               >
                 MindAR
@@ -153,6 +158,7 @@ const Resume = () => {
             <code>
               <a
                 target="_blank"
+                rel="noreferrer"
                 href="https://ar-js-org.github.io/AR.js-Docs/"
               >
                 AR.js
@@ -184,6 +190,7 @@ const Resume = () => {
           <h1>
             <a
               target="_blank"
+              rel="noreferrer"
               href="https://www.wishfullmoon.kr/"
             >
               청주에 뜬 달
@@ -206,6 +213,7 @@ const Resume = () => {
             <code>
               <a
                 target="_blank"
+                rel="noreferrer"
                 href="https://p5js.org/"
               >
                 p5.js
@@ -236,6 +244,7 @@ const Resume = () => {
           <h1>
             <a
               target="_blank"
+              rel="noreferrer"
               href="https://andongza.works"
             >
               안동선 아카이브
@@ -255,6 +264,7 @@ const Resume = () => {
             <code>
               <a
                 target="_blank"
+                rel="noreferrer"
                 href="https://quilljs.com/"
               >
                 Quill.js
@@ -283,6 +293,7 @@ const Resume = () => {
           <h1>
             <a
               target="_blank"
+              rel="noreferrer"
               href="https://rebel9.co.kr/en/services"
             >
               Rebel9 Services
@@ -318,6 +329,7 @@ const Resume = () => {
           <h1>
             <a
               target="_blank"
+              rel="noreferrer"
               href="https://www.renalab.xyz/"
             >
               닥터레나의 실험실
@@ -343,6 +355,7 @@ const Resume = () => {
             <code>
               <a
                 target="_blank"
+                rel="noreferrer"
                 href="https://gsap.com/"
               >
                 GSAP
@@ -390,6 +403,7 @@ const Resume = () => {
             <code>
               <a
                 target="_blank"
+                rel="noreferrer"
                 href="https://gsap.com/"
               >
                 GSAP
@@ -415,6 +429,7 @@ const Resume = () => {
           <h1>
             <a
               target="_blank"
+              rel="noreferrer"
               href="https://ar-dadada.ccydp.kr/"
             >
               YDP DADADA AR
@@ -433,6 +448,7 @@ const Resume = () => {
             <code>
               <a
                 target="_blank"
+                rel="noreferrer"
                 href="https://modelviewer.dev/"
               >
                 model-viewer
@@ -461,6 +477,7 @@ const Resume = () => {
           <h1>
             <a
               target="_blank"
+              rel="noreferrer"
               href="https://www.decoding-my-emotion.com/"
             >
               앤어플랜트 이모션디코더
@@ -469,6 +486,7 @@ const Resume = () => {
           <p>
             <a
               target="_blank"
+              rel="noreferrer"
               href="https://www.instagram.com/and_a_plant/"
             >
               앤어플랜트
@@ -498,6 +516,7 @@ const Resume = () => {
           <h1>
             <a
               target="_blank"
+              rel="noreferrer"
               href="https://piknic-entrepreneurship.vercel.app/"
             >
               옵티컬 미 포텐셜 미
@@ -507,6 +526,7 @@ const Resume = () => {
             복합 문화공간 피크닉의 전시{" "}
             <a
               target="_blank"
+              rel="noreferrer"
               href="https://piknic.kr/home/include/board_view.php?SEQ=CATEEXHIBITION0003"
             >
               회사만들기
@@ -537,6 +557,7 @@ const Resume = () => {
           <h1>
             <a
               target="_blank"
+              rel="noreferrer"
               href="https://piknic-piet-oudolf.netlify.app/"
             >
               정원 만들기
@@ -626,6 +647,7 @@ const Resume = () => {
           <h1>
             <a
               target="_blank"
+              rel="noreferrer"
               href="https://chopsticks.market"
             >
               찹스틱스 소비자 플랫폼
