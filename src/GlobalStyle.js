@@ -6,7 +6,7 @@ export default createGlobalStyle`
     padding: 0;
   }
 
-  * {
+  a {
     color: black;
   }
 
