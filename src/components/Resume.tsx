@@ -22,6 +22,241 @@ const Resume = () => {
             <a
               target="_blank"
               rel="noreferrer"
+              href="https://www.wishfullmoon.kr/"
+            >
+              청주에 뜬 달
+            </a>
+          </h1>
+          <p>
+            청주시립미술관의 강익중 특별전 `청주에
+            뜬 달` 의 전시 체험에 사용된 웹 개발에
+            참여하였습니다. 모바일과 데스크탑
+            이용을 모두 대응합니다.
+            <br />
+            <br />
+            인트로를 포함 3단계를 거쳐 작성된
+            메세지를 서버로 전송하면 전시장 내
+            미디어 월에 시각적으로 표현된 메세지를
+            확인할 수 있습니다.
+            <br />
+            <br />
+            상호작용의 즐거움을 더하기위해{" "}
+            <code>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://p5js.org/"
+              >
+                p5.js
+              </a>
+            </code>
+            의 WebGL 모드를 사용하여 유저의 터치에
+            반응해 무너지는 3D 타일을
+            구현하였습니다.
+          </p>
+        </div>
+
+        <Video
+          autoPlay
+          loop
+          muted
+          playsInline
+          style={{ objectFit: "cover" }}
+        >
+          <source
+            src="https://ddbjbm834jucr.cloudfront.net/moon-over-cj.mp4"
+            type="video/mp4"
+          />
+        </Video>
+      </Section>
+
+      <Section>
+        <div className="desc">
+          <h1>
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://www.decoding-my-emotion.com/"
+            >
+              앤어플랜트 이모션디코더
+            </a>
+          </h1>
+          <p>
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://www.instagram.com/and_a_plant/"
+            >
+              앤어플랜트
+            </a>
+            의 `감정해독기(Emotion Decoder)`
+            프로젝트에 웹 개발자로 참여하였습니다.
+            <br />
+            <br />
+            마치 장면이 넘어가듯 보여지는 페이지
+            트랜지션을 구현하기 위해
+            debounce/throttle을 활용해 스크롤
+            이벤트의 감도를 제어하여 트랜지션
+            애니메이션과 매핑하였습니다.
+          </p>
+        </div>
+
+        <Video autoPlay loop muted playsInline>
+          <source
+            src="https://ddbjbm834jucr.cloudfront.net/%E1%84%8B%E1%85%B5%E1%84%86%E1%85%A9%E1%84%89%E1%85%A7%E1%86%AB%E1%84%83%E1%85%B5%E1%84%8F%E1%85%A9%E1%84%83%E1%85%A5-%E1%84%91%E1%85%A9%E1%84%90%E1%85%B3%E1%84%91%E1%85%A9%E1%86%AF%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A9-%E1%84%87%E1%85%B5%E1%84%83%E1%85%B5%E1%84%8B%E1%85%A9.mp4"
+            type="video/mp4"
+          />
+        </Video>
+      </Section>
+
+      <Section>
+        <div className="desc">
+          <h1>
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://andongza.works"
+            >
+              안동선 에디터 아카이브
+            </a>
+          </h1>
+          <p>
+            안동선 에디터님의 아카이브 웹사이트와
+            포스트 작성 및 관리를 위한 어드민을
+            개발하였습니다.
+            <br />
+            <br />
+            포스트 작성 시 사용되는 텍스트
+            에디터에서는 텍스트를 작성하고,
+            이미지를 첨부하고, 이미지 슬라이드를
+            만들고, 링크를 첨부할 수 있습니다.
+            리치 텍스트 에디터 구현을 위해{" "}
+            <code>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://quilljs.com/"
+              >
+                Quill.js
+              </a>
+            </code>{" "}
+            를 사용하였습니다.
+          </p>
+        </div>
+
+        <Video
+          autoPlay
+          loop
+          muted
+          playsInline
+          style={{ objectFit: "contain" }}
+        >
+          <source
+            src="https://ddbjbm834jucr.cloudfront.net/andongza.mp4"
+            type="video/mp4"
+          />
+        </Video>
+      </Section>
+
+      <Section>
+        <div className="desc">
+          <h1>
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://rebel9.co.kr/en/services"
+            >
+              Rebel9 Services
+            </a>
+          </h1>
+          <p>
+            레벨나인의 서비스들을 소개하는
+            페이지를 개발하였습니다. 스크롤에 따라
+            슬라이드 컨텐츠가 앞 뒤로 페이드되는
+            트랜지션이 특징입니다. Intersection
+            Observer API를 이용해 구현하였습니다.
+          </p>
+        </div>
+
+        <Video
+          autoPlay
+          loop
+          muted
+          playsInline
+          style={{
+            objectFit: "contain",
+          }}
+        >
+          <source
+            src="https://ddbjbm834jucr.cloudfront.net/rebel9-products.mp4"
+            type="video/mp4"
+          />
+        </Video>
+      </Section>
+
+      <Section>
+        <div className="desc">
+          <h1>
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://www.renalab.xyz/"
+            >
+              닥터레나의 실험실
+            </a>
+          </h1>
+          <p>
+            수원 광교의 교육 프로그램 '닥터 레나의
+            실험실' 의 참여 학생들의 직접 가져온
+            물건들을 스캐닝해 만든 3D 모델들을
+            구경할 수 있는 웹페이지를
+            개발하였습니다.
+            <br />
+            <br />
+            3D 모델들을 렌더링하기 위해{" "}
+            <code>
+              <a href="https://modelviewer.dev/">
+                model-viewer
+              </a>
+            </code>
+            를 사용하였으며, 인트로 화면 배경에
+            존재하는 키 비주얼 요소에 모션을
+            적용하기 위해{" "}
+            <code>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://gsap.com/"
+              >
+                GSAP
+              </a>
+            </code>
+            를 사용하였습니다.
+          </p>
+        </div>
+
+        <Video
+          autoPlay
+          loop
+          muted
+          playsInline
+          style={{
+            objectFit: "contain",
+          }}
+        >
+          <source
+            src="https://ddbjbm834jucr.cloudfront.net/dr-rena-x4.mp4"
+            type="video/mp4"
+          />
+        </Video>
+      </Section>
+
+      <Section>
+        <div className="desc">
+          <h1>
+            <a
+              target="_blank"
+              rel="noreferrer"
               href="https://www.seonyupublicart.com/"
             >
               선유동화: Unseeing
@@ -185,202 +420,6 @@ const Resume = () => {
 
       <Section>
         <div className="desc">
-          <h1>
-            <a
-              target="_blank"
-              rel="noreferrer"
-              href="https://www.wishfullmoon.kr/"
-            >
-              청주에 뜬 달
-            </a>
-          </h1>
-          <p>
-            청주시립미술관의 강익중 특별전 `청주에
-            뜬 달` 의 전시 체험에 사용된 웹 개발에
-            참여하였습니다. 모바일과 데스크탑
-            이용을 모두 대응합니다.
-            <br />
-            <br />
-            인트로를 포함 3단계를 거쳐 작성된
-            메세지를 서버로 전송하면 전시장 내
-            미디어 월에 시각적으로 표현된 메세지를
-            확인할 수 있습니다.
-            <br />
-            <br />
-            상호작용의 즐거움을 더하기위해{" "}
-            <code>
-              <a
-                target="_blank"
-                rel="noreferrer"
-                href="https://p5js.org/"
-              >
-                p5.js
-              </a>
-            </code>
-            의 WebGL 모드를 사용하여 유저의 터치에
-            반응해 무너지는 3D 타일을
-            구현하였습니다.
-          </p>
-        </div>
-
-        <Video
-          autoPlay
-          loop
-          muted
-          playsInline
-          style={{ objectFit: "contain" }}
-        >
-          <source
-            src="https://ddbjbm834jucr.cloudfront.net/wish-fullmoon-cropped.mp4"
-            type="video/mp4"
-          />
-        </Video>
-      </Section>
-
-      <Section>
-        <div className="desc">
-          <h1>
-            <a
-              target="_blank"
-              rel="noreferrer"
-              href="https://andongza.works"
-            >
-              안동선 에디터 아카이브
-            </a>
-          </h1>
-          <p>
-            안동선 에디터님의 아카이브 웹사이트와
-            포스트 작성 및 관리를 위한 어드민을
-            개발하였습니다.
-            <br />
-            <br />
-            포스트 작성 시 사용되는 텍스트
-            에디터에서는 텍스트를 작성하고,
-            이미지를 첨부하고, 이미지 슬라이드를
-            만들고, 링크를 첨부할 수 있습니다.
-            리치 텍스트 에디터 구현을 위해{" "}
-            <code>
-              <a
-                target="_blank"
-                rel="noreferrer"
-                href="https://quilljs.com/"
-              >
-                Quill.js
-              </a>
-            </code>{" "}
-            를 사용하였습니다.
-          </p>
-        </div>
-
-        <Video
-          autoPlay
-          loop
-          muted
-          playsInline
-          style={{ objectFit: "contain" }}
-        >
-          <source
-            src="https://ddbjbm834jucr.cloudfront.net/andongza.mp4"
-            type="video/mp4"
-          />
-        </Video>
-      </Section>
-
-      <Section>
-        <div className="desc">
-          <h1>
-            <a
-              target="_blank"
-              rel="noreferrer"
-              href="https://rebel9.co.kr/en/services"
-            >
-              Rebel9 Services
-            </a>
-          </h1>
-          <p>
-            레벨나인의 서비스들을 소개하는
-            페이지를 개발하였습니다. 스크롤에 따라
-            슬라이드 컨텐츠가 앞 뒤로 페이드되는
-            트랜지션이 특징입니다. Intersection
-            Observer API를 이용해 구현하였습니다.
-          </p>
-        </div>
-
-        <Video
-          autoPlay
-          loop
-          muted
-          playsInline
-          style={{
-            objectFit: "contain",
-          }}
-        >
-          <source
-            src="https://ddbjbm834jucr.cloudfront.net/rebel9-products.mp4"
-            type="video/mp4"
-          />
-        </Video>
-      </Section>
-
-      <Section>
-        <div className="desc">
-          <h1>
-            <a
-              target="_blank"
-              rel="noreferrer"
-              href="https://www.renalab.xyz/"
-            >
-              닥터레나의 실험실
-            </a>
-          </h1>
-          <p>
-            수원 광교의 교육 프로그램 '닥터 레나의
-            실험실' 의 참여 학생들의 직접 가져온
-            물건들을 스캐닝해 만든 3D 모델들을
-            구경할 수 있는 웹페이지를
-            개발하였습니다.
-            <br />
-            <br />
-            3D 모델들을 렌더링하기 위해{" "}
-            <code>
-              <a href="https://modelviewer.dev/">
-                model-viewer
-              </a>
-            </code>
-            를 사용하였으며, 인트로 화면 배경에
-            존재하는 키 비주얼 요소에 모션을
-            적용하기 위해{" "}
-            <code>
-              <a
-                target="_blank"
-                rel="noreferrer"
-                href="https://gsap.com/"
-              >
-                GSAP
-              </a>
-            </code>
-            를 사용하였습니다.
-          </p>
-        </div>
-
-        <Video
-          autoPlay
-          loop
-          muted
-          playsInline
-          style={{
-            objectFit: "contain",
-          }}
-        >
-          <source
-            src="https://ddbjbm834jucr.cloudfront.net/dr-rena-x4.mp4"
-            type="video/mp4"
-          />
-        </Video>
-      </Section>
-
-      <Section>
-        <div className="desc">
           <h1>YDP DADADA</h1>
           <p>
             영등포 타임스퀘어 앞 광장에 위치한
@@ -465,45 +504,6 @@ const Resume = () => {
         >
           <source
             src="https://ddbjbm834jucr.cloudfront.net/ydp-ar.mp4"
-            type="video/mp4"
-          />
-        </Video>
-      </Section>
-
-      <Section>
-        <div className="desc">
-          <h1>
-            <a
-              target="_blank"
-              rel="noreferrer"
-              href="https://www.decoding-my-emotion.com/"
-            >
-              앤어플랜트 이모션디코더
-            </a>
-          </h1>
-          <p>
-            <a
-              target="_blank"
-              rel="noreferrer"
-              href="https://www.instagram.com/and_a_plant/"
-            >
-              앤어플랜트
-            </a>
-            의 `감정해독기(Emotion Decoder)`
-            프로젝트에 웹 개발자로 참여하였습니다.
-            <br />
-            <br />
-            마치 장면이 넘어가듯 보여지는 페이지
-            트랜지션을 구현하기 위해
-            debounce/throttle을 활용해 스크롤
-            이벤트의 감도를 제어하여 트랜지션
-            애니메이션과 매핑하였습니다.
-          </p>
-        </div>
-
-        <Video autoPlay loop muted playsInline>
-          <source
-            src="https://ddbjbm834jucr.cloudfront.net/%E1%84%8B%E1%85%B5%E1%84%86%E1%85%A9%E1%84%89%E1%85%A7%E1%86%AB%E1%84%83%E1%85%B5%E1%84%8F%E1%85%A9%E1%84%83%E1%85%A5-%E1%84%91%E1%85%A9%E1%84%90%E1%85%B3%E1%84%91%E1%85%A9%E1%86%AF%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A9-%E1%84%87%E1%85%B5%E1%84%83%E1%85%B5%E1%84%8B%E1%85%A9.mp4"
             type="video/mp4"
           />
         </Video>
