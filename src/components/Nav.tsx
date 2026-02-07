@@ -8,16 +8,16 @@ const Nav = () => {
   return (
     <Container>
       <span onClick={() => navigate("/")}>
-        이동규 블로그
+        DONGGYU LEE
       </span>
 
       <List>
         <span onClick={() => navigate("/posts")}>
-          글
+          POSTS
         </span>
 
         <span onClick={() => navigate("/works")}>
-          작업
+          WORKS
         </span>
       </List>
     </Container>
@@ -32,13 +32,11 @@ const Container = styled.div`
 
   width: 100%;
 
-  height: var(--nav-height);
-
   box-sizing: border-box;
 
-  padding: 16px;
+  padding: 8px;
 
-  font-size: 1.5em;
+  font-size: 15px;
 
   display: flex;
   justify-content: space-between;

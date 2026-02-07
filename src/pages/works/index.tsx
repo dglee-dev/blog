@@ -33,7 +33,8 @@ const Container = styled.div`
   height: fit-content;
   padding: 0;
   margin: 0;
-  margin-top: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 
   background-color: white;
 

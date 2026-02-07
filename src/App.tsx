@@ -17,7 +17,7 @@ function App() {
     <>
       <GlobalStyle />
 
-      {/* <Nav /> */}
+      <Nav />
 
       <Container>
         <Routes>
@@ -46,14 +46,14 @@ function App() {
 const Container = styled.div`
   position: fixed;
   left: 50%;
-  top: var(--nav-height);
+  top: 0;
   transform: translateX(-50%);
 
   display: flex;
   justify-content: center;
 
   width: 100vw;
-  height: calc(100dvh - var(--nav-height));
+  height: calc(100dvh);
   overflow: scroll;
 
   margin: 0 auto;
