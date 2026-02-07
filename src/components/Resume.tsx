@@ -18,15 +18,7 @@ const Resume = () => {
 
       <Section>
         <div className="desc">
-          <h1>
-            <a
-              target="_blank"
-              rel="noreferrer"
-              href="https://www.wishfullmoon.kr/"
-            >
-              청주에 뜬 달
-            </a>
-          </h1>
+          <h1>청주에 뜬 달</h1>
           <p>
             청주시립미술관의 강익중 특별전 `청주에
             뜬 달` 의 전시 체험에 사용된 웹 개발에
