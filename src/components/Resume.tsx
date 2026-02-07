@@ -338,15 +338,7 @@ const Resume = () => {
 
       <Section>
         <div className="desc">
-          <h1>
-            <a
-              target="_blank"
-              rel="noreferrer"
-              href="https://www.memorial-timecube.com/"
-            >
-              메모리얼 타임큐브
-            </a>
-          </h1>
+          <h1>메모리얼 타임큐브</h1>
           <p>
             2024년 6월에 진행된 보훈부 행사{" "}
             <a
