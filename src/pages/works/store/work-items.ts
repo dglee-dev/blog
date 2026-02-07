@@ -10,10 +10,10 @@ const worksWithoutId: Array<
   {
     slug: "andongza-works",
     thumbnail: {
-      src: "/images/works/andongza/thumbnail.png",
+      src: "/images/works/andongza/thumb.png",
       style: {
-        fit: "cover",
-        position: "center",
+        fit: "80%",
+        position: "50% 50%",
       },
     },
   },
@@ -62,8 +62,88 @@ const worksWithoutId: Array<
     thumbnail: {
       src: "/images/works/korea-memorial/thumbnail.jpg",
       style: {
-        fit: "130%",
-        position: "center 82%",
+        fit: "200%",
+        position: "center 45%",
+      },
+    },
+  },
+  {
+    slug: "gardening",
+    thumbnail: {
+      src: "/images/works/piknic-gardening/gardening.png",
+      style: {
+        fit: "200%",
+        position: "25% 20%",
+      },
+    },
+  },
+  {
+    slug: "dadada",
+    thumbnail: {
+      src: "/images/works/dadada/dadada.png",
+      style: {
+        fit: "120%",
+        position: "center",
+      },
+    },
+  },
+  {
+    slug: "rebel9-services",
+    thumbnail: {
+      src: "/images/works/rebel9-services/thumb.png",
+      style: {
+        fit: "260%",
+        position: "top left",
+      },
+    },
+  },
+  {
+    slug: "opticalme",
+    thumbnail: {
+      src: "/images/works/opticalme/thumb.png",
+      style: {
+        fit: "100%",
+        position: "center",
+      },
+    },
+  },
+  {
+    slug: "chopsticks",
+    thumbnail: {
+      src: "/images/works/chopsticks/thumb.png",
+      style: {
+        fit: "160%",
+        position: "30% 16%",
+      },
+    },
+  },
+  {
+    slug: "wordie",
+    thumbnail: {
+      src: "/images/works/wordie/thumb.png",
+      style: {
+        fit: "180%",
+        position: "44% 50%",
+      },
+    },
+  },
+  {
+    slug: "vanilla-portal",
+    thumbnail: {
+      src: "/images/works/vanilla-portal/thumb.png",
+      style: {
+        fit: "100%",
+        position: "top left",
+      },
+    },
+  },
+  {
+    slug: "piknic-leiter",
+    thumbnail: {
+      src: "/images/works/piknic-leiter/thumb.jpg",
+      style: {
+        fit: "320%",
+        position: "49% 35%",
       },
     },
   },
@@ -75,7 +155,7 @@ export const workItemStore = createStore<{
   setSelectedWork: (work: WorkItem) => void;
 }>((set) => ({
   works: mapListId<Omit<WorkItem, "id">>(
-    worksWithoutId
+    worksWithoutId,
   ),
   selectedWork: {
     slug: "",

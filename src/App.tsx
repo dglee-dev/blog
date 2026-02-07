@@ -17,7 +17,7 @@ function App() {
     <>
       <GlobalStyle />
 
-      <Nav />
+      {/* <Nav /> */}
 
       <Container>
         <Routes>

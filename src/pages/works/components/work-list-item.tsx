@@ -11,7 +11,7 @@ const WorkListItem = ({
   workItem: WorkItem;
 }) => {
   const { setSelectedWork } = useStore(
-    workItemStore
+    workItemStore,
   );
 
   const handleClick = () => {
@@ -44,16 +44,21 @@ const Container = styled.div<{
     props.position ? props.position : "center"};
   background-repeat: no-repeat;
 
-  transition: opacity 0.1s ease-in-out;
+  transition: all 0.08s ease-in-out;
+
+  opacity: 0.35;
+  box-shadow: 0 1px 7px 1px #e4e4e4;
 
   &:hover {
-    opacity: 0.8;
+    opacity: 1;
+    transform: scale(1.01);
   }
 
-  width: 20vw;
-  height: 20vw;
-  max-width: 300px;
-  max-height: 300px;
+  width: 125px;
+  height: 125px;
+
+  border-radius: 17px;
+  margin: 6px;
 
   cursor: pointer;
 `;
