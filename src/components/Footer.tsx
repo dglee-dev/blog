@@ -12,9 +12,6 @@ const Footer = () => {
         <div
           style={{
             width: "100%",
-            height: "100%",
-            paddingTop: "2em",
-            paddingBottom: "2em",
 
             display: "flex",
             flexDirection: "column",
@@ -102,10 +99,14 @@ const Container = styled.footer`
 
   font-weight: 500;
 
-  scroll-snap-align: end;
-
   @media screen and (max-width: 480px) {
-    height: 100svh;
+    margin: 0;
+
+    min-height: 100dvh;
+    height: 100dvh;
+
+    scroll-snap-align: start;
+
     padding-right: 2em;
   }
 `;

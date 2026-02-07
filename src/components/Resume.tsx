@@ -11,7 +11,7 @@ const Resume = () => {
   const { isMobile } = useViewportType();
 
   return (
-    <div>
+    <>
       <Section>
         {isMobile && <MobileList />}
       </Section>
@@ -854,7 +854,7 @@ const Resume = () => {
           }}
         />
       </Section>
-    </div>
+    </>
   );
 };
 
@@ -874,6 +874,7 @@ const Section = styled.div`
 
   @media only screen and (max-width: 480px) {
     min-height: 100dvh;
+    max-height: 100dvh;
     height: 100dvh;
 
     margin-top: 0;

@@ -18,7 +18,9 @@ const Container = styled.div`
   margin: 0 auto;
 
   @media only screen and (max-width: 480px) {
-    height: 100svh;
+    min-height: 100dvh;
+    height: 100dvh;
+
     overflow: auto;
     scroll-snap-type: y mandatory;
 
