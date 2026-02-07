@@ -1,14 +1,8 @@
 import styled from "styled-components";
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 
 const MobileList = () => {
   const ref = useRef<null | HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (ref.current) {
-      ref.current.scrollIntoView();
-    }
-  }, [ref]);
 
   return (
     <Container>
@@ -36,6 +30,9 @@ const MobileList = () => {
 
 const Container = styled.div`
   min-height: 100svh;
+  height: 100dvh;
+
+  background-color: blue;
 
   display: flex;
   justify-content: start;

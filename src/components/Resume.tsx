@@ -12,11 +12,9 @@ const Resume = () => {
 
   return (
     <div>
-      {isMobile && (
-        <Section>
-          <MobileList />
-        </Section>
-      )}
+      <Section>
+        {isMobile && <MobileList />}
+      </Section>
 
       <Section>
         <div className="desc">
@@ -875,7 +873,11 @@ const Section = styled.div`
   }
 
   @media only screen and (max-width: 480px) {
-    height: 100svh;
+    min-height: 100dvh;
+    height: 100dvh;
+
+    background-color: brown;
+
     margin-top: 0;
 
     padding-left: 2em !important;
