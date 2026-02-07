@@ -245,7 +245,7 @@ const Resume = () => {
               rel="noreferrer"
               href="https://andongza.works"
             >
-              안동선 아카이브
+              안동선 에디터 아카이브
             </a>
           </h1>
           <p>
