@@ -32,8 +32,6 @@ const Container = styled.div`
   min-height: 100svh;
   height: 100dvh;
 
-  background-color: blue;
-
   display: flex;
   justify-content: start;
   align-items: center;

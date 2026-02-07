@@ -876,8 +876,6 @@ const Section = styled.div`
     min-height: 100dvh;
     height: 100dvh;
 
-    background-color: brown;
-
     margin-top: 0;
 
     padding-left: 2em !important;
