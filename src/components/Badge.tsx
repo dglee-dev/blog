@@ -39,6 +39,8 @@ export const Icons = {
   strapi: StrapiIcon,
 };
 
+export type IconKey = keyof typeof Icons;
+
 const Badge = ({
   icon,
   children,
