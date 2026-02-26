@@ -1,7 +1,7 @@
 /* eslint-disable */
 import GlobalStyle from "./GlobalStyle";
 import Layout from "./Layout";
-import Resume from "./components/Resume";
+import ProjectList from "./components/project-list";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import useViewportType from "./hooks/useViewportType";
@@ -19,7 +19,7 @@ function App() {
           </Header>
         )}
 
-        <Resume />
+        <ProjectList />
         <Footer />
       </Layout>
     </>
