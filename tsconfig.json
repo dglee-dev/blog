@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "jsx": "react",
+    "lib": ["es2016", "dom"],
     "noEmit": true,
     "allowImportingTsExtensions": true,
     "esModuleInterop": true,
