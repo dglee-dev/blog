@@ -263,6 +263,33 @@ const projects: ProjectItem[] = [
     tags: ["ar", "mobile"],
   },
   {
+    id: "sb-treasure",
+    title: "성북마을 보물찾기",
+    titleHref: "https://treasure-sb.kr/",
+    description: (
+      <p>
+        성북구의 문화유산 체험과 교육을 위한
+        모바일 웹 애플리케이션 `성북마을
+        보물찾기`를 개발하였습니다.
+        <br />
+        <br />
+        실시간 위치정보를 기반으로 AR 컨텐츠를
+        트리거할 수 있으며, 총 5종의 AR 참새와
+        함께 성북구의 문화유산과 관련된 퀴즈를
+        풀 수 있습니다. 정답과 오답, 안내
+        상태에 따라 참새가 다양한
+        애니메이션으로 반응하여 유저에게
+        즐거움을 줍니다.
+      </p>
+    ),
+    media: {
+      type: "video",
+      src: "https://justin-cms-images.s3.ap-northeast-2.amazonaws.com/sb-treasure-pf.mov",
+      style: { objectFit: "cover" },
+    },
+    tags: ["ar", "mobile"],
+  },
+  {
     id: "ar-heritage",
     title: "대동 AR Heritage",
     titleHref:
