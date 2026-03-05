@@ -38,6 +38,41 @@ export type ProjectItem = {
 
 const projects: ProjectItem[] = [
   {
+    id: "andongza",
+    title: "안동선 에디터 아카이브",
+    titleHref: "https://andongza.works",
+    description: (
+      <p>
+        안동선 에디터님의 아카이브 웹사이트와
+        포스트 작성 및 관리를 위한 어드민을
+        개발하였습니다.
+        <br />
+        <br />
+        포스트 작성 시 사용되는 텍스트
+        에디터에서는 텍스트를 작성하고, 이미지를
+        첨부하고, 이미지 슬라이드를 만들고, 링크를
+        첨부할 수 있습니다. 리치 텍스트 에디터
+        구현을 위해{" "}
+        <code>
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://quilljs.com/"
+          >
+            Quill.js
+          </a>
+        </code>{" "}
+        를 사용하였습니다.
+      </p>
+    ),
+    media: {
+      type: "video",
+      src: "https://ddbjbm834jucr.cloudfront.net/andongza.mp4",
+      style: { objectFit: "contain" },
+    },
+    tags: ["web"],
+  },
+  {
     id: "moon-over-cj",
     title: "청주에 뜬 달",
     description: (
@@ -107,41 +142,6 @@ const projects: ProjectItem[] = [
     tags: ["interactive", "exhibition"],
   },
   {
-    id: "andongza",
-    title: "안동선 에디터 아카이브",
-    titleHref: "https://andongza.works",
-    description: (
-      <p>
-        안동선 에디터님의 아카이브 웹사이트와
-        포스트 작성 및 관리를 위한 어드민을
-        개발하였습니다.
-        <br />
-        <br />
-        포스트 작성 시 사용되는 텍스트
-        에디터에서는 텍스트를 작성하고, 이미지를
-        첨부하고, 이미지 슬라이드를 만들고, 링크를
-        첨부할 수 있습니다. 리치 텍스트 에디터
-        구현을 위해{" "}
-        <code>
-          <a
-            target="_blank"
-            rel="noreferrer"
-            href="https://quilljs.com/"
-          >
-            Quill.js
-          </a>
-        </code>{" "}
-        를 사용하였습니다.
-      </p>
-    ),
-    media: {
-      type: "video",
-      src: "https://ddbjbm834jucr.cloudfront.net/andongza.mp4",
-      style: { objectFit: "contain" },
-    },
-    tags: ["web"],
-  },
-  {
     id: "rebel9-services",
     title: "Rebel9 Services",
     titleHref: "https://rebel9.co.kr/en/services",
@@ -161,46 +161,46 @@ const projects: ProjectItem[] = [
     },
     tags: ["web"],
   },
-  {
-    id: "dr-rena",
-    title: "닥터레나의 실험실",
-    titleHref: "https://www.renalab.xyz/",
-    description: (
-      <p>
-        수원 광교의 교육 프로그램 '닥터 레나의
-        실험실' 의 참여 학생들의 직접 가져온
-        물건들을 스캐닝해 만든 3D 모델들을 구경할
-        수 있는 웹페이지를 개발하였습니다.
-        <br />
-        <br />
-        3D 모델들을 렌더링하기 위해{" "}
-        <code>
-          <a href="https://modelviewer.dev/">
-            model-viewer
-          </a>
-        </code>
-        를 사용하였으며, 인트로 화면 배경에
-        존재하는 키 비주얼 요소에 모션을 적용하기
-        위해{" "}
-        <code>
-          <a
-            target="_blank"
-            rel="noreferrer"
-            href="https://gsap.com/"
-          >
-            GSAP
-          </a>
-        </code>
-        를 사용하였습니다.
-      </p>
-    ),
-    media: {
-      type: "video",
-      src: "https://ddbjbm834jucr.cloudfront.net/dr-rena-x4.mp4",
-      style: { objectFit: "contain" },
-    },
-    tags: ["exhibition", "web"],
-  },
+  // {
+  //   id: "dr-rena",
+  //   title: "닥터레나의 실험실",
+  //   titleHref: "https://www.renalab.xyz/",
+  //   description: (
+  //     <p>
+  //       수원 광교의 교육 프로그램 '닥터 레나의
+  //       실험실' 의 참여 학생들의 직접 가져온
+  //       물건들을 스캐닝해 만든 3D 모델들을 구경할
+  //       수 있는 웹페이지를 개발하였습니다.
+  //       <br />
+  //       <br />
+  //       3D 모델들을 렌더링하기 위해{" "}
+  //       <code>
+  //         <a href="https://modelviewer.dev/">
+  //           model-viewer
+  //         </a>
+  //       </code>
+  //       를 사용하였으며, 인트로 화면 배경에
+  //       존재하는 키 비주얼 요소에 모션을 적용하기
+  //       위해{" "}
+  //       <code>
+  //         <a
+  //           target="_blank"
+  //           rel="noreferrer"
+  //           href="https://gsap.com/"
+  //         >
+  //           GSAP
+  //         </a>
+  //       </code>
+  //       를 사용하였습니다.
+  //     </p>
+  //   ),
+  //   media: {
+  //     type: "video",
+  //     src: "https://ddbjbm834jucr.cloudfront.net/dr-rena-x4.mp4",
+  //     style: { objectFit: "contain" },
+  //   },
+  //   tags: ["exhibition", "web"],
+  // },
   {
     id: "seonyudonwha",
     title: "선유동화: Unseeing",
@@ -275,11 +275,10 @@ const projects: ProjectItem[] = [
         <br />
         실시간 위치정보를 기반으로 AR 컨텐츠를
         트리거할 수 있으며, 총 5종의 AR 참새와
-        함께 성북구의 문화유산과 관련된 퀴즈를
-        풀 수 있습니다. 정답과 오답, 안내
-        상태에 따라 참새가 다양한
-        애니메이션으로 반응하여 유저에게
-        즐거움을 줍니다.
+        함께 성북구의 문화유산과 관련된 퀴즈를 풀
+        수 있습니다. 정답과 오답, 안내 상태에 따라
+        참새가 다양한 애니메이션으로 반응하여
+        유저에게 즐거움을 줍니다.
       </p>
     ),
     media: {
