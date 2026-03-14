@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components/macro";
 import useRouter from "@/shared/lib/router/hooks/useRouter";
 
@@ -29,13 +28,16 @@ const Container = styled.div`
   top: 0;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 100;
 
   width: 100%;
 
   box-sizing: border-box;
 
   padding: 8px;
+  padding-left: 16px;
 
+  font-family: "Gravi", sans-serif;
   font-size: 15px;
 
   display: flex;
@@ -57,6 +59,12 @@ const Container = styled.div`
 const List = styled.div`
   display: flex;
   gap: 1em;
+
+  padding-right: 1.5em;
+
+  & span {
+    cursor: pointer;
+  }
 `;
 
 export default Nav;

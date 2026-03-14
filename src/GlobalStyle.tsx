@@ -50,7 +50,9 @@ export default createGlobalStyle`
 
   hr {
     background-color: transparent;
-    border: none;
+    border: 0px;
+    border-bottom: 1px solid gainsboro;
     height: 1.8em;
+    outline: none;
   }
 `;

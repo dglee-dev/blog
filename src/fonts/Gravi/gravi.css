@@ -1,0 +1,11 @@
+@font-face {
+  font-family: "Gravi";
+  src: url("./RTGravi-Soft.otf") format("opentype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Gravi";
+  src: url("./RTGravi-Bold.otf") format("opentype");
+  font-weight: 700;
+}
