@@ -15,8 +15,10 @@ const Nav = () => {
           POSTS
         </span>
 
-        <span onClick={() => navigate("/works")}>
-          WORKS
+        <span
+          onClick={() => navigate("/workroom")}
+        >
+          WORKROOM
         </span>
       </List>
     </Container>

@@ -11,7 +11,6 @@ export default createGlobalStyle`
   }
 
   * {
-    color: black;
     box-sizing: border-box;
   }
 

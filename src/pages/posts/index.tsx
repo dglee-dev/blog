@@ -1,6 +1,5 @@
-import React from "react";
-import styled from "styled-components/macro";
 import { last } from "lodash";
+import styled from "styled-components/macro";
 
 import PostList from "@/pages/posts/components/PostList";
 import usePosts from "@/pages/posts/hooks/usePosts";
@@ -15,7 +14,7 @@ const PostPage = () => {
           const postKey = post.Key;
 
           const filename = last(
-            postKey.split("/")
+            postKey.split("/"),
           );
 
           return (
