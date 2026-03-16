@@ -2,8 +2,8 @@ import CardCarousel from "../components/CardCarousel";
 
 const HomePage = () => {
   return (
-    <CardCarousel>
-      <CardCarousel.Item>
+    <CardCarousel total={4}>
+      <CardCarousel.Item index={0}>
         <CardCarousel.Card
           style={{
             width: "400px",
@@ -23,7 +23,7 @@ const HomePage = () => {
         </CardCarousel.Card>
       </CardCarousel.Item>
 
-      <CardCarousel.Item>
+      <CardCarousel.Item index={1}>
         <CardCarousel.Card
           style={{
             width: "400px",
@@ -37,16 +37,17 @@ const HomePage = () => {
           >
             1. 바퀴의 재발명
           </h3>
+
           <p style={{ marginBottom: 4 }}>
             '바퀴를 재발명하지 말라' 고들 하지만..
             <br />
-            세상의 모든 도구는 누군가가 대신
-            만들어준 것 아니겠어요.
+            세상의 모든 도구는 누군가가 만들어 준
+            것 아니겠어요.
           </p>
         </CardCarousel.Card>
       </CardCarousel.Item>
 
-      <CardCarousel.Item>
+      <CardCarousel.Item index={2}>
         <CardCarousel.Card
           style={{
             width: "400px",
@@ -67,7 +68,7 @@ const HomePage = () => {
         </CardCarousel.Card>
       </CardCarousel.Item>
 
-      <CardCarousel.Item>
+      <CardCarousel.Item index={3}>
         <CardCarousel.Card
           style={{
             width: "400px",

@@ -1,4 +1,4 @@
-import React, {
+import {
   createContext,
   useContext,
   useState,
@@ -14,19 +14,33 @@ interface CarouselCtx {
   next: () => void;
 }
 
-const CarouselContext = createContext<CarouselCtx | null>(null);
+const CarouselContext =
+  createContext<CarouselCtx | null>(null);
 
 const useCarousel = () => {
   const ctx = useContext(CarouselContext);
-  if (!ctx) throw new Error("Must be used within CardCarousel");
+  if (!ctx)
+    throw new Error(
+      "Must be used within CardCarousel",
+    );
   return ctx;
 };
 
 // --- Item ---
 
-const Item = ({ children }: { children: ReactNode }) => (
-  <ItemContainer>{children}</ItemContainer>
-);
+const Item = ({
+  index,
+  children,
+}: {
+  index: number;
+  children: ReactNode;
+}) => {
+  const { currentIndex } = useCarousel();
+  if (index !== currentIndex) return null;
+  return (
+    <ItemContainer>{children}</ItemContainer>
+  );
+};
 
 const ItemContainer = styled.div`
   width: 100%;
@@ -38,8 +52,16 @@ const ItemContainer = styled.div`
 
 // --- Card ---
 
-const Card = ({ children, style }: { children: ReactNode; style?: CSSProperties }) => (
-  <CardContainer style={style}>{children}</CardContainer>
+const Card = ({
+  children,
+  style,
+}: {
+  children: ReactNode;
+  style?: CSSProperties;
+}) => (
+  <CardContainer style={style}>
+    {children}
+  </CardContainer>
 );
 
 const CardContainer = styled.div`
@@ -50,43 +72,117 @@ const CardContainer = styled.div`
 
 // --- Nav ---
 
-const Nav = ({ style }: { style?: CSSProperties }) => {
-  const { prev, next, currentIndex, total } = useCarousel();
+const Nav = ({
+  style,
+}: {
+  style?: CSSProperties;
+}) => {
+  const { prev, next, currentIndex, total } =
+    useCarousel();
   return (
-    <NavContainer style={style}>
-      <NavButton onClick={prev} disabled={currentIndex === 0}>
-        <svg width="40" height="100" viewBox="0 0 40 100" fill="none">
-          <polyline points="30,10 10,50 30,90" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-      </NavButton>
-      <NavButton onClick={next} disabled={currentIndex === total - 1}>
-        <svg width="40" height="100" viewBox="0 0 40 100" fill="none">
-          <polyline points="10,10 30,50 10,90" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-      </NavButton>
-    </NavContainer>
+    <>
+      <NavButtonWrap
+        style={style}
+        $direction="left"
+        $disabled={currentIndex === 0}
+      >
+        <NavButton
+          onClick={prev}
+          disabled={currentIndex === 0}
+          $direction="left"
+        >
+          <svg
+            width="40"
+            height="100"
+            viewBox="0 0 40 100"
+            fill="none"
+          >
+            <polyline
+              points="30,10 10,50 30,90"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </NavButton>
+      </NavButtonWrap>
+
+      <NavButtonWrap
+        $direction="right"
+        $disabled={currentIndex === total - 1}
+      >
+        <NavButton
+          onClick={next}
+          disabled={currentIndex === total - 1}
+          $direction="right"
+        >
+          <svg
+            width="40"
+            height="100"
+            viewBox="0 0 40 100"
+            fill="none"
+          >
+            <polyline
+              points="10,10 30,50 10,90"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </NavButton>
+      </NavButtonWrap>
+    </>
   );
 };
 
-const NavContainer = styled.div`
+const NavButtonWrap = styled.div<{
+  $direction: "left" | "right";
+  $disabled: boolean;
+}>`
   position: fixed;
-  top: 50%;
-  left: 0;
-  right: 0;
-  transform: translateY(-50%);
-  display: flex;
-  justify-content: space-between;
-  padding: 0 20px;
-  pointer-events: none;
+  top: 0;
+  ${({ $direction }) =>
+    $direction === "left" ? "left: 0;" : "right: 0;"}
+  height: 100dvh;
+  width: 30vw;
+  pointer-events: all;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.2s;
+    pointer-events: none;
+    ${({ $direction }) =>
+      $direction === "left"
+        ? "background: linear-gradient(to right, rgba(0,0,0,0.06), transparent);"
+        : "background: linear-gradient(to left, rgba(0,0,0,0.06), transparent);"}
+  }
+
+  ${({ $disabled }) =>
+    !$disabled &&
+    `&:hover::before { opacity: 1; }`}
 `;
 
-const NavButton = styled.button`
+const NavButton = styled.button<{
+  $direction: "left" | "right";
+}>`
+  position: absolute;
+  inset: 0;
   background: none;
   border: none;
-  padding: 0;
+  padding: 20px;
   cursor: pointer;
-  pointer-events: all;
   color: #333;
+  display: flex;
+  align-items: center;
+  ${({ $direction }) =>
+    $direction === "left"
+      ? "justify-content: flex-start;"
+      : "justify-content: flex-end;"}
 
   &:disabled {
     opacity: 0.15;
@@ -96,31 +192,34 @@ const NavButton = styled.button`
 
 // --- Main ---
 
-const CardCarouselBase = ({ children }: { children: ReactNode }) => {
-  let itemCount = 0;
-  React.Children.forEach(children, (child) => {
-    if (React.isValidElement(child) && child.type === Item) itemCount++;
-  });
-
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const prev = () => setCurrentIndex((i) => Math.max(i - 1, 0));
-  const next = () => setCurrentIndex((i) => Math.min(i + 1, itemCount - 1));
-
-  let itemIdx = 0;
-  const rendered = React.Children.map(children, (child) => {
-    if (React.isValidElement(child) && child.type === Item) {
-      return itemIdx++ === currentIndex ? child : null;
-    }
-    return child;
-  });
+const CardCarouselBase = ({
+  total,
+  children,
+}: {
+  total: number;
+  children: ReactNode;
+}) => {
+  const [currentIndex, setCurrentIndex] =
+    useState(0);
+  const prev = () =>
+    setCurrentIndex((i) => Math.max(i - 1, 0));
+  const next = () =>
+    setCurrentIndex((i) =>
+      Math.min(i + 1, total - 1),
+    );
 
   return (
-    <CarouselContext.Provider value={{ currentIndex, total: itemCount, prev, next }}>
-      {rendered}
+    <CarouselContext.Provider
+      value={{ currentIndex, total, prev, next }}
+    >
+      {children}
     </CarouselContext.Provider>
   );
 };
 
-const CardCarousel = Object.assign(CardCarouselBase, { Item, Card, Nav });
+const CardCarousel = Object.assign(
+  CardCarouselBase,
+  { Item, Card, Nav },
+);
 
 export default CardCarousel;
