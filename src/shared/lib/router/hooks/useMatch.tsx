@@ -44,8 +44,6 @@ const useMatch = (children: React.ReactNode) => {
     const matchedElement: RouteObject =
       resourceMap[matchedRoute.branch.id];
 
-    console.log(matchedElement);
-
     setMatchedElement(matchedElement);
   }, [children, currentPath]);
 

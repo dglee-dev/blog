@@ -34,7 +34,7 @@ function App() {
             element={<PostDetails />}
           />
           <Route
-            path="/works"
+            path="/workroom"
             element={<WorksPage />}
           />
         </Routes>

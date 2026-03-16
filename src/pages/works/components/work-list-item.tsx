@@ -1,15 +1,14 @@
-import React from "react";
+import { forwardRef } from "react";
 import { useStore } from "zustand";
 import styled from "styled-components/macro";
 
 import { WorkItem } from "@/pages/works/types";
 import { workItemStore } from "@/pages/works/store/work-items";
 
-const WorkListItem = ({
-  workItem,
-}: {
-  workItem: WorkItem;
-}) => {
+const WorkListItem = forwardRef<
+  HTMLDivElement,
+  { workItem: WorkItem; selected: boolean }
+>(({ workItem, selected }, ref) => {
   const { setSelectedWork } = useStore(
     workItemStore,
   );
@@ -20,18 +19,25 @@ const WorkListItem = ({
 
   return (
     <Container
+      ref={ref}
       onClick={handleClick}
       thumbnail={workItem.thumbnail.src}
+      selected={selected}
       fit={workItem.thumbnail.style.fit}
       position={workItem.thumbnail.style.position}
-    ></Container>
+    />
   );
-};
+});
 
 const Container = styled.div<{
   thumbnail: string;
   position?: string;
+  selected: boolean;
 }>`
+  width: 125px;
+  height: 125px;
+  border-radius: 17px;
+
   background-color: white;
   background-image: ${(props: {
     thumbnail: string;
@@ -47,18 +53,17 @@ const Container = styled.div<{
   transition: all 0.08s ease-in-out;
 
   opacity: 0.35;
+
+  ${(props: { selected: boolean }) =>
+    props.selected
+      ? "transform: scale(1.1); opacity: 1"
+      : ""};
+
   box-shadow: 0 1px 7px 1px #e4e4e4;
 
   &:hover {
     opacity: 1;
-    transform: scale(1.01);
   }
-
-  width: 125px;
-  height: 125px;
-
-  border-radius: 17px;
-  margin: 6px;
 
   cursor: pointer;
 `;
