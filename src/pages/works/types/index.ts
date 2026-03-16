@@ -2,7 +2,8 @@ export type WorkItem = {
   id: string;
   slug: string;
   title: string;
-  description: string;
+  subtitle: string;
+  description: React.ReactNode;
   thumbnail: {
     src: string;
     style: {

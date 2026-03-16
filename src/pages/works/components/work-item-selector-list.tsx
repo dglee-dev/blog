@@ -10,8 +10,11 @@ interface Props {
   works: Array<WithId<WorkItem>>;
 }
 
-const WorkItemSelectorList = ({ works }: Props) => {
-  const { registerTarget, touchingIds } = useWorkItemSelector();
+const WorkItemSelectorList = ({
+  works,
+}: Props) => {
+  const { registerTarget, touchingIds } =
+    useWorkItemSelector();
 
   return (
     <ListContainer>
@@ -20,7 +23,9 @@ const WorkItemSelectorList = ({ works }: Props) => {
           key={workItem.id}
           workItem={workItem}
           ref={registerTarget(workItem.id)}
-          selected={last(touchingIds) === workItem.id}
+          selected={
+            last(touchingIds) === workItem.id
+          }
         />
       ))}
     </ListContainer>
@@ -31,7 +36,7 @@ const ListContainer = styled.div`
   width: 200px;
   height: fit-content;
   margin-top: 40dvh;
-  margin-bottom: 40dvh;
+  margin-bottom: calc(40dvh + 35px);
 
   display: flex;
   flex-direction: column;
