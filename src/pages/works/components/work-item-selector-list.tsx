@@ -43,8 +43,8 @@ const WorkItemSelectorList = ({
 const ListContainer = styled.div`
   width: 200px;
   height: fit-content;
-  margin-top: 40dvh;
-  margin-bottom: calc(40dvh + 35px);
+  margin-top: calc(50dvh - 70px);
+  margin-bottom: calc(50dvh - 70px);
 
   display: flex;
   flex-direction: column;
