@@ -9,6 +9,8 @@ const worksWithoutId: Array<
 > = [
   {
     slug: "andongza-works",
+    title: "Andongza Works",
+    description: "",
     thumbnail: {
       src: "/images/works/andongza/thumb.png",
       style: {
@@ -19,6 +21,8 @@ const worksWithoutId: Array<
   },
   {
     slug: "yongdam-play",
+    title: "Yongdam Play",
+    description: "",
     thumbnail: {
       src: "/images/works/yongdam/thumbnail.png",
       style: {
@@ -29,6 +33,8 @@ const worksWithoutId: Array<
   },
   {
     slug: "seonyu-dongwha",
+    title: "Seonyu Dongwha",
+    description: "",
     thumbnail: {
       src: "/images/works/seonyudo/thumbnail.png",
       style: {
@@ -39,6 +45,8 @@ const worksWithoutId: Array<
   },
   {
     slug: "sb-treasure",
+    title: "SB Treasure",
+    description: "",
     thumbnail: {
       src: "/images/works/seongbuk/thumbnail.jpg",
       style: {
@@ -49,6 +57,8 @@ const worksWithoutId: Array<
   },
   {
     slug: "moon-over-cheongju",
+    title: "Moon Over Cheongju",
+    description: "",
     thumbnail: {
       src: "/images/works/cheongju/thumbnail2.png",
       style: {
@@ -59,6 +69,8 @@ const worksWithoutId: Array<
   },
   {
     slug: "memorial-timecube",
+    title: "Memorial Timecube",
+    description: "",
     thumbnail: {
       src: "/images/works/korea-memorial/thumbnail.jpg",
       style: {
@@ -69,6 +81,8 @@ const worksWithoutId: Array<
   },
   {
     slug: "gardening",
+    title: "Gardening",
+    description: "",
     thumbnail: {
       src: "/images/works/piknic-gardening/gardening.png",
       style: {
@@ -79,6 +93,8 @@ const worksWithoutId: Array<
   },
   {
     slug: "dadada",
+    title: "Dadada",
+    description: "",
     thumbnail: {
       src: "/images/works/dadada/dadada.png",
       style: {
@@ -89,6 +105,8 @@ const worksWithoutId: Array<
   },
   {
     slug: "rebel9-services",
+    title: "Rebel9 Services",
+    description: "",
     thumbnail: {
       src: "/images/works/rebel9-services/thumb.png",
       style: {
@@ -99,6 +117,8 @@ const worksWithoutId: Array<
   },
   {
     slug: "opticalme",
+    title: "OpticalMe",
+    description: "",
     thumbnail: {
       src: "/images/works/opticalme/thumb.png",
       style: {
@@ -109,6 +129,8 @@ const worksWithoutId: Array<
   },
   {
     slug: "chopsticks",
+    title: "Chopsticks",
+    description: "",
     thumbnail: {
       src: "/images/works/chopsticks/thumb.png",
       style: {
@@ -119,6 +141,8 @@ const worksWithoutId: Array<
   },
   {
     slug: "wordie",
+    title: "Wordie",
+    description: "",
     thumbnail: {
       src: "/images/works/wordie/thumb.png",
       style: {
@@ -129,6 +153,8 @@ const worksWithoutId: Array<
   },
   {
     slug: "vanilla-portal",
+    title: "Vanilla Portal",
+    description: "",
     thumbnail: {
       src: "/images/works/vanilla-portal/thumb.png",
       style: {
@@ -139,6 +165,8 @@ const worksWithoutId: Array<
   },
   {
     slug: "piknic-leiter",
+    title: "Piknic Leiter",
+    description: "",
     thumbnail: {
       src: "/images/works/piknic-leiter/thumb.jpg",
       style: {

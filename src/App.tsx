@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components/macro";
 
 import GlobalStyle from "@/GlobalStyle";
@@ -44,11 +43,6 @@ function App() {
 }
 
 const Container = styled.div`
-  position: fixed;
-  left: 50%;
-  top: 0;
-  transform: translateX(-50%);
-
   display: flex;
   justify-content: center;
 
