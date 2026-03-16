@@ -9,13 +9,13 @@ type MatchedRoute = {
 
 export const matchRoute = (
   currentPath,
-  branches: Array<TokenizedBranch>
-): MatchedRoute => {
+  branches: Array<TokenizedBranch>,
+): MatchedRoute | null => {
   for (let i = 0; i < branches.length; i++) {
     const branch = branches[i];
     const matched = matchBranch(
       currentPath,
-      branch
+      branch,
     );
 
     if (matched) {
@@ -25,18 +25,20 @@ export const matchRoute = (
       };
     }
   }
+
+  return null;
 };
 
 export const matchBranch = (
   currentPath: string,
-  branch: TokenizedBranch
+  branch: TokenizedBranch,
 ): MatchedParams | null => {
   const matchedParams = {};
 
   if (branch.isIndex) {
     return isSamePath(
       currentPath,
-      branch.fullPath
+      branch.fullPath,
     )
       ? matchedParams
       : null;

@@ -10,12 +10,14 @@ import { sortBranches } from "@/shared/lib/router/utils/sort-branches";
 import { matchRoute } from "@/shared/lib/router/utils/match-route";
 import { buildResourceMap } from "@/shared/lib/router/utils/build-resource-map";
 import useRouter from "@/shared/lib/router/hooks/useRouter";
+import { RouteObject } from "@/shared/lib/router/types/route-object";
 
 const useMatch = (children: React.ReactNode) => {
   const [matchedElement, setMatchedElement] =
     useState(null);
 
-  const { routePath: currentPath } = useRouter();
+  const { routePath: currentPath, navigate } =
+    useRouter();
 
   useEffect(() => {
     const routes = createRoutes(children);
@@ -26,16 +28,23 @@ const useMatch = (children: React.ReactNode) => {
     const tokenizedBranches =
       tokenizeBranches(branches);
     const sortedBranches = sortBranches(
-      tokenizedBranches
+      tokenizedBranches,
     );
 
     const matchedRoute = matchRoute(
       currentPath,
-      sortedBranches
+      sortedBranches,
     );
 
-    const matchedElement =
+    if (!matchedRoute) {
+      setMatchedElement(null);
+      return;
+    }
+
+    const matchedElement: RouteObject =
       resourceMap[matchedRoute.branch.id];
+
+    console.log(matchedElement);
 
     setMatchedElement(matchedElement);
   }, [children, currentPath]);
