@@ -263,16 +263,8 @@ const worksWithoutId: Array<
 
 export const workItemStore = createStore<{
   works: Array<WithId<WorkItem>>;
-  selectedWork: WorkItem;
-  setSelectedWork: (work: WorkItem) => void;
-}>((set) => ({
+}>(() => ({
   works: mapListId<Omit<WorkItem, "id">>(
     worksWithoutId,
   ),
-  selectedWork: {
-    slug: "",
-    thumbnail: { src: "" },
-  } as WorkItem,
-  setSelectedWork: (work: WorkItem) =>
-    set({ selectedWork: work }),
 }));

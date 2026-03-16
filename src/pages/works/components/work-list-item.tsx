@@ -1,26 +1,16 @@
 import { forwardRef } from "react";
-import { useStore } from "zustand";
 import styled from "styled-components/macro";
 
 import { WorkItem } from "@/pages/works/types";
-import { workItemStore } from "@/pages/works/store/work-items";
 
 const WorkListItem = forwardRef<
   HTMLDivElement,
   { workItem: WorkItem; selected: boolean }
 >(({ workItem, selected }, ref) => {
-  const { setSelectedWork } = useStore(
-    workItemStore,
-  );
-
-  const handleClick = () => {
-    setSelectedWork(workItem);
-  };
-
   return (
     <Container
+      id={workItem.slug}
       ref={ref}
-      onClick={handleClick}
       thumbnail={workItem.thumbnail.src}
       selected={selected}
       fit={workItem.thumbnail.style.fit}

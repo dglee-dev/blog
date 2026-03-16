@@ -5,6 +5,7 @@ import { WithId } from "@/shared/types/utils";
 import { WorkItem } from "@/pages/works/types";
 import WorkListItem from "@/pages/works/components/work-list-item";
 import { useWorkItemSelector } from "@/pages/works/components/work-item-selector";
+import { useWorkHash } from "@/pages/works/hooks/useWorkHash";
 
 interface Props {
   works: Array<WithId<WorkItem>>;
@@ -15,6 +16,13 @@ const WorkItemSelectorList = ({
 }: Props) => {
   const { registerTarget, touchingIds } =
     useWorkItemSelector();
+
+  const selectedId = last(touchingIds);
+  const selectedSlug = works.find(
+    (w) => w.id === selectedId,
+  )?.slug;
+
+  useWorkHash(selectedSlug);
 
   return (
     <ListContainer>
