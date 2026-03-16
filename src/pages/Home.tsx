@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components/macro";
 
 const HomePage = () => {
@@ -14,31 +13,27 @@ const HomePage = () => {
       </p>
 
       <div>
-        <h4>
-          1. 도구를 직접 만드는 것을 좋아합니다.
-        </h4>
+        <h4>1. 바퀴의 재발명</h4>
 
         <p>
-          '바퀴를 재발명하지 말라' 고들 하지만,
-          내가 원하는 바퀴가 세상에 없다면 사실
-          내가 원하는 것은 바퀴가 아닐지도
-          모릅니다.
+          '바퀴를 재발명하지 말라' 고들 하지만..
+          <br />
+          세상의 모든 도구는 누군가가 대신
+          만들어준 것 아니겠어요.
         </p>
       </div>
 
       <div>
-        <h4>
-          2. Visual Programming에 관심이 많습니다.
-        </h4>
+        <h4>2. Visual Programming</h4>
 
         <p>
-          그렇습니다. <a href="">작은 실험들</a>을
+          눈에 보이는 <a href="">작은 실험들</a>을
           반복합니다.
         </p>
       </div>
 
       <div>
-        <h4>3. 실패로부터 배우고 성장합니다.</h4>
+        <h4>3. 실패의 기록</h4>
 
         <p>
           이 블로그가 가치있는 이유는 제가 저지른
