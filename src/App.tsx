@@ -10,10 +10,11 @@ import Nav from "@/components/Nav";
 import PostDetails from "@/pages/posts/components/PostDetails";
 import Route from "@/shared/lib/router/components/Route";
 import Routes from "@/shared/lib/router/components/Routes";
+import { PrefetchCacheProvider } from "@/shared/lib/router/context/PrefetchCacheContext";
 
 function App() {
   return (
-    <>
+    <PrefetchCacheProvider>
       <GlobalStyle />
 
       <Nav />
@@ -38,7 +39,7 @@ function App() {
           />
         </Routes>
       </Container>
-    </>
+    </PrefetchCacheProvider>
   );
 }
 

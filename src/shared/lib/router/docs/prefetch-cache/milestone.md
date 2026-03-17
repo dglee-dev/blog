@@ -6,40 +6,43 @@
 
 ---
 
-## Milestone 1. CacheContext 구현
+## Milestone 1. PrefetchCacheContext 구현
 
-`context/CacheContext.tsx`와 `hooks/useCache.ts`를 만든다.
+`context/PrefetchCacheContext.tsx`와 `hooks/usePrefetchCache.ts`를 만든다.
 
 이후 모든 것이 이 위에서 동작하기 때문에 가장 먼저 구현한다.
 
+- **PrefetchCacheContext**: `Map<string, unknown>` 형태로 prefetch 결과를 들고 있는 React Context. `setPrefetchCache(key, value)`로 값을 저장하면 구독 중인 컴포넌트가 리렌더된다.
+- **usePrefetchCache**: query key를 받아 PrefetchCacheContext에서 해당 값을 꺼내는 훅. 제네릭으로 타입을 지정할 수 있다.
+
 **체크리스트**
-- [ ] `setCache(key, value)` 호출 후 `useCache(key)`가 같은 값을 반환
+- [ ] `setPrefetchCache(key, value)` 호출 후 `usePrefetchCache(key)`가 같은 값을 반환
 - [ ] 캐시 값이 변경될 때 구독 중인 컴포넌트가 리렌더
-- [ ] 존재하지 않는 key로 `useCache`를 호출하면 `undefined` 반환
+- [ ] 존재하지 않는 key로 `usePrefetchCache`를 호출하면 `undefined` 반환
 
 ---
 
-## Milestone 2. usePosts를 캐시 기반으로 전환
+## Milestone 2. usePosts를 prefetchCache 기반으로 전환
 
-`usePosts`에서 fetch 함수(`fetchPosts`)를 외부로 추출하고, `useCache("posts")`를 먼저 확인한 뒤 없으면 fetch하도록 수정한다.
+`usePosts`에서 fetch 함수(`fetchPosts`)를 외부로 추출하고, `usePrefetchCache("posts")`를 먼저 확인한 뒤 없으면 fetch하도록 수정한다.
 
 **체크리스트**
-- [ ] 캐시에 직접 값을 심어둔 상태에서 `/posts` 진입 시 Network 요청 없이 즉시 렌더링
-- [ ] 캐시가 비어있을 때 기존과 동일하게 fetch 실행
-- [ ] fetch 완료 후 결과가 캐시에 저장 (이후 재진입 시 fetch 없이 렌더링)
+- [ ] prefetchCache에 직접 값을 심어둔 상태에서 `/posts` 진입 시 Network 요청 없이 즉시 렌더링
+- [ ] prefetchCache가 비어있을 때 기존과 동일하게 fetch 실행
+- [ ] fetch 완료 후 결과가 prefetchCache에 저장 (이후 재진입 시 fetch 없이 렌더링)
 
 ---
 
 ## Milestone 3. Prefetch HOC 구현
 
-`components/Prefetch.tsx`를 만든다. Intersection Observer로 viewport 진입을 감지하고, `fetcher()`를 실행해 결과를 CacheContext에 저장한다.
+`components/Prefetch.tsx`를 만든다. Intersection Observer로 viewport 진입을 감지하고, `fetcher()`를 실행해 결과를 PrefetchCacheContext에 저장한다.
 
 **체크리스트**
 - [ ] `Prefetch`가 viewport에 진입하는 순간 Network 탭에서 fetch 요청 발생
 - [ ] viewport 밖에 있을 때는 fetch 실행 안 됨
-- [ ] fetch 완료 후 CacheContext에 올바른 query key로 저장
+- [ ] fetch 완료 후 PrefetchCacheContext에 올바른 query key로 저장
 - [ ] 한 번 실행 후 Intersection Observer가 disconnect되어 중복 요청 없음
-- [ ] `/posts` 진입 시 `usePosts`가 캐시에서 즉시 데이터를 읽어 Network 요청 없이 렌더링
+- [ ] `/posts` 진입 시 `usePosts`가 prefetchCache에서 즉시 데이터를 읽어 Network 요청 없이 렌더링
 
 ---
 
