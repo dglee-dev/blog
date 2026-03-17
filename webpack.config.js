@@ -17,7 +17,7 @@ module.exports = (env, argv) => {
         }),
       ],
     },
-    argv.mode,
+    argv.mode
   );
 
   return {
@@ -26,7 +26,7 @@ module.exports = (env, argv) => {
     output: {
       filename: "bundle.js",
       publicPath: "/",
-      path: path.resolve(__dirname, "build"),
+      path: path.resolve(__dirname, "dist"),
       clean: true, // 기존 파일 제거
     },
     resolve: {
@@ -71,7 +71,7 @@ function getPluginsByEnv(
     development: [],
     common: [],
   },
-  env,
+  env
 ) {
   return [...plugins[env], ...plugins.common];
 }
