@@ -6,7 +6,7 @@ const { compilerOptions } = require("./tsconfig");
 const config = {
   roots: ["<rootDir>/src", "<rootDir>/tests"],
   collectCoverageFrom: [
-    "src/**/*.{js,jsx,ts,tsx}",
+    "src/**/*.{ts,tsx}",
     "!src/**/*.d.ts",
   ],
   testMatch: [
