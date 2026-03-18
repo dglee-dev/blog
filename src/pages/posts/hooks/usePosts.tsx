@@ -1,30 +1,28 @@
 import { useEffect, useState } from "react";
-
-interface PostObject {
-  Key: string;
-  ETag: string;
-  Size: number;
-}
+import fetchPosts, { PostObject } from "@/pages/posts/api/fetchPosts";
+import usePrefetchCache from "@/shared/lib/router/hooks/usePrefetchCache";
+import { usePrefetchCacheContext } from "@/shared/lib/router/context/PrefetchCacheContext";
 
 const usePosts = () => {
-  const [posts, setPosts] = useState<
-    PostObject[]
-  >([]);
+  const cached = usePrefetchCache<PostObject[]>("posts");
+  const { setPrefetchCache } = usePrefetchCacheContext();
+  const [posts, setPosts] = useState<PostObject[]>(cached ?? []);
 
   useEffect(() => {
-    (async function () {
-      const res = await fetch(
-        "https://oct7lssmetmk5ftplu4npwnwne0bdkyp.lambda-url.ap-northeast-2.on.aws"
-      );
+    if (cached) {
+      console.log("[prefetch] cache hit: posts");
+      return;
+    }
 
-      const result = await res.json();
-
+    console.log("[prefetch] cache miss: posts — fetching now");
+    fetchPosts().then((result) => {
       setPosts(result);
-    })();
+      setPrefetchCache("posts", result);
+    });
   }, []);
 
   return {
-    posts,
+    posts: cached ?? posts,
   };
 };
 

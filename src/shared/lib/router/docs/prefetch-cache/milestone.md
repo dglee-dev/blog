@@ -53,8 +53,8 @@
 
 **체크리스트**
 
-- [ ] prefetchCache에 직접 값을 심어둔 상태에서 `/posts` 진입 시 Network 요청 없이 즉시 렌더링
-- [ ] prefetchCache가 비어있을 때 기존과 동일하게 fetch 실행
-- [ ] fetch 완료 후 결과가 prefetchCache에 저장 (이후 재진입 시 fetch 없이 렌더링)
+- [x] prefetchCache에 직접 값을 심어둔 상태에서 `/posts` 진입 시 Network 요청 없이 즉시 렌더링
+- [x] prefetchCache가 비어있을 때 기존과 동일하게 fetch 실행
+- [x] fetch 완료 후 결과가 prefetchCache에 저장 (이후 재진입 시 fetch 없이 렌더링)
 - [ ] `/posts` 클릭 시 흰 화면 없이 즉시 렌더링
 - [ ] 직접 URL로 `/posts` 진입 시 (prefetch 없이) 기존 fetch fallback 정상 동작

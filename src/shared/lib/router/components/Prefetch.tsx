@@ -25,7 +25,11 @@ const Prefetch = ({
         if (entry.isIntersecting) {
           observer.disconnect();
 
+          console.log(`[prefetch] start: ${queryKey}`);
+          const startedAt = Date.now();
+
           fetcher().then((result) => {
+            console.log(`[prefetch] done: ${queryKey} (${Date.now() - startedAt}ms)`);
             setPrefetchCache(queryKey, result);
           });
         }
