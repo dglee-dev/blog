@@ -46,4 +46,12 @@ PostList.Item = ({
   );
 };
 
+PostList.SkeletonItem = styled.li`
+  list-style: none;
+  height: 16px;
+  width: 40%;
+  background: #e0e0e0;
+  border-radius: 4px;
+`;
+
 export default PostList;
