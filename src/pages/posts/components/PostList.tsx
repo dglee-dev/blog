@@ -19,6 +19,7 @@ PostList.Container = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 8px;
+  padding: 48px 0;
 `;
 
 PostList.Item = ({
