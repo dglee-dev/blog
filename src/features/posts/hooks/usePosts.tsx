@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import fetchPosts, { PostObject } from "@/pages/posts/api/fetchPosts";
-import usePrefetchCache from "@/shared/lib/router/hooks/usePrefetchCache";
-import { usePrefetchCacheContext } from "@/shared/lib/router/context/PrefetchCacheContext";
+import fetchPosts, { PostObject } from "@/features/posts/api/fetchPosts";
+import usePrefetchCache from "@lib/router/hooks/usePrefetchCache";
+import { usePrefetchCacheContext } from "@lib/router/context/PrefetchCacheContext";
 
 const usePosts = () => {
   const cached = usePrefetchCache<PostObject[]>("posts");

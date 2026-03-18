@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import usePost from "@/pages/posts/hooks/usePost";
+import usePost from "@/features/posts/hooks/usePost";
 
 const PostDetails = () => {
   const { contents } = usePost();

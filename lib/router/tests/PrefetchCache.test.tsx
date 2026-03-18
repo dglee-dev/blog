@@ -12,8 +12,8 @@ import "@testing-library/jest-dom";
 import {
   PrefetchCacheProvider,
   usePrefetchCacheContext,
-} from "@/shared/lib/router/context/PrefetchCacheContext";
-import usePrefetchCache from "@/shared/lib/router/hooks/usePrefetchCache";
+} from "@lib/router/context/PrefetchCacheContext";
+import usePrefetchCache from "@lib/router/hooks/usePrefetchCache";
 
 const TestConsumer = ({
   queryKey,

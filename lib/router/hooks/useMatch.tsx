@@ -3,14 +3,14 @@ import React, {
   useState,
 } from "react";
 
-import { createRoutes } from "@/shared/lib/router/utils/create-routes";
-import { buildBranches } from "@/shared/lib/router/utils/build-branches";
-import { tokenizeBranches } from "@/shared/lib/router/utils/tokenize-branches";
-import { sortBranches } from "@/shared/lib/router/utils/sort-branches";
-import { matchRoute } from "@/shared/lib/router/utils/match-route";
-import { buildResourceMap } from "@/shared/lib/router/utils/build-resource-map";
-import useRouter from "@/shared/lib/router/hooks/useRouter";
-import { RouteObject } from "@/shared/lib/router/types/route-object";
+import { createRoutes } from "@lib/router/utils/create-routes";
+import { buildBranches } from "@lib/router/utils/build-branches";
+import { tokenizeBranches } from "@lib/router/utils/tokenize-branches";
+import { sortBranches } from "@lib/router/utils/sort-branches";
+import { matchRoute } from "@lib/router/utils/match-route";
+import { buildResourceMap } from "@lib/router/utils/build-resource-map";
+import useRouter from "@lib/router/hooks/useRouter";
+import { RouteObject } from "@lib/router/types/route-object";
 
 const useMatch = (children: React.ReactNode) => {
   const [matchedElement, setMatchedElement] =

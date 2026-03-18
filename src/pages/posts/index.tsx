@@ -1,8 +1,8 @@
 import { last } from "lodash";
 import styled from "styled-components/macro";
 
-import PostList from "@/pages/posts/components/PostList";
-import usePosts from "@/pages/posts/hooks/usePosts";
+import PostList from "@/features/posts/components/PostList";
+import usePosts from "@/features/posts/hooks/usePosts";
 import Spinner from "@/shared/components/Spinner";
 
 const PostPage = () => {

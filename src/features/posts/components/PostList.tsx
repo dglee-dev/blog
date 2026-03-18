@@ -1,4 +1,4 @@
-import useRouter from "@/shared/lib/router/hooks/useRouter";
+import useRouter from "@lib/router/hooks/useRouter";
 import { Path } from "@/shared/types/utils";
 import React from "react";
 import styled from "styled-components/macro";

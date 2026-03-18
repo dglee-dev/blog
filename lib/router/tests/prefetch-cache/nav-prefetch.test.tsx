@@ -5,17 +5,17 @@
 import React from "react";
 import { render, waitFor } from "@testing-library/react";
 
-import { PrefetchCacheProvider } from "@/shared/lib/router/context/PrefetchCacheContext";
-import usePrefetchCache from "@/shared/lib/router/hooks/usePrefetchCache";
-import Prefetch from "@/shared/lib/router/components/Prefetch";
+import { PrefetchCacheProvider } from "@lib/router/context/PrefetchCacheContext";
+import usePrefetchCache from "@lib/router/hooks/usePrefetchCache";
+import Prefetch from "@lib/router/components/Prefetch";
 
-jest.mock("@/pages/posts/api/fetchPosts", () =>
+jest.mock("@/features/posts/api/fetchPosts", () =>
   jest.fn(() =>
     Promise.resolve([{ Key: "post-1", ETag: "abc", Size: 100 }])
   )
 );
 
-import fetchPosts from "@/pages/posts/api/fetchPosts";
+import fetchPosts from "@/features/posts/api/fetchPosts";
 
 // IntersectionObserver stub
 let intersectionCallback: (

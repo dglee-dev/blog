@@ -1,4 +1,4 @@
-import { TokenizedBranch } from "@/shared/lib/router/types/route-branch";
+import { TokenizedBranch } from "@lib/router/types/route-branch";
 
 type MatchedParams = Record<string, string>;
 

@@ -7,10 +7,10 @@ import HomePage from "@/pages/Home";
 import PostPage from "@/pages/posts";
 
 import Nav from "@/components/Nav";
-import PostDetails from "@/pages/posts/components/PostDetails";
-import Route from "@/shared/lib/router/components/Route";
-import Routes from "@/shared/lib/router/components/Routes";
-import { PrefetchCacheProvider } from "@/shared/lib/router/context/PrefetchCacheContext";
+import PostDetails from "@/features/posts/components/PostDetails";
+import Route from "@lib/router/components/Route";
+import Routes from "@lib/router/components/Routes";
+import { PrefetchCacheProvider } from "@lib/router/context/PrefetchCacheContext";
 
 function App() {
   return (

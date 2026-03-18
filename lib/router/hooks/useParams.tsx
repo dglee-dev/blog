@@ -2,7 +2,7 @@ import { useContext, useMemo } from "react";
 import {
   ParamsContext,
   RouteParams,
-} from "@/shared/lib/router/context/ParamsContext";
+} from "@lib/router/context/ParamsContext";
 
 /**
  * useParams hook

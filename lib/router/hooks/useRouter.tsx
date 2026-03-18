@@ -1,6 +1,6 @@
 import { useContext } from "react";
 
-import { RoutePathContext } from "@/shared/lib/router/components/Router";
+import { RoutePathContext } from "@lib/router/components/Router";
 
 const useRouter = () => {
   const { routePath, setRoutePath } = useContext(

@@ -4,17 +4,17 @@
 import React from "react";
 import { render, waitFor, act } from "@testing-library/react";
 
-import { PrefetchCacheProvider } from "@/shared/lib/router/context/PrefetchCacheContext";
-import { usePrefetchCacheContext } from "@/shared/lib/router/context/PrefetchCacheContext";
-import usePosts from "@/pages/posts/hooks/usePosts";
+import { PrefetchCacheProvider } from "@lib/router/context/PrefetchCacheContext";
+import { usePrefetchCacheContext } from "@lib/router/context/PrefetchCacheContext";
+import usePosts from "@/features/posts/hooks/usePosts";
 
-jest.mock("@/pages/posts/api/fetchPosts", () =>
+jest.mock("@/features/posts/api/fetchPosts", () =>
   jest.fn(() =>
     Promise.resolve([{ Key: "post-1", ETag: "abc", Size: 100 }])
   )
 );
 
-import fetchPosts from "@/pages/posts/api/fetchPosts";
+import fetchPosts from "@/features/posts/api/fetchPosts";
 
 beforeEach(() => {
   jest.clearAllMocks();

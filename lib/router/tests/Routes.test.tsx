@@ -4,8 +4,8 @@
 
 import { render } from "@testing-library/react";
 
-import Route from "@/shared/lib/router/components/Route";
-import Routes from "@/shared/lib/router/components/Routes";
+import Route from "@lib/router/components/Route";
+import Routes from "@lib/router/components/Routes";
 
 type Pathname = `/${string}`;
 

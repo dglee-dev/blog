@@ -1,7 +1,7 @@
 import { chain, trimEnd, trim } from "lodash";
 
-import { RouteBranch } from "@/shared/lib/router/types/route-branch";
-import { RouteObject } from "@/shared/lib/router/types/route-object";
+import { RouteBranch } from "@lib/router/types/route-branch";
+import { RouteObject } from "@lib/router/types/route-object";
 
 export function buildBranches(
   routeObjects: RouteObject[],

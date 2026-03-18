@@ -1,5 +1,5 @@
-import { TokenizedBranch } from "@/shared/lib/router/types/route-branch";
-import { rankVector } from "@/shared/lib/router/utils/rank-vector";
+import { TokenizedBranch } from "@lib/router/types/route-branch";
+import { rankVector } from "@lib/router/utils/rank-vector";
 
 export function sortBranches(
   tokenizedBranches: TokenizedBranch[]

@@ -1,7 +1,7 @@
 import styled from "styled-components/macro";
-import useRouter from "@/shared/lib/router/hooks/useRouter";
-import Prefetch from "@/shared/lib/router/components/Prefetch";
-import fetchPosts from "@/pages/posts/api/fetchPosts";
+import useRouter from "@lib/router/hooks/useRouter";
+import Prefetch from "@lib/router/components/Prefetch";
+import fetchPosts from "@/features/posts/api/fetchPosts";
 
 const Nav = () => {
   const { navigate } = useRouter();

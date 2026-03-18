@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 
-import { usePrefetchCacheContext } from "@/shared/lib/router/context/PrefetchCacheContext";
+import { usePrefetchCacheContext } from "@lib/router/context/PrefetchCacheContext";
 
 interface PrefetchProps {
   queryKey: string;

@@ -1,4 +1,4 @@
-import { BranchToken } from "@/shared/lib/router/types/route-token";
+import { BranchToken } from "@lib/router/types/route-token";
 
 export type RouteBranch = {
   fullPath: string;

@@ -6,11 +6,11 @@ import {
   render,
   waitFor,
 } from "@testing-library/react";
-import Prefetch from "@/shared/lib/router/components/Prefetch";
+import Prefetch from "@lib/router/components/Prefetch";
 import {
   PrefetchCacheProvider,
   usePrefetchCacheContext,
-} from "@/shared/lib/router/context/PrefetchCacheContext";
+} from "@lib/router/context/PrefetchCacheContext";
 
 let intersectionCallback: (
   entries: IntersectionObserverEntry[],

@@ -1,5 +1,5 @@
-import { TokenizedBranch } from "@/shared/lib/router/types/route-branch";
-import { BranchToken } from "@/shared/lib/router/types/route-token";
+import { TokenizedBranch } from "@lib/router/types/route-branch";
+import { BranchToken } from "@lib/router/types/route-token";
 
 type TokenScore = 0 | 1 | 2 | 3;
 

@@ -1,6 +1,6 @@
 import React from "react";
 
-import useMatch from "@/shared/lib/router/hooks/useMatch";
+import useMatch from "@lib/router/hooks/useMatch";
 
 const Routes = ({
   children,

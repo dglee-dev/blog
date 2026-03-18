@@ -1,4 +1,4 @@
-import { usePrefetchCacheContext } from "@/shared/lib/router/context/PrefetchCacheContext";
+import { usePrefetchCacheContext } from "@lib/router/context/PrefetchCacheContext";
 
 const usePrefetchCache = <T>(key: string): T | undefined => {
   const { prefetchCache } = usePrefetchCacheContext();

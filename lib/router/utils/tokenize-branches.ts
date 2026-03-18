@@ -3,8 +3,8 @@ import { chain } from "lodash";
 import {
   RouteBranch,
   TokenizedBranch,
-} from "@/shared/lib/router/types/route-branch";
-import { BranchToken } from "@/shared/lib/router/types/route-token";
+} from "@lib/router/types/route-branch";
+import { BranchToken } from "@lib/router/types/route-token";
 
 export function tokenizeBranches(
   branches: RouteBranch[]

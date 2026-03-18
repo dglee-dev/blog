@@ -1,4 +1,4 @@
-import { RouteObject } from "@/shared/lib/router/types/route-object";
+import { RouteObject } from "@lib/router/types/route-object";
 import { nanoid } from "nanoid";
 import React from "react";
 
