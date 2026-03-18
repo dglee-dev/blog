@@ -12,6 +12,8 @@ const config = {
   testMatch: [
     "<rootDir>/src/**/*.{spec,test}.{js,jsx,ts,tsx}",
     "<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}",
+    "<rootDir>/lib/**/*.{spec,test}.{js,jsx,ts,tsx}",
+    "<rootDir>/lib/**/__tests__/**/*.{js,jsx,ts,tsx}",
     "<rootDir>/tests/**/*.{spec,test}.{js,ts}",
   ],
   testEnvironment: "node",
