@@ -32,6 +32,7 @@ module.exports = (env, argv) => {
     resolve: {
       alias: {
         "@": path.resolve(__dirname, "src"),
+        "@lib": path.resolve(__dirname, "lib"),
       },
       extensions: [".ts", ".tsx", ".js", ".jsx"], // import 확장자 생략 허용
     },
