@@ -4,7 +4,7 @@ const {
 const { compilerOptions } = require("./tsconfig");
 
 const config = {
-  roots: ["<rootDir>/src", "<rootDir>/tests"],
+  roots: ["<rootDir>/src", "<rootDir>/lib", "<rootDir>/tests"],
   collectCoverageFrom: [
     "src/**/*.{ts,tsx}",
     "!src/**/*.d.ts",
