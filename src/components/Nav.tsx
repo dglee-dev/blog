@@ -1,5 +1,7 @@
 import styled from "styled-components/macro";
 import useRouter from "@/shared/lib/router/hooks/useRouter";
+import Prefetch from "@/shared/lib/router/components/Prefetch";
+import fetchPosts from "@/pages/posts/api/fetchPosts";
 
 const Nav = () => {
   const { navigate } = useRouter();
@@ -11,9 +13,11 @@ const Nav = () => {
       </span>
 
       <List>
-        <span onClick={() => navigate("/posts")}>
-          POSTS
-        </span>
+        <Prefetch queryKey="posts" fetcher={fetchPosts}>
+          <span onClick={() => navigate("/posts")}>
+            POSTS
+          </span>
+        </Prefetch>
 
         <span
           onClick={() => navigate("/workroom")}

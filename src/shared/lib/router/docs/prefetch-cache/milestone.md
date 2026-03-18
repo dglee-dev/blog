@@ -29,10 +29,10 @@
 
 **체크리스트**
 
-- [ ] `Prefetch`가 viewport에 진입하는 순간 Network 탭에서 fetch 요청 발생
-- [ ] viewport 밖에 있을 때는 fetch 실행 안 됨
-- [ ] fetch 완료 후 PrefetchCacheContext에 올바른 query key로 저장
-- [ ] 한 번 실행 후 Intersection Observer가 disconnect되어 중복 요청 없음
+- [x] `Prefetch`가 viewport에 진입하는 순간 Network 탭에서 fetch 요청 발생
+- [x] viewport 밖에 있을 때는 fetch 실행 안 됨
+- [x] fetch 완료 후 PrefetchCacheContext에 올바른 query key로 저장
+- [x] 한 번 실행 후 Intersection Observer가 disconnect되어 중복 요청 없음
 
 ---
 
