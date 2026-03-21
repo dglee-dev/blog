@@ -14,6 +14,10 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
 
+  .no-overscroll {
+    overscroll-behavior: none;
+  }
+
   body {
     font-family: "Pretendard", "sans-serif";
     font-weight: 300;

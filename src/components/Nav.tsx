@@ -20,9 +20,15 @@ const Nav = () => {
         </Prefetch>
 
         <span
-          onClick={() => navigate("/workroom")}
+          onClick={() => navigate("/works")}
         >
-          WORKROOM
+          WORKS
+        </span>
+
+        <span
+          onClick={() => navigate("/demos")}
+        >
+          DEMOS
         </span>
       </List>
     </Container>

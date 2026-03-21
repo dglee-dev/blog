@@ -19,7 +19,7 @@ function App() {
 
       <Nav />
 
-      <Container>
+      <Container id="app-container">
         <Routes>
           <Route
             path="/"
@@ -34,7 +34,7 @@ function App() {
             element={<PostDetails />}
           />
           <Route
-            path="/workroom"
+            path="/works"
             element={<WorksPage />}
           />
         </Routes>

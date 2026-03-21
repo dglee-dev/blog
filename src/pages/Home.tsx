@@ -1,6 +1,8 @@
 import CardCarousel from "../components/CardCarousel";
+import useNoOverscroll from "@/shared/hooks/useNoOverscroll";
 
 const HomePage = () => {
+  useNoOverscroll("app-container");
   return (
     <CardCarousel total={4}>
       <CardCarousel.Item index={0}>
@@ -96,7 +98,7 @@ const HomePage = () => {
         </CardCarousel.Card>
       </CardCarousel.Item>
 
-      <CardCarousel.Nav />
+      {/* <CardCarousel.Nav /> */}
     </CardCarousel>
   );
 };
