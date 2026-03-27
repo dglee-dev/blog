@@ -1,5 +1,5 @@
 import ReactMarkdown from "react-markdown";
-import styled from "styled-components";
+import styled from "styled-components/macro";
 
 import usePost from "@/features/posts/hooks/usePost";
 
@@ -9,14 +9,19 @@ const PostDetails = () => {
   return (
     <Container>
       <ReactMarkdown>{contents}</ReactMarkdown>
+      <Spacer />
     </Container>
   );
 };
 
+const Spacer = styled.div`
+  height: 120px;
+`;
+
 const Container = styled.div`
   width: 100%;
   max-width: 680px;
-  padding: 48px 16px 120px;
+  padding: 48px 16px 0;
 
   h1, h2, h3, h4 {
     margin: 1.5em 0 0.5em;
