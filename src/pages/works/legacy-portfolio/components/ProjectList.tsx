@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled, { css } from "styled-components/macro";
 
 import TechStack from "./TechStack";
@@ -10,12 +10,30 @@ import { ProjectItem } from "../data/projects";
 const ProjectList = () => {
   const { isMobile } = useViewportType();
   const { projects } = useProjects();
+  const indexRef = useRef<HTMLDivElement>(null);
+  const [indexVisible, setIndexVisible] = useState(true);
+
+  useEffect(() => {
+    if (!indexRef.current) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setIndexVisible(entry.isIntersecting),
+      { threshold: 0 }
+    );
+    observer.observe(indexRef.current);
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <>
-      <Section>
+      <Section ref={indexRef}>
         {isMobile && <MobileList projects={projects} />}
       </Section>
+
+      {isMobile && !indexVisible && (
+        <BackToIndex onClick={() => indexRef.current?.scrollIntoView({ behavior: "smooth" })}>
+          BACK TO INDEX
+        </BackToIndex>
+      )}
 
       {projects.map((project: ProjectItem) => (
         <Section key={project.id} id={project.id}>
@@ -64,6 +82,19 @@ const ProjectList = () => {
     </>
   );
 };
+
+const BackToIndex = styled.button`
+  position: fixed;
+  bottom: 5px;
+  right: 5px;
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: "Gravi", sans-serif;
+  font-size: 15px;
+  cursor: pointer;
+  color: inherit;
+`;
 
 const LinkIcon = styled.a`
   display: inline-flex;
