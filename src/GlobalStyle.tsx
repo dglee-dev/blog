@@ -59,7 +59,9 @@ export default createGlobalStyle`
     outline: none;
   }
 
-  a:hover {
-    color: violet !important;
+  @media (hover: hover) {
+    a:hover {
+      color: violet !important;
+    }
   }
 `;
