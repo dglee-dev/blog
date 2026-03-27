@@ -56,8 +56,12 @@ const Title = styled.h1`
   letter-spacing: 0.2px;
   margin: 0 !important;
 
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
   @media (max-width: 480px) {
-    font-size: 16.2px;
+    font-size: 20px;
   }
 `;
 
