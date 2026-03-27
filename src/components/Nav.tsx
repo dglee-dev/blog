@@ -4,7 +4,7 @@ import Prefetch from "@lib/router/components/Prefetch";
 import fetchPosts from "@/features/posts/api/fetchPosts";
 
 const Nav = () => {
-  const { navigate } = useRouter();
+  const { navigate, routePath } = useRouter();
 
   return (
     <Container>
@@ -12,12 +12,20 @@ const Nav = () => {
 
       <List>
         <Prefetch queryKey="posts" fetcher={fetchPosts}>
-          <NavLink href="/posts" onClick={(e) => { e.preventDefault(); navigate("/posts"); }}>
+          <NavLink
+            href="/posts"
+            $active={routePath.startsWith("/posts")}
+            onClick={(e) => { e.preventDefault(); navigate("/posts"); }}
+          >
             POSTS
           </NavLink>
         </Prefetch>
 
-        <NavLink href="/works" onClick={(e) => { e.preventDefault(); navigate("/works"); }}>
+        <NavLink
+          href="/works"
+          $active={routePath.startsWith("/works")}
+          onClick={(e) => { e.preventDefault(); navigate("/works"); }}
+        >
           WORKS
         </NavLink>
 
@@ -66,7 +74,9 @@ const List = styled.div`
   padding-right: 1.5em;
 `;
 
-const NavLink = styled.a``;
+const NavLink = styled.a<{ $active?: boolean }>`
+  ${({ $active }) => $active && "color: #aaa !important;"}
+`;
 
 const NavTitle = styled.span``;
 

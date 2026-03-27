@@ -88,6 +88,12 @@ const GoBack = styled.button`
   }
 
   @media (max-width: 480px) {
+    &:hover {
+      color: inherit;
+    }
+  }
+
+  @media (max-width: 480px) {
     display: none;
   }
 `;
