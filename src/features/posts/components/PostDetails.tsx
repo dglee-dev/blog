@@ -83,13 +83,9 @@ const GoBack = styled.button`
   color: inherit;
   white-space: nowrap;
 
-  &:hover {
-    color: violet;
-  }
-
-  @media (max-width: 480px) {
+  @media (hover: hover) {
     &:hover {
-      color: inherit;
+      color: violet;
     }
   }
 
