@@ -95,15 +95,19 @@ function matchFailed() {
   return null;
 }
 
+function stripQueryString(path: string) {
+  return path.split("?")[0];
+}
+
 function splitPath(pathname) {
-  const trimmed = trimSlashes(pathname);
+  const trimmed = trimSlashes(stripQueryString(pathname));
 
   return trimmed ? trimmed.split("/") : [];
 }
 
 function isSamePath(one, another) {
   return (
-    trimSlashes(one) === trimSlashes(another)
+    trimSlashes(stripQueryString(one)) === trimSlashes(stripQueryString(another))
   );
 }
 

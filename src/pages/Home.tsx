@@ -1,8 +1,18 @@
+import { useEffect } from "react";
 import CardCarousel from "../components/CardCarousel";
 import useNoOverscroll from "@/shared/hooks/useNoOverscroll";
+import useRouter from "@lib/router/hooks/useRouter";
 
 const HomePage = () => {
   useNoOverscroll("app-container");
+  const { navigate } = useRouter();
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.has("tag")) {
+      navigate(`/works?${params.toString()}`);
+    }
+  }, []);
   return (
     <CardCarousel total={4}>
       <CardCarousel.Item index={0}>
