@@ -55,6 +55,10 @@ const Title = styled.h1`
   line-height: 1.3;
   letter-spacing: 0.2px;
   margin: 0 !important;
+
+  @media (max-width: 480px) {
+    font-size: 16.2px;
+  }
 `;
 
 const Description = styled.p`
@@ -77,6 +81,10 @@ const GoBack = styled.button`
 
   &:hover {
     color: violet;
+  }
+
+  @media (max-width: 480px) {
+    display: none;
   }
 `;
 
