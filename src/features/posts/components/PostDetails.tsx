@@ -16,7 +16,7 @@ const PostDetails = () => {
 const Container = styled.div`
   width: 100%;
   max-width: 680px;
-  padding: 48px 16px;
+  padding: 48px 16px 120px;
 
   h1, h2, h3, h4 {
     margin: 1.5em 0 0.5em;
