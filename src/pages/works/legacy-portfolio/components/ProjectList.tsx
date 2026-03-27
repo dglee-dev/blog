@@ -39,7 +39,7 @@ const ProjectList = () => {
         )}
       </Section>
 
-      {isMobile && !indexVisible && (
+      {/* {isMobile && !indexVisible && (
         <BackToIndex
           onClick={() => {
             let el: HTMLElement | null =
@@ -62,7 +62,7 @@ const ProjectList = () => {
         >
           BACK TO INDEX
         </BackToIndex>
-      )}
+      )} */}
 
       {projects.map((project: ProjectItem) => (
         <Section key={project.id} id={project.id}>
