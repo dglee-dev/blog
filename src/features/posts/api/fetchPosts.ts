@@ -1,12 +1,31 @@
+import matter from "gray-matter";
+
 export interface PostObject {
   Key: string;
-  ETag: string;
-  Size: number;
+  title: string;
+  date: string;
+  tags: string[];
 }
 
-const fetchPosts = (): Promise<PostObject[]> =>
-  fetch(
-    "https://oct7lssmetmk5ftplu4npwnwne0bdkyp.lambda-url.ap-northeast-2.on.aws"
-  ).then((res) => res.json());
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const ctx = (require as any).context("../../../../docs/posts", false, /\.md$/);
+
+const fetchPosts = (): Promise<PostObject[]> => {
+  const posts: PostObject[] = ctx.keys().map((key: string) => {
+    const raw = ctx(key) as string;
+    const { data } = matter(raw);
+    const filename = key.replace("./", "");
+    return {
+      Key: `posts/${filename}`,
+      title: data.title ?? filename.replace(".md", ""),
+      date: data.date ? String(data.date).slice(0, 10) : "",
+      tags: data.tags ?? [],
+    };
+  });
+
+  posts.sort((a, b) => (a.date > b.date ? -1 : 1));
+
+  return Promise.resolve(posts);
+};
 
 export default fetchPosts;

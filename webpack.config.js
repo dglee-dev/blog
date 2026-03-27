@@ -47,6 +47,10 @@ module.exports = (env, argv) => {
           test: /\.css$/,
           use: ["style-loader", "css-loader"],
         },
+        {
+          test: /\.md$/,
+          type: "asset/source",
+        },
       ],
     },
     plugins,

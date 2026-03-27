@@ -21,7 +21,7 @@ const PostPage = () => {
           return (
             <PostList.Item
               key={`Post-${index}`}
-              title={filename.split(".md")[0]}
+              title={post.title ?? filename.split(".md")[0]}
               href={`/posts/${filename}`}
             />
           );

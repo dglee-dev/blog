@@ -2,38 +2,28 @@ import { last } from "lodash";
 import matter from "gray-matter";
 import { useEffect, useState } from "react";
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const ctx = (require as any).context("../../../../docs/posts", false, /\.md$/);
+
 const usePost = () => {
   const [contents, setContents] = useState("");
 
   useEffect(() => {
     const pathname = window.location.pathname;
-    const filename = decodeURIComponent(
-      last(pathname.split("/"))
-    );
+    const filename = decodeURIComponent(last(pathname.split("/")));
 
-    (async function () {
-      const markdownStrings =
-        await fetchFileContents(filename);
-
-      const parsed = matter(markdownStrings);
-
-      setContents(parsed.content);
-    })();
+    try {
+      const raw = ctx(`./${filename}`) as string;
+      const { content } = matter(raw);
+      setContents(content);
+    } catch {
+      setContents("포스트를 찾을 수 없습니다.");
+    }
   }, []);
 
   return {
     contents,
   };
-};
-
-const fetchFileContents = async (
-  filename: string
-) => {
-  const res = await fetch(
-    "https://whgxy3lfdxsly3nol276h5djia0upiwd.lambda-url.ap-northeast-2.on.aws"
-  );
-
-  return await res.text();
 };
 
 export default usePost;
