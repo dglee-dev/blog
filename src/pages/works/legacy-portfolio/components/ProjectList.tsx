@@ -41,11 +41,24 @@ const ProjectList = () => {
 
       {isMobile && !indexVisible && (
         <BackToIndex
-          onClick={() =>
-            indexRef.current?.scrollIntoView({
-              behavior: "instant",
-            })
-          }
+          onClick={() => {
+            let el: HTMLElement | null =
+              indexRef.current?.parentElement ?? null;
+            while (el) {
+              const { overflowY, overflow } =
+                getComputedStyle(el);
+              if (
+                overflowY === "auto" ||
+                overflowY === "scroll" ||
+                overflow === "auto" ||
+                overflow === "scroll"
+              ) {
+                el.scrollTop = 0;
+                return;
+              }
+              el = el.parentElement;
+            }
+          }}
         >
           BACK TO INDEX
         </BackToIndex>
