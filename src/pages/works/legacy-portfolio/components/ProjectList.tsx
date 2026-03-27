@@ -115,8 +115,8 @@ const ProjectList = () => {
 
 const BackToIndex = styled.button`
   position: fixed;
-  bottom: 5px;
-  right: 5px;
+  bottom: 8px;
+  right: 8px;
   background: none;
   border: none;
   padding: 0;
