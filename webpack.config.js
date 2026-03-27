@@ -51,6 +51,10 @@ module.exports = (env, argv) => {
           test: /\.md$/,
           type: "asset/source",
         },
+        {
+          test: /\.(svg|png|jpg|jpeg|gif|webp|webm|mp4|mov|otf|woff|woff2)$/,
+          type: "asset/resource",
+        },
       ],
     },
     plugins,

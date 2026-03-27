@@ -36,6 +36,7 @@ PostList.Item = ({
       style={{
         fontSize: "16px",
         listStyle: "none",
+        cursor: "pointer",
       }}
       onClick={() => {
         if (href) router.navigate(href as Path);

@@ -34,6 +34,7 @@ const PostPage = () => {
 const Container = styled.div`
   width: 100%;
   max-width: 500px;
+  padding-top: 80px;
 `;
 
 const SpinnerContainer = styled.div`

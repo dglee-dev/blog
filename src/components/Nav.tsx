@@ -25,11 +25,11 @@ const Nav = () => {
           WORKS
         </span>
 
-        <span
+        {/* <span
           onClick={() => navigate("/demos")}
         >
           DEMOS
-        </span>
+        </span> */}
       </List>
     </Container>
   );

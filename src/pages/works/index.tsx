@@ -1,46 +1,77 @@
-import { useStore } from "zustand";
 import styled from "styled-components/macro";
-
-import { workItemStore } from "@/pages/works/store/work-items";
-import WorkItemSelector from "@/pages/works/components/work-item-selector";
-import WorkItemSelectorList from "@/pages/works/components/work-item-selector-list";
-import WorkItemSelectorLine from "@/pages/works/components/work-item-selector-line";
-import WorkItemTitle from "@/pages/works/components/work-item-title";
-import WorkItemDetails from "@/pages/works/components/work-item-details";
+import ProjectList from "./legacy-portfolio/components/ProjectList";
 
 const WorksPage = () => {
-  const { works } = useStore(workItemStore);
-
   return (
-    <Container>
-      <WorkItemSelector>
-        <div
-          style={{
-            // backgroundColor: "violet",
-            display: "flex",
-          }}
-        >
-          <WorkItemTitle />
-          <WorkItemSelectorList works={works} />
-          <WorkItemDetails.Description />
-        </div>
-
-        <WorkItemSelectorLine />
-      </WorkItemSelector>
-    </Container>
+    <Layout>
+      <ProjectList />
+      <Footer>
+        <span>© {new Date().getFullYear()} Donggyu Lee. All rights reserved.</span>
+      </Footer>
+    </Layout>
   );
 };
 
-const Container = styled.div`
+const Footer = styled.footer`
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 20px;
+
+  padding: 24px 1em 36px;
+  border-top: 1px solid #e0e0e0;
+  margin-top: 2em;
+
+  font-size: 12px;
+  color: #888;
+
+  a {
+    color: #888;
+    text-decoration: none;
+
+    &:hover {
+      color: #333;
+    }
+  }
+
+  @media only screen and (max-width: 480px) {
+    display: none;
+  }
+`;
+
+const Spacer = styled.div`
+  height: 48px;
+
+  @media only screen and (max-width: 480px) {
+    display: none;
+  }
+`;
+
+const Layout = styled.div`
+  background-color: white;
 
   width: 100%;
-  height: 100%;
-  overflow-y: auto;
+  max-width: 240mm;
 
-  /* background-color: orange; */
+  margin: 0 auto;
+  padding: 80px 1em 48px;
+
+  @media only screen and (max-width: 480px) {
+    min-height: 100dvh;
+    height: 100dvh;
+
+    overflow: auto;
+    scroll-snap-type: y mandatory;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    padding: 0;
+  }
 `;
 
 export default WorksPage;

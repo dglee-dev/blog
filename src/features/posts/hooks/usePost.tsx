@@ -7,6 +7,7 @@ const ctx = (require as any).context("../../../../docs/posts", false, /\.md$/);
 
 const usePost = () => {
   const [contents, setContents] = useState("");
+  const [title, setTitle] = useState("");
 
   useEffect(() => {
     const pathname = window.location.pathname;
@@ -14,8 +15,9 @@ const usePost = () => {
 
     try {
       const raw = ctx(`./${filename}`) as string;
-      const { content } = matter(raw);
+      const { content, data } = matter(raw);
       setContents(content);
+      setTitle(data.title ?? "");
     } catch {
       setContents("포스트를 찾을 수 없습니다.");
     }
@@ -23,6 +25,7 @@ const usePost = () => {
 
   return {
     contents,
+    title,
   };
 };
 

@@ -4,15 +4,23 @@ import styled from "styled-components/macro";
 import usePost from "@/features/posts/hooks/usePost";
 
 const PostDetails = () => {
-  const { contents } = usePost();
+  const { contents, title } = usePost();
 
   return (
     <Container>
+      {title && <Title>{title}</Title>}
       <ReactMarkdown>{contents}</ReactMarkdown>
       <Spacer />
     </Container>
   );
 };
+
+const Title = styled.h1`
+  font-size: 1.4em;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 0 0 1.5em;
+`;
 
 const Spacer = styled.div`
   height: 120px;
