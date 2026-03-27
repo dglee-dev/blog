@@ -21,16 +21,19 @@ const ProjectList = () => {
         <Section key={project.id}>
           <div className="desc">
             <h1>
-              {project.titleHref ? (
-                <a
+              {project.title}
+              {project.titleHref && (
+                <LinkIcon
+                  href={project.titleHref}
                   target="_blank"
                   rel="noreferrer"
-                  href={project.titleHref}
+                  aria-label="link"
                 >
-                  {project.title}
-                </a>
-              ) : (
-                project.title
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+                    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+                  </svg>
+                </LinkIcon>
               )}
             </h1>
             {project.description}
@@ -62,8 +65,20 @@ const ProjectList = () => {
   );
 };
 
+const LinkIcon = styled.a`
+  display: inline-flex;
+  align-items: center;
+  margin-left: 6px;
+  color: #000;
+  vertical-align: -0.1em;
+`;
+
 const Section = styled.div`
   margin-bottom: 2em;
+
+  a {
+    color: inherit;
+  }
 
   h1 {
     font-size: 1.2em;

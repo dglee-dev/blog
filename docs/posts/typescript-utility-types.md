@@ -2,9 +2,10 @@
 title: TypeScript 유틸리티 타입 제대로 쓰기
 date: 2024-05-22
 tags: [typescript, types]
+description: |
+  TypeScript의 내장 유틸리티 타입들은 반복적인 타입 정의를 줄이고 표현력을 높여준다.
+  자주 쓰지만 놓치기 쉬운 것들을 정리했다.
 ---
-
-TypeScript의 내장 유틸리티 타입들은 반복적인 타입 정의를 줄이고 표현력을 높여준다. 자주 쓰지만 놓치기 쉬운 것들을 정리했다.
 
 ## Partial vs Required
 

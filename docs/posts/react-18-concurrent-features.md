@@ -2,9 +2,10 @@
 title: React 18의 Concurrent 기능 살펴보기
 date: 2024-03-15
 tags: [react, concurrent, performance]
+description: |
+  React 18에서 도입된 Concurrent 기능들은 UI의 반응성을 크게 개선해준다.
+  핵심은 렌더링을 중단하고 재개할 수 있는 능력이다.
 ---
-
-React 18에서 도입된 Concurrent 기능들은 UI의 반응성을 크게 개선해준다. 핵심은 렌더링을 중단하고 재개할 수 있는 능력이다.
 
 ## startTransition
 

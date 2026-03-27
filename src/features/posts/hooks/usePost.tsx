@@ -8,6 +8,7 @@ const ctx = (require as any).context("../../../../docs/posts", false, /\.md$/);
 const usePost = () => {
   const [contents, setContents] = useState("");
   const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
 
   useEffect(() => {
     const pathname = window.location.pathname;
@@ -18,6 +19,7 @@ const usePost = () => {
       const { content, data } = matter(raw);
       setContents(content);
       setTitle(data.title ?? "");
+      setDescription(data.description ?? "");
     } catch {
       setContents("포스트를 찾을 수 없습니다.");
     }
@@ -26,6 +28,7 @@ const usePost = () => {
   return {
     contents,
     title,
+    description,
   };
 };
 

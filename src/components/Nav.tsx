@@ -8,28 +8,24 @@ const Nav = () => {
 
   return (
     <Container>
-      <span onClick={() => navigate("/")}>
+      <NavLink href="/" onClick={(e) => { e.preventDefault(); navigate("/"); }}>
         DONGGYU LEE
-      </span>
+      </NavLink>
 
       <List>
         <Prefetch queryKey="posts" fetcher={fetchPosts}>
-          <span onClick={() => navigate("/posts")}>
+          <NavLink href="/posts" onClick={(e) => { e.preventDefault(); navigate("/posts"); }}>
             POSTS
-          </span>
+          </NavLink>
         </Prefetch>
 
-        <span
-          onClick={() => navigate("/works")}
-        >
+        <NavLink href="/works" onClick={(e) => { e.preventDefault(); navigate("/works"); }}>
           WORKS
-        </span>
+        </NavLink>
 
-        {/* <span
-          onClick={() => navigate("/demos")}
-        >
+        {/* <NavLink href="/demos" onClick={(e) => { e.preventDefault(); navigate("/demos"); }}>
           DEMOS
-        </span> */}
+        </NavLink> */}
       </List>
     </Container>
   );
@@ -57,13 +53,10 @@ const Container = styled.div`
 
   & a {
     text-decoration: none;
-  }
-
-  & span {
+    color: inherit;
     display: flex;
     justify-content: center;
     align-items: center;
-
     cursor: pointer;
   }
 `;
@@ -73,10 +66,8 @@ const List = styled.div`
   gap: 1em;
 
   padding-right: 1.5em;
-
-  & span {
-    cursor: pointer;
-  }
 `;
+
+const NavLink = styled.a``;
 
 export default Nav;

@@ -58,4 +58,8 @@ export default createGlobalStyle`
     height: 1.8em;
     outline: none;
   }
+
+  a:hover {
+    color: violet !important;
+  }
 `;

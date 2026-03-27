@@ -2,9 +2,10 @@
 title: Prefetch로 체감 성능 올리기
 date: 2024-08-10
 tags: [performance, prefetch, ux]
+description: |
+  실제 로딩 시간을 줄이는 것과 사용자가 느끼는 빠름은 다른 문제다.
+  Prefetch는 사용자가 요청하기 전에 미리 데이터를 가져와서 체감 성능을 높이는 기법이다.
 ---
-
-실제 로딩 시간을 줄이는 것과 사용자가 느끼는 빠름은 다른 문제다. Prefetch는 사용자가 요청하기 전에 미리 데이터를 가져와서 체감 성능을 높이는 기법이다.
 
 ## 언제 Prefetch할까
 

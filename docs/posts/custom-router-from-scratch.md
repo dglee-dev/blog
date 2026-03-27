@@ -2,9 +2,10 @@
 title: 라우터를 직접 만들면 생기는 일들
 date: 2024-11-03
 tags: [router, spa, history-api]
+description: |
+  React Router나 TanStack Router 없이 라우터를 직접 만들어보면 SPA가 어떻게 동작하는지 더 잘 이해하게 된다.
+  History API가 핵심이다.
 ---
-
-React Router나 TanStack Router 없이 라우터를 직접 만들어보면 SPA가 어떻게 동작하는지 더 잘 이해하게 된다. History API가 핵심이다.
 
 ## History API 기초
 

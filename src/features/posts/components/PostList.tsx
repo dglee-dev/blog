@@ -32,17 +32,16 @@ PostList.Item = ({
   const router = useRouter();
 
   return (
-    <li
-      style={{
-        fontSize: "16px",
-        listStyle: "none",
-        cursor: "pointer",
-      }}
-      onClick={() => {
-        if (href) router.navigate(href as Path);
-      }}
-    >
-      {title}
+    <li style={{ listStyle: "none" }}>
+      <a
+        href={href}
+        style={{ fontSize: "16px", textDecoration: "none", color: "inherit" }}
+        onClick={(e) => {
+          if (href) { e.preventDefault(); router.navigate(href as Path); }
+        }}
+      >
+        {title}
+      </a>
     </li>
   );
 };
