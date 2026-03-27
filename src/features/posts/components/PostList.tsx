@@ -20,6 +20,10 @@ PostList.Container = styled.ul`
   flex-direction: column;
   gap: 8px;
   padding: 48px 0;
+
+  @media (max-width: 480px) {
+    padding-left: 20px;
+  }
 `;
 
 PostList.Item = ({
