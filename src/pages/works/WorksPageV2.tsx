@@ -7,26 +7,33 @@ import WorkItemSelectorList from "@/pages/works/components/work-item-selector-li
 import WorkItemSelectorLine from "@/pages/works/components/work-item-selector-line";
 import WorkItemTitle from "@/pages/works/components/work-item-title";
 import WorkItemDetails from "@/pages/works/components/work-item-details";
+import WorksMobileIndex from "@/pages/works/components/works-mobile-index";
 
 const WorksPage = () => {
   const { works } = useStore(workItemStore);
 
   return (
     <Container>
-      <WorkItemSelector>
-        <div
-          style={{
-            // backgroundColor: "violet",
-            display: "flex",
-          }}
-        >
-          <WorkItemTitle />
-          <WorkItemSelectorList works={works} />
-          <WorkItemDetails.Description />
-        </div>
+      <MobileOnly>
+        <WorksMobileIndex works={works} />
+      </MobileOnly>
 
-        <WorkItemSelectorLine />
-      </WorkItemSelector>
+      <DesktopOnly>
+        <WorkItemSelector>
+          <div
+            style={{
+              // backgroundColor: "violet",
+              display: "flex",
+            }}
+          >
+            <WorkItemTitle />
+            <WorkItemSelectorList works={works} />
+            <WorkItemDetails.Description />
+          </div>
+
+          <WorkItemSelectorLine />
+        </WorkItemSelector>
+      </DesktopOnly>
     </Container>
   );
 };
@@ -41,6 +48,23 @@ const Container = styled.div`
   overflow-y: auto;
 
   /* background-color: orange; */
+`;
+
+const MobileOnly = styled.div`
+  display: none;
+  width: 100%;
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+`;
+
+const DesktopOnly = styled.div`
+  display: contents;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export default WorksPage;

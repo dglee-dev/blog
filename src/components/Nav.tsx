@@ -8,9 +8,7 @@ const Nav = () => {
 
   return (
     <Container>
-      <NavLink href="/" onClick={(e) => { e.preventDefault(); navigate("/"); }}>
-        DONGGYU LEE
-      </NavLink>
+      <NavTitle>DONGGYU LEE</NavTitle>
 
       <List>
         <Prefetch queryKey="posts" fetcher={fetchPosts}>
@@ -69,5 +67,7 @@ const List = styled.div`
 `;
 
 const NavLink = styled.a``;
+
+const NavTitle = styled.span``;
 
 export default Nav;

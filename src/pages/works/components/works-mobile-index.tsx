@@ -1,24 +1,19 @@
-import React from "react";
 import styled from "styled-components/macro";
 
-import { ProjectItem } from "../data/projects";
+import { WithId } from "@/shared/types/utils";
+import { WorkItem } from "@/pages/works/types";
 
 interface Props {
-  projects: ProjectItem[];
+  works: Array<WithId<WorkItem>>;
 }
 
-const MobileList = ({ projects }: Props) => {
+const WorksMobileIndex = ({ works }: Props) => {
   return (
     <Container>
-      {projects.map((project, index) => (
-        <IndexItem
-          key={project.id}
-          href={`#${project.id}`}
-        >
-          <Number>
-            {String(index + 1).padStart(2, "0")}
-          </Number>
-          <Title>{project.title}</Title>
+      {works.map((work, index) => (
+        <IndexItem key={work.id} href={`#${work.slug}`}>
+          <Number>{String(index + 1).padStart(2, "0")}</Number>
+          <Title>{work.title}</Title>
         </IndexItem>
       ))}
     </Container>
@@ -30,14 +25,15 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   gap: 4px;
-  min-height: 100dvh;
-  padding: 40px 0;
+  height: 100dvh;
+  padding: 40px 28px;
 `;
 
 const IndexItem = styled.a`
   display: flex;
   align-items: baseline;
-  padding: 4px 0;
+  gap: 14px;
+  padding: 10px 0;
   text-decoration: none;
   color: inherit;
   border-bottom: 1px solid #f0f0f0;
@@ -55,8 +51,9 @@ const Number = styled.span`
 `;
 
 const Title = styled.span`
-  font-size: 1em;
+  font-family: "Gravi", sans-serif;
+  font-size: 1.1em;
   font-weight: 500;
 `;
 
-export default MobileList;
+export default WorksMobileIndex;

@@ -14,11 +14,11 @@ const ProjectList = () => {
   return (
     <>
       <Section>
-        {isMobile && <MobileList />}
+        {isMobile && <MobileList projects={projects} />}
       </Section>
 
       {projects.map((project: ProjectItem) => (
-        <Section key={project.id}>
+        <Section key={project.id} id={project.id}>
           <div className="desc">
             <h1>
               {project.title}

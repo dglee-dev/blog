@@ -11,6 +11,8 @@ const HomePage = () => {
     const params = new URLSearchParams(window.location.search);
     if (params.has("tag")) {
       navigate(`/works?${params.toString()}`);
+    } else {
+      navigate("/works");
     }
   }, []);
   return (
