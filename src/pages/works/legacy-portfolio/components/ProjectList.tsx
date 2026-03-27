@@ -1,5 +1,11 @@
-import React, { useEffect, useRef, useState } from "react";
-import styled, { css } from "styled-components/macro";
+import React, {
+  useEffect,
+  useRef,
+  useState,
+} from "react";
+import styled, {
+  css,
+} from "styled-components/macro";
 
 import TechStack from "./TechStack";
 import MobileList from "./MobileList";
@@ -11,13 +17,15 @@ const ProjectList = () => {
   const { isMobile } = useViewportType();
   const { projects } = useProjects();
   const indexRef = useRef<HTMLDivElement>(null);
-  const [indexVisible, setIndexVisible] = useState(true);
+  const [indexVisible, setIndexVisible] =
+    useState(true);
 
   useEffect(() => {
     if (!indexRef.current) return;
     const observer = new IntersectionObserver(
-      ([entry]) => setIndexVisible(entry.isIntersecting),
-      { threshold: 0 }
+      ([entry]) =>
+        setIndexVisible(entry.isIntersecting),
+      { threshold: 0 },
     );
     observer.observe(indexRef.current);
     return () => observer.disconnect();
@@ -26,11 +34,19 @@ const ProjectList = () => {
   return (
     <>
       <Section ref={indexRef}>
-        {isMobile && <MobileList projects={projects} />}
+        {isMobile && (
+          <MobileList projects={projects} />
+        )}
       </Section>
 
       {isMobile && !indexVisible && (
-        <BackToIndex onClick={() => indexRef.current?.scrollIntoView({ behavior: "smooth" })}>
+        <BackToIndex
+          onClick={() =>
+            indexRef.current?.scrollIntoView({
+              behavior: "instant",
+            })
+          }
+        >
           BACK TO INDEX
         </BackToIndex>
       )}
@@ -47,7 +63,16 @@ const ProjectList = () => {
                   rel="noreferrer"
                   aria-label="link"
                 >
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg
+                    width="13"
+                    height="13"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
                     <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
                     <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
                   </svg>
@@ -56,7 +81,9 @@ const ProjectList = () => {
             </h1>
             {project.description}
             {project.techStack && (
-              <TechStack stacks={project.techStack} />
+              <TechStack
+                stacks={project.techStack}
+              />
             )}
           </div>
 
@@ -68,7 +95,10 @@ const ProjectList = () => {
               playsInline
               style={project.media.style}
             >
-              <source src={project.media.src} type="video/mp4" />
+              <source
+                src={project.media.src}
+                type="video/mp4"
+              />
             </Video>
           ) : (
             <Image
