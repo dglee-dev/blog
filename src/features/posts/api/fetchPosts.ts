@@ -18,7 +18,9 @@ const fetchPosts = (): Promise<PostObject[]> => {
     return {
       Key: `posts/${filename}`,
       title: data.title ?? filename.replace(".md", ""),
-      date: data.date ? String(data.date).slice(0, 10) : "",
+      date: data.date instanceof Date
+        ? data.date.toISOString().slice(0, 10)
+        : data.date ? String(data.date).slice(0, 10) : "",
       tags: data.tags ?? [],
     };
   });
