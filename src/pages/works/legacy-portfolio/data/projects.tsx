@@ -119,7 +119,8 @@ const projects: ProjectItem[] = [
   {
     id: "emotion-decoder",
     title: "앤어플랜트 이모션디코더",
-    titleHref: "https://www.decoding-my-emotion.com/",
+    titleHref:
+      "https://www.decoding-my-emotion.com/",
     description: (
       <p>
         <a
@@ -142,7 +143,7 @@ const projects: ProjectItem[] = [
     ),
     media: {
       type: "video",
-      src: "https://ddbjbm834jucr.cloudfront.net/%E1%84%8B%E1%85%B5%E1%84%86%E1%85%A9%E1%84%89%E1%85%A7%E1%86%AB%E1%84%83%E1%85%B5%E1%84%8B%E1%85%A9-%E1%84%91%E1%85%A9%E1%84%90%E1%85%B3%E1%84%91%E1%85%A9%E1%86%AF%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A9-%E1%84%87%E1%85%B5%E1%84%83%E1%85%B5%E1%84%8B%E1%85%A9.mp4",
+      src: "https://d2fcahg5tqhff.cloudfront.net/videos/emotion-decoder.mp4",
     },
     tags: ["interactive", "exhibition"],
   },
@@ -256,7 +257,8 @@ const projects: ProjectItem[] = [
   {
     id: "ar-heritage",
     title: "대동 AR Heritage",
-    titleHref: "https://daedong-mobile-web.vercel.app/",
+    titleHref:
+      "https://daedong-mobile-web.vercel.app/",
     description: (
       <p>
         광주광역시의 대동의 여러 지역들과 관련된
@@ -323,7 +325,10 @@ const projects: ProjectItem[] = [
     media: {
       type: "video",
       src: "https://ddbjbm834jucr.cloudfront.net/korea-memorial-cropped.mp4",
-      style: { objectFit: "contain", backgroundColor: "black" },
+      style: {
+        objectFit: "contain",
+        backgroundColor: "black",
+      },
     },
     tags: ["ar", "mobile"],
   },
@@ -402,7 +407,8 @@ const projects: ProjectItem[] = [
   {
     id: "piknic-opticalme",
     title: "옵티컬 미 포텐셜 미",
-    titleHref: "https://piknic-entrepreneurship.vercel.app/",
+    titleHref:
+      "https://piknic-entrepreneurship.vercel.app/",
     description: (
       <p>
         복합 문화공간 피크닉의 전시{" "}
@@ -438,7 +444,8 @@ const projects: ProjectItem[] = [
   {
     id: "piknic-garden",
     title: "정원 만들기",
-    titleHref: "https://piknic-piet-oudolf.netlify.app/",
+    titleHref:
+      "https://piknic-piet-oudolf.netlify.app/",
     description: (
       <p>
         정원을 주제로 한 피크닉의 전시 `정원
@@ -534,7 +541,10 @@ const projects: ProjectItem[] = [
       { name: "Recoil", icon: "recoil" },
       { name: "React Query", icon: "reactquery" },
       { name: "GraphQL", icon: "graphql" },
-      { name: "아임포트(포트원)", icon: "portone" },
+      {
+        name: "아임포트(포트원)",
+        icon: "portone",
+      },
     ],
     tags: ["web"],
   },
@@ -563,7 +573,10 @@ const projects: ProjectItem[] = [
       { name: "TypeScript", icon: "typescript" },
       { name: "Apollo Client", icon: "apollo" },
       { name: "GraphQL", icon: "graphql" },
-      { name: "React hook form", icon: "hookform" },
+      {
+        name: "React hook form",
+        icon: "hookform",
+      },
     ],
     tags: ["web"],
   },
@@ -595,7 +608,10 @@ const projects: ProjectItem[] = [
     techStack: [
       { name: "Figma", icon: "figma" },
       { name: "Next.js", icon: "nextjs" },
-      { name: "아임포트(포트원)", icon: "portone" },
+      {
+        name: "아임포트(포트원)",
+        icon: "portone",
+      },
     ],
     tags: ["web"],
   },
