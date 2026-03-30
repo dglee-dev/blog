@@ -138,7 +138,7 @@ const projects: ProjectItem[] = [
       src: "https://ddbjbm834jucr.cloudfront.net/moon-over-cj.mp4",
       style: { objectFit: "cover" },
     },
-    tags: ["interactive", "exhibition", "mobile"],
+    tags: ["interactive", "exhibition"],
   },
   {
     id: "emotion-decoder",
