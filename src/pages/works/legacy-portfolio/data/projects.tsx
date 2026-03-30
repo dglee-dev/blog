@@ -570,7 +570,7 @@ const projects: ProjectItem[] = [
         icon: "portone",
       },
     ],
-    tags: ["web"],
+    tags: ["web", "mobile"],
   },
   {
     id: "chopsticks-seller",
