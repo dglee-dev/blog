@@ -44,6 +44,30 @@ export type ProjectItem = {
 
 const projects: ProjectItem[] = [
   {
+    id: "galaxy-card",
+    title: "갤럭시 카드",
+    titleHref: "https://galaxy-card.vercel.app/",
+    description: (
+      <p>
+        레이어 컬러 배합과 그라데이션, 정규화된
+        포인터 좌표를 이용해 홀로그램 효과를 가진
+        카드를 구현한 인터랙션 데모 스니펫입니다.
+        <br />
+        <br />
+        <a href="https://poke-holo.simey.me/">
+          poke-holo
+        </a>
+        의 구현을 참고하여 제작되었습니다.
+      </p>
+    ),
+    media: {
+      type: "video",
+      src: "https://d2fcahg5tqhff.cloudfront.net/videos/galaxy-card.mp4",
+      style: { objectFit: "contain" },
+    },
+    tags: ["web", "interactive"],
+  },
+  {
     id: "andongza",
     title: "안동선 에디터 아카이브",
     titleHref: "https://andongza.works",
