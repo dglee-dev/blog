@@ -249,7 +249,7 @@ const projects: ProjectItem[] = [
     ),
     media: {
       type: "video",
-      src: "https://d2fcahg5tqhff.cloudfront.net.amazonaws.com/videos/sb-treasure-pf.mp4",
+      src: "https://d2fcahg5tqhff.cloudfront.net/videos/sb-treasure-pf.mp4",
       style: { objectFit: "cover" },
     },
     tags: ["ar", "mobile"],
