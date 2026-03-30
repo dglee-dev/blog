@@ -220,7 +220,12 @@ const projects: ProjectItem[] = [
       src: "https://d2fcahg5tqhff.cloudfront.net/videos/seonyudonwha-pf.mp4",
       style: { objectFit: "cover" },
     },
-    tags: ["ar", "mobile", "exhibition"],
+    tags: [
+      "ar",
+      "interactive",
+      "mobile",
+      "exhibition",
+    ],
   },
   {
     id: "yongdam-play",
