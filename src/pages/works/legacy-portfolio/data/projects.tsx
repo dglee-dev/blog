@@ -65,7 +65,7 @@ const projects: ProjectItem[] = [
       src: "https://d2fcahg5tqhff.cloudfront.net/videos/galaxy-card.mp4",
       style: { objectFit: "contain" },
     },
-    tags: ["web", "interactive"],
+    tags: ["web", "mobile", "interactive"],
   },
   {
     id: "andongza",
@@ -250,7 +250,7 @@ const projects: ProjectItem[] = [
       src: "https://d2fcahg5tqhff.cloudfront.net/videos/yongdam-play-pf.mp4",
       style: { objectFit: "cover" },
     },
-    tags: ["ar", "mobile"],
+    tags: ["ar", "mobile", "interactive"],
   },
   {
     id: "sb-treasure",
@@ -276,7 +276,7 @@ const projects: ProjectItem[] = [
       src: "https://d2fcahg5tqhff.cloudfront.net/videos/sb-treasure-pf.mp4",
       style: { objectFit: "cover" },
     },
-    tags: ["ar", "mobile"],
+    tags: ["ar", "mobile", "interactive"],
   },
   {
     id: "ar-heritage",
@@ -296,7 +296,7 @@ const projects: ProjectItem[] = [
       src: "https://d2fcahg5tqhff.cloudfront.net/videos/ar-heritage-rotato.mp4",
       style: { objectFit: "cover" },
     },
-    tags: ["ar", "mobile"],
+    tags: ["ar", "mobile", "interactive"],
   },
   {
     id: "memorial-timecube",
@@ -673,7 +673,7 @@ const projects: ProjectItem[] = [
       { name: "TypeScript", icon: "typescript" },
       { name: "GraphQL", icon: "graphql" },
     ],
-    tags: ["mobile"],
+    tags: ["mobile", "interactive"],
   },
 ];
 
