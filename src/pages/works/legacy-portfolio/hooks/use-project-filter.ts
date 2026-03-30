@@ -17,5 +17,10 @@ export const useProjectFilter = () => {
     return params.getAll("tag") as ProjectTag[];
   }, [search]);
 
-  return { activeTags };
+  const sortTags = useMemo(() => {
+    const params = new URLSearchParams(search);
+    return params.getAll("sort") as ProjectTag[];
+  }, [search]);
+
+  return { activeTags, sortTags };
 };
