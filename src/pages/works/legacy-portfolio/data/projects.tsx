@@ -193,7 +193,7 @@ const projects: ProjectItem[] = [
     ),
     media: {
       type: "video",
-      src: "https://ddbjbm834jucr.cloudfront.net/seonyudonwha-pf.mov",
+      src: "https://d2fcahg5tqhff.cloudfront.net/videos/seonyudonwha-pf.mp4",
       style: { objectFit: "cover" },
     },
     tags: ["ar", "mobile", "exhibition"],
@@ -223,7 +223,7 @@ const projects: ProjectItem[] = [
     ),
     media: {
       type: "video",
-      src: "https://ddbjbm834jucr.cloudfront.net/yongdam-play-pf.mov",
+      src: "https://d2fcahg5tqhff.cloudfront.net/videos/yongdam-play-pf.mp4",
       style: { objectFit: "cover" },
     },
     tags: ["ar", "mobile"],
@@ -249,7 +249,7 @@ const projects: ProjectItem[] = [
     ),
     media: {
       type: "video",
-      src: "https://justin-cms-images.s3.ap-northeast-2.amazonaws.com/sb-treasure-pf.mov",
+      src: "https://d2fcahg5tqhff.cloudfront.net.amazonaws.com/videos/sb-treasure-pf.mp4",
       style: { objectFit: "cover" },
     },
     tags: ["ar", "mobile"],
@@ -269,7 +269,7 @@ const projects: ProjectItem[] = [
     ),
     media: {
       type: "video",
-      src: "https://ddbjbm834jucr.cloudfront.net/ar-heritage-rotato.mov",
+      src: "https://d2fcahg5tqhff.cloudfront.net/videos/ar-heritage-rotato.mp4",
       style: { objectFit: "cover" },
     },
     tags: ["ar", "mobile"],
