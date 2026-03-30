@@ -16,9 +16,13 @@ const useProjects = () => {
 
     if (sortTags.length > 0) {
       result = [...result].sort((a, b) => {
-        const aScore = sortTags.filter((tag) => a.tags.includes(tag)).length;
-        const bScore = sortTags.filter((tag) => b.tags.includes(tag)).length;
-        return bScore - aScore;
+        const score = (tags: typeof a.tags) =>
+          sortTags.reduce(
+            (acc, tag, i) =>
+              tags.includes(tag) ? acc + (sortTags.length - i) : acc,
+            0
+          );
+        return score(b.tags) - score(a.tags);
       });
     }
 
