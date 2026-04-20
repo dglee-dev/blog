@@ -11,11 +11,19 @@ const Nav = () => {
       <NavTitle>DONGGYU LEE</NavTitle>
 
       <List>
-        <Prefetch queryKey="posts" fetcher={fetchPosts}>
+        <Prefetch
+          queryKey="posts"
+          fetcher={fetchPosts}
+        >
           <NavLink
             href="/posts"
-            $active={routePath.startsWith("/posts")}
-            onClick={(e) => { e.preventDefault(); navigate("/posts"); }}
+            $active={routePath.startsWith(
+              "/posts",
+            )}
+            onClick={(e) => {
+              e.preventDefault();
+              navigate("/posts");
+            }}
           >
             POSTS
           </NavLink>
@@ -24,7 +32,10 @@ const Nav = () => {
         <NavLink
           href="/works"
           $active={routePath.startsWith("/works")}
-          onClick={(e) => { e.preventDefault(); navigate("/works"); }}
+          onClick={(e) => {
+            e.preventDefault();
+            navigate("/works");
+          }}
         >
           WORKS
         </NavLink>
@@ -75,7 +86,8 @@ const List = styled.div`
 `;
 
 const NavLink = styled.a<{ $active?: boolean }>`
-  ${({ $active }) => $active && "color: #aaa !important;"}
+  ${({ $active }) =>
+    $active && "color: #aaa !important;"}
 `;
 
 const NavTitle = styled.span``;
