@@ -1,4 +1,8 @@
 import matter from "gray-matter";
+import type {
+  PostFrontmatter,
+  PostPublish,
+} from "../types";
 
 export interface PostObject {
   Key: string;
@@ -17,11 +21,18 @@ const isDev =
   process.env.NODE_ENV === "development";
 
 const isVisible = (
-  publish: string | undefined,
+  publish: PostPublish | undefined,
 ): boolean => {
   if (publish === "hidden") return false;
   if (publish === "draft") return isDev;
   return true; // public or undefined
+};
+
+const toDateStr = (date: unknown): string => {
+  if (date instanceof Date)
+    return date.toISOString().slice(0, 10);
+  if (date) return String(date).slice(0, 10);
+  return "";
 };
 
 const fetchPosts = (): Promise<PostObject[]> => {
@@ -29,24 +40,25 @@ const fetchPosts = (): Promise<PostObject[]> => {
     .keys()
     .flatMap((key: string) => {
       const raw = ctx(key) as string;
+
       const { data } = matter(raw);
-      if (!isVisible(data.publish)) return [];
+      const frontmatter = data as PostFrontmatter;
+
+      if (!isVisible(frontmatter.publish)) return [];
+
       const filename = key.replace("./", "");
+      const {
+        title = filename.replace(".md", ""),
+        date,
+        tags = [],
+      } = frontmatter;
+
       return [
         {
           Key: `posts/${filename}`,
-          title:
-            data.title ??
-            filename.replace(".md", ""),
-          date:
-            data.date instanceof Date
-              ? data.date
-                  .toISOString()
-                  .slice(0, 10)
-              : data.date
-                ? String(data.date).slice(0, 10)
-                : "",
-          tags: data.tags ?? [],
+          title,
+          date: toDateStr(date),
+          tags,
         },
       ];
     });
