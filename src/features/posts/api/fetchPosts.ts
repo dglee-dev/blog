@@ -23,9 +23,11 @@ const isDev =
 const isVisible = (
   publish: PostPublish | undefined,
 ): boolean => {
+  if (publish === "public") return true;
   if (publish === "hidden") return false;
   if (publish === "draft") return isDev;
-  return true; // public or undefined
+
+  return false;
 };
 
 const toDateStr = (date: unknown): string => {
@@ -44,7 +46,8 @@ const fetchPosts = (): Promise<PostObject[]> => {
       const { data } = matter(raw);
       const frontmatter = data as PostFrontmatter;
 
-      if (!isVisible(frontmatter.publish)) return [];
+      if (!isVisible(frontmatter.publish))
+        return [];
 
       const filename = key.replace("./", "");
       const {
