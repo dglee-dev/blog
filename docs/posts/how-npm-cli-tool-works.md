@@ -1,8 +1,9 @@
 ---
-title: `npx mytool` 을 입력하면?
-description: npm으로 배포된 cli 툴은 어떻게 실행될까?
-published: public
-tags: 'hummer-cli'
+title: "npm으로 설치된 CLI 툴은 어떻게 작동될까?"
+description: "`myapp` 을 설치하고 cli 인터페이스에서 myapp을 입력하면 다운로드 받은 패키지의 파일이 실행되며 cli 툴을 사용할 수 있다. 그 안에서 어떤 일들이 일어나는걸까. bin 프로퍼티와 PATH의 역할은 무엇일까?"
+publish: public
+tags: hummer-cli
+date: 2026-05-06
 ---
 
 
