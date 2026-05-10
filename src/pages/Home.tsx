@@ -8,13 +8,14 @@ const HomePage = () => {
   const { navigate } = useRouter();
 
   useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
+    const params = new URLSearchParams(
+      window.location.search,
+    );
     if (params.has("tag")) {
       navigate(`/works?${params.toString()}`);
-    } else {
-      navigate("/works");
     }
   }, []);
+
   return (
     <CardCarousel total={4}>
       <CardCarousel.Item index={0}>
@@ -33,6 +34,25 @@ const HomePage = () => {
           </h3>
           <p style={{ marginBottom: 4 }}>
             안녕하세요, 개발자 이동규입니다.
+          </p>
+
+          <p>
+            랜딩페이지 에디터, React Native 앱,
+            LMS, 커머스 플랫폼, Canvas 기반
+            에디터, Three.js와 Web AR기반
+            인터랙티브 웹앱 등 여러가지 도메인과
+            기술환경에서 프론트엔드 개발을
+            경험해왔습니다.
+          </p>
+
+          <p>
+            이러한 경험을 바탕으로, 현재는 여러
+            종류의 애플리케이션을 일관되고
+            효율적으로 개발·운영할 수 있도록 돕는
+            엔지니어링 도구들 - CLI 툴, 페이지
+            라우터, 디자인 시스템 - 을 직접
+            만들거나 엔지니어링하는 방향으로
+            발전을 지속하고 있습니다.
           </p>
         </CardCarousel.Card>
       </CardCarousel.Item>

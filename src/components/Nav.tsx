@@ -8,7 +8,9 @@ const Nav = () => {
 
   return (
     <Container>
-      <NavTitle>DONGGYU LEE</NavTitle>
+      <NavTitle>
+        <NavLink href="/">DONGGYU LEE</NavLink>
+      </NavTitle>
 
       <List>
         <Prefetch
