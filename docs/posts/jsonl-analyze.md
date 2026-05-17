@@ -1,5 +1,6 @@
 ---
 title: Claude의 JSONL 분석하기
+publish: draft
 ---
 
 - 턴: 유저 질문과 모델 응답 한 쌍을 턴이라고 부른다.
