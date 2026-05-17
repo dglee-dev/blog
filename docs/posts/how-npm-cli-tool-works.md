@@ -53,3 +53,24 @@ bin 섹션의 첫 문장을 읽어보았다.
 설치 이후 사용자가 cli 인터페이스에서 `myapp` 키워드를 호출하면 PATH에 등록되어 있는 경로들에서 myapp 파일을 찾아나선다. 생성된 심링크가 존재하는 경로는 Node.js가 설치될 때 이미 PATH에 등록되어있으므로 `/usr/local/bin`에서 myapp 심링크를 찾아 목적하는 'executable file' 인 `cli.js` 를 실행할 수 있게 된다.
 
 정리하자면, 위에서 이해하기 어려웠던 'executable file을 PATH에 설치한다' 는 말에는 '로컬에 라이브러리를 설치하고, bin에 명시된 파일(executable file)을 가리키는 심볼릭 링크를 생성해 PATH에 등록된 경로에 둔다' 는 동작들이 숨어있다는 것을 알 수 있다. 
+
+
+
+### Shebang
+
+빼먹은 부분이 있는데, 본문에 다음과 같은 이야기가 나온다.
+
+> Please make sure that your file(s) referenced in `bin` starts with `#!/usr/bin/env node`; otherwise, the scripts are started without the node excutable
+
+여기에 등장하는 `#!` 으로 시작하는 이 라인은 일명 shebang(sharp + bang) 이라 불리우는 것이다. 첫 줄에 어떤 인터프리터(런타임)으로 해당 file을 해석해야 하는지에 대한 힌트를 제공하는 것이다. 만약 shebang line을 명시하지 않으면 OS는 해당 파일을 쉘 스크립트로 인식해 오류를 내뱉게 된다고 한다.
+
+
+
+- [Wikipedia - Shebang (Unix)](https://en.wikipedia.org/wiki/Shebang_(Unix))
+- [Rㅌeddit - Today I Understood The Importance of the Shebang](https://www.reddit.com/r/bash/comments/ugoz97/today_i_understood_the_importance_of_the_shebang/)
+
+
+
+## 적용
+
+실제 프로젝트에 어떻게 적용했는지 기록한다.
