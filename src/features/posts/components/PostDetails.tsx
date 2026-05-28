@@ -140,6 +140,10 @@ const Container = styled.div`
     padding: 0;
   }
 
+  strong {
+    font-weight: 600;
+  }
+
   ul,
   ol {
     padding-left: 1.5em;
