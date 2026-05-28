@@ -46,18 +46,21 @@ cache/
 notification/
 ```
 
-여기에서 의존성을 고려해서 스크립트를 로드하려면 어떤 모듈이 어디에 의존하는지를 기록하는 문서를 작성하게 될 것이다.  
-그리고 해당 문서에 의거해서 스크립트 순서를 개발자가 수동으로 관리해야한다. 이 부분에서 개발자라면 '작성된 의존성대로 스크립트 순서를 자동으로 계산해주는 알고리즘을 짤 수 있지 않을까?' 라는 생각이 들기 마련이다. 이것이 당시의 `Loader` 의 역할이다. 여기에 중복 로딩을 방지하고, race condition, 로딩 실패처리, 캐시, 실행 순서, circular dependency등에 대한 처리를 추가하다보면 사실상 작은 런타임 시스템이 필요해지는 것이다.
+여기에서 의존성을 고려해서 스크립트를 로드하려면 어떤 모듈이 어디에 의존하는지를 기록하는 문서를 작성하게 될 것이다. 그리고 해당 문서에 의거해서 스크립트 순서를 개발자가 수동으로 관리해야한다. 이 부분에서 개발자라면 '작성된 의존성대로 스크립트 순서를 자동으로 계산해주는 알고리즘을 짤 수 있지 않을까?' 라는 생각이 들기 마련이다. 이것이 당시의 `Loader` 의 역할이다. 여기에 중복 로딩을 방지하고, race condition, 로딩 실패처리, 캐시, 실행 순서, circular dependency등에 대한 처리를 추가하다보면 사실상 작은 런타임 시스템이 필요해지는 것이다.
+
+그렇게 대규모 웹 애플리케이션 작성을 위한 초기 클라이언트 모듈 시스템들이 생겨나게 되었다.
 
 ## 2. 초기 클라이언트 모듈 시스템
 
 ### Google Closure Library, Yahoo User Interface Library
 
-웹페이지의 애플리케이션화로 인해 코드가 복잡해지고 이에 따라 모듈 로더에 대한 필요성이 생겨나면서, 대기업들은 그들의 자체적인 기술력을 이용해 클라이언트 모듈 시스템을 제작해냈다. Gmail을 개발한 구글은 이미 2004년경 현대의 Webpack과 같은 역할을 하는 번들링/컴파일 툴인 `Closure Library`를 만들어 사용하고 있었으며, 야후는 [`YUI`](https://clarle.github.io/yui3/) 라는 이름의 라이브러리에 모듈 시스템을 얹어내었다.
+웹페이지의 애플리케이션화로 인해 코드가 복잡해지고 이에 따라 모듈 로더에 대한 필요성이 생겨나면서, 대기업들은 그들의 자체적인 기술력을 이용해 클라이언트 모듈 시스템을 제작해냈다. Gmail을 개발한 구글은 이미 2004년경 현대의 Webpack과 같은 역할을 하는 번들링/컴파일 툴인 `Closure Library`를 만들어 사용하고 있었으며, 야후는 [`YUI`](https://clarle.github.io/yui3/) 라는 이름의 라이브러리에 모듈 로더를 얹어내었다.
 
 ### Dojo Toolkit
 
-Dojo는 2004년에 등장한 프레임워크로서, Dijit이라는 이름의 UI 위젯 라이브러리와 Java/C# 친화적인 클래스 기반 OOP 패러다임(dojo.declare), 대규모 자바스크립트 코드베이스를 관리하기 위한 모듈 시스템(sync XHR - AMD), 그리고 i18n과 크로스 브라우징까지 하나로 묶어 제공하는 웹 애플리케이션 제작용 툴킷이었다. James Burke는 Dojo라는 웹 애플리케이션 프레임워크의 모듈 로더(Dojo Loader) 컨트리뷰터였다. 
+Dojo는 2004년에 등장한 프레임워크로서, Dijit이라는 이름의 UI 위젯 라이브러리와 Java/C# 친화적인 클래스 기반 OOP 패러다임(dojo.declare), 대규모 자바스크립트 코드베이스를 관리하기 위한 모듈 시스템(sync XHR - AMD), 그리고 i18n과 크로스 브라우징까지 하나로 묶어 제공하는 '엔터프라이즈급' 웹 애플리케이션 제작용 툴킷이었다. Alex Russell이 만들었으며, UI Widget의 느낌이나 개발자 경험이 기존에 존재하던 데스크탑용 애플리케이션 프레임워크(Java Swing, WinForms)를 흉내낸 것에 가까운 느낌이다. 당시에는 '웹에서도 데스크탑 앱 같은 경험을 구현해보자' 가 목표였기 때문이었던 것으로 짐작된다. 다만 지금의 Next.js와 같은 서버사이드 프레임워크가 아니라 클라이언트에서 로드되어 사용되는 런타임 라이브러리들의 집합이었다.
+
+Dojo의 로더는 기본적으로 CJS를 흉내내기 위해 synchronous XHR(async off)로 런타임에 모듈을 로딩했다.
 
 ## 3. 서버사이드 모듈 시스템(CJS)과 Node.js
 
@@ -71,7 +74,7 @@ Dojo는 2004년에 등장한 프레임워크로서, Dijit이라는 이름의 UI 
 
 CJS를 브라우저 모듈시스템에서도 사용하기 위한 움직임들도 있었다. [curl.js](http://github.com/unscriptable/curl), [SproutCore](http://sproutcore.com), [PINF](http://github.com/pinf/loader-js)가 그것이다.
 
-이들  curl.js와 PINF는 사실상 런타임에 비동기적으로 모듈을 로딩하는 방식으로 구현되었다. 
+이들 curl.js와 PINF는 사실상 런타임에 비동기적으로 모듈을 로딩하는 방식으로 구현되었다.
 
 ## 4. 분리된 클라이언트 모듈 시스템 (AMD, Require.js)
 
@@ -79,13 +82,15 @@ CJS는 동기적으로 모듈을 로드하는 시스템이라서 브라우저에
 
 Require.js는 AMD의 대표 구현체이다. [curl.js](https://github.com/cujojs/curl)와 경쟁구도가 있었으나 James Burke의 Require.js의 커뮤니티가 더 빠르게 성장하며 AMD를 대표하게 되었다.
 
-AMD와 Require.js의 등장을 조금 자세히 설명하기 위해서는 위에서 등장한 Dojo toolkit과 James Burke의 관계에 대해 설명할 필요가 있다. 
+AMD와 Require.js의 등장을 조금 자세히 설명하기 위해서는 위에서 등장한 Dojo toolkit과 James Burke의 관계에 대해 설명할 필요가 있다.
 
 - [Require.js History](https://requirejs.org/docs/history.html)
 
 ## 5. 모듈 번들러(Browserify, Webpack)의 등장
 
 AMD는 2011~2013년 즈음 득세하는 듯 했지만 Browserify, Webpack처럼 'CJS를 번들링해서 클라이언트에 던져주면, 클라이언트에서는 모듈 로딩이 필요없다' 라는 해결책이 나오면서 힘을 잃었다.
+
+Browserify
 
 Webpack은 CJS 뿐 아니라 AMD 코드도 지원했고, JS뿐 아니라 CSS, 이미지, 폰트 등 정적 에셋까지 모두 모듈로 묶었다(이게 뭔소릴까?).
 
