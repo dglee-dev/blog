@@ -9,7 +9,16 @@ const Nav = () => {
   return (
     <Container>
       <NavTitle>
-        <NavLink href="/">DONGGYU LEE</NavLink>
+        <NavLink
+          href="/"
+          $active={true}
+          onClick={(e) => {
+            e.preventDefault();
+            navigate("/");
+          }}
+        >
+          DONGGYU LEE
+        </NavLink>
       </NavTitle>
 
       <List>
@@ -89,7 +98,7 @@ const List = styled.div`
 
 const NavLink = styled.a<{ $active?: boolean }>`
   ${({ $active }) =>
-    $active && "color: #aaa !important;"}
+    `color: ${$active ? "#000000" : "#aaa !important"}`}
 `;
 
 const NavTitle = styled.span``;
