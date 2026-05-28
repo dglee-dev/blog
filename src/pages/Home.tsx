@@ -28,6 +28,7 @@ const HomePage = () => {
         <CardCarousel.Card
           style={{
             width: "440px",
+            height: "400px",
           }}
         >
           <div
