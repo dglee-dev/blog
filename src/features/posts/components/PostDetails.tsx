@@ -70,6 +70,8 @@ const Description = styled.p`
   color: #666;
   line-height: 1.6;
   white-space: pre-line;
+
+  font-size: 0.7em;
 `;
 
 const GoBack = styled.button`
@@ -107,7 +109,9 @@ const Container = styled.div`
   max-width: 680px;
   align-self: flex-start;
 
-  h1,
+  font-size: 18px;
+
+  x h1,
   h2,
   h3,
   h4 {
