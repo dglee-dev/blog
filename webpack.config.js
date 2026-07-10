@@ -2,12 +2,15 @@ const webpack = require("webpack");
 const path = require("path");
 
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
 
 module.exports = (env, argv) => {
+  const isDevelopment = argv.mode === "development";
+
   const plugins = getPluginsByEnv(
     {
       production: [],
-      development: [],
+      development: [new ReactRefreshWebpackPlugin()],
       common: [
         new HtmlWebpackPlugin({
           template: "./public/index.html",
@@ -40,7 +43,14 @@ module.exports = (env, argv) => {
       rules: [
         {
           test: /\.(ts|tsx|js|jsx)$/,
-          use: "babel-loader",
+          use: {
+            loader: "babel-loader",
+            options: {
+              plugins: isDevelopment
+                ? [require.resolve("react-refresh/babel")]
+                : [],
+            },
+          },
           exclude: /node_modules/,
         },
         {

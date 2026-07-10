@@ -2,10 +2,47 @@ import ReactMarkdown from "react-markdown";
 import styled from "styled-components/macro";
 
 import usePost from "@/features/posts/hooks/usePost";
+import { useEffect } from "react";
 
 const PostDetails = () => {
   const { contents, title, description } =
     usePost();
+
+  useEffect(() => {
+    const scrollKey = `scroll:${window.location.pathname}`;
+
+    const saveScroll = () => {
+      sessionStorage.setItem(
+        scrollKey,
+        String(window.scrollY),
+      );
+    };
+
+    window.addEventListener(
+      "beforeunload",
+      saveScroll,
+    );
+
+    return () =>
+      window.removeEventListener(
+        "beforeunload",
+        saveScroll,
+      );
+  }, []);
+
+  useEffect(() => {
+    if (!contents) return;
+
+    const scrollKey = `scroll:${window.location.pathname}`;
+    const saved =
+      sessionStorage.getItem(scrollKey);
+
+    if (saved) {
+      requestAnimationFrame(() => {
+        window.scrollTo(0, Number(saved));
+      });
+    }
+  }, [contents]);
 
   return (
     <Container>
