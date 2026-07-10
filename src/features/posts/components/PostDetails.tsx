@@ -1,8 +1,8 @@
+import { useEffect } from "react";
 import ReactMarkdown from "react-markdown";
 import styled from "styled-components/macro";
 
 import usePost from "@/features/posts/hooks/usePost";
-import { useEffect } from "react";
 
 const PostDetails = () => {
   const { contents, title, description } =
@@ -146,7 +146,7 @@ const Container = styled.div`
   max-width: 680px;
   align-self: flex-start;
 
-  font-size: 18px;
+  font-size: 14px;
 
   x h1,
   h2,
