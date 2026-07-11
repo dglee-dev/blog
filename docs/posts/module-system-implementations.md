@@ -1,6 +1,6 @@
 ---
 title: "모듈 시리즈 2: 모듈 시스템의 설계와 구현 (작성중)"
-publish: draft
+publish: private
 date: 2026-05-16
 ---
 

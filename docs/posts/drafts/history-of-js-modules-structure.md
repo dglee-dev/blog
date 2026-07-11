@@ -42,26 +42,28 @@
     - 당시에는 지금처럼 작은 팀이 오픈소스를 이용해서 뭔가를 빠르게 만드는 기업환경이 아니었다
     - 따라서 범용 모듈 시스템에 대한 대중적 니즈가 아직 없었고, 엔터프라이즈급 환경에서는 YUI / Dojo와 같은 프레임워크를 채택하는 것으로 충분했다
 
-4. V8과 Node, CommonJS
+4. V8과 Node
 
 - V8 (2008)
-- CommonJS (2009)
+- Node.js
   - 라이언달이 JavaScript를 서버에서 쓰겠다는 아이디어로 Node.js 만듦
+
+5. CommonJS
+
+- CommonJS (2009)
   - 서버 쪽 모듈시스템은 비교적 간단해서 (동기적) 그냥 CommonJS라는 표준을 바로 채택
   - 이게 잘 운영되다보니 '브라우저에서도 이렇게 쓰자' 가 AMD로 이어지게 되었다
 
-5. AMD
+6. AMD(Require.js) (2010)
 
-- AMD(Require.js) (2010)
-  - CommonJS를 브라우저에 가져오려다가 브라우저의 현실때문에 별도 규격으로 분리
+- CommonJS를 브라우저에 가져오려다가 브라우저의 현실때문에 별도 규격으로 분리
 
-6. 새로운 해결책의 등장: Browserify와 Webpack
+7. 새로운 해결책의 등장: Browserify와 Webpack
 
-- ## Browserify (2011)
-
+- Browserify (2011)
 - Webpack (2014)
 
-7. ES Modules
+8. ES Modules
 
 - 왜 언어 차원의 모듈이 필요했는가
 - CommonJS와 무엇이 다른가
