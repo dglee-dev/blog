@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import styled from "styled-components/macro";
 
 import usePost from "@/features/posts/hooks/usePost";
@@ -63,7 +64,9 @@ const PostDetails = () => {
         </div>
       </Header>
       <Body>
-        <ReactMarkdown>{contents}</ReactMarkdown>
+        <ReactMarkdown remarkPlugins={[remarkGfm]}>
+          {contents}
+        </ReactMarkdown>
         <Spacer />
       </Body>
     </Container>
@@ -194,6 +197,28 @@ const Container = styled.div`
   li {
     margin: 0.3em 0;
     line-height: 1.6;
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1em 0;
+    font-size: 0.9em;
+  }
+
+  th,
+  td {
+    border: 1px solid #e0e0e0;
+    padding: 6px 10px;
+    text-align: left;
+    white-space: nowrap;
+  }
+
+  th {
+    background: #f5f5f5;
+    font-weight: 600;
   }
 `;
 
